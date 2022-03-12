@@ -1,0 +1,374 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: triple_pinyin_smpyaoe
+  name: 三码拼音aoe
+  version: "1.0"
+  author:
+    - 佛振 <chen.sst@gmail.com>
+    - 阿森納裡 <15678407@qq.com>
+  description: |
+    左手15键内实现“声母+韵头韵腹+韵尾声调”三码输入一个带调音节；
+    基础韵母按韵腹大致分为4组：a/an/ang,ai/ei/ao,o/ou/ong,e/en/eng；
+    i=iei,u=uong,v=vao,er=va。
+  dependencies:
+    - luna_pinyin
+    - stroke
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 繁體, 简体 ]
+  - name: ascii_punct
+    states: [ ，。, ，． ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor  # 編輯器
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator@luna_pinyin_lookup
+    - reverse_lookup_translator@stroke_lookup
+    - script_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: 'zyxwvutsrqponmlkjihgfedcba'
+  delimiter: " ;'"
+  # auto_clear: auto # manual|auto|max_length 空碼按下一鍵確認清屏|空碼自動清屏|達到最長碼時後碼頂上清屏
+  algebra:
+   # 音節修正合併
+    - erase/^xx$/
+    - xform/^m([1-5])$/mu$1/        # 鼻音m（呣）轉化爲mu
+    - xform/^r5$/er5/               # r5（兒）轉化爲er5
+    - xform/^eh([1-5])$/e$1/        # 模糊音：eh（誒欸）、e合併
+    - xform/^wong([1-5])$/weng$1/   # 模糊音：wong、weng合併
+   # 拼音完整形式
+    - xform/^([jqx])u/$1v/
+    - xform/iu/iou/
+    - xform/ui/uei/
+    - xform/ong/ung/
+    - xform/^yi?/i/
+    - xform/^wu?/u/
+    - xform/iu/v/
+    - xform/([iuv])n/$1en/
+   # 異拼
+    - derive/^([jqx])?veng/$1iong/            # veng->iong
+    - derive/^(\w|[zcs]h)ueng/$1ong/          # ueng->ong
+   # 尖音處理
+    - xform/^zii([1-5])$/buei$1/
+    - xform/^zi(\w+[1-5])$/bu$1/
+    - xform/^z(v\w*[1-5])$/b$1/
+    - xform/^cii([1-5])$/puei$1/
+    - xform/^ci(\w+[1-5])$/pu$1/
+    - xform/^c(v\w*[1-5])$/p$1/
+    - xform/^sii([1-5])$/muei$1/
+    - xform/^si(\w+[1-5])$/mu$1/
+    - xform/^s(v\w*[1-5])$/m$1/
+   # 音節合併
+    - xform/^([zcs]h?|r)i([1-5])$/$1o$2/
+    - xform/^([zcs])([aoe]\w*)([1-5])$/$1hi$2$3/
+    - xform/^([zcs])u(an|eng?|ei|o)?([1-5])$/$1hv$2$3/
+    - xform/^fiao([1-5])$/riao$1/
+    - xform/^fu(eng)?([1-5])$/rv$1$2/
+    - xform/^f(\w+)([1-5])$/ri$1$2/
+    
+   # 第1碼：聲母
+    - xform/^b/Q/
+    - xform/^p/W/
+    - xform/^m/E/
+    - xform/^[fr]/R/
+    - xform/^d/A/
+    - xform/^t/S/
+    - xform/^n/D/
+    - xform/^l/F/
+    - xform/^[gj]/Z/
+    - xform/^[kq]/X/
+    - xform/^[hx]/C/
+    - xform/^([aoeiuv])/V$1/
+    - xform/^zh?/T/
+    - xform/^ch?/G/
+    - xform/^sh?/B/
+   # 第2碼：韻頭+韻腹
+    - xform/^([QWERTASDFGZXCVB])(a|an|ang)([1-5])$/$1Q$2$3/
+    - xform/^([QWERTASDFGZXCVB])(ai|ei|ao)([1-5])$/$1W$2$3/
+    - xform/^([QWERTASDFGZXCVB])(o|ou|ong)([1-5])$/$1E$2$3/
+    - xform/^([QWERTASDFGZXCVB])(e|en|eng)([1-5])$/$1R$2$3/
+    
+    - xform/^([QWERTASDFGZXCVB])(ia|ian|iang)([1-5])$/$1A$2$3/
+    - xform/^([QWERTASDFGZXCVB])(iai|iei|iao|i)([1-5])$/$1S$2$3/
+    - xform/^([QWERTASDFGZXCVB])(io|iou|iong)([1-5])$/$1D$2$3/
+    - xform/^([QWERTASDFGZXCVB])(ie|ien|ieng)([1-5])$/$1F$2$3/
+    
+    - xform/^([QWERTASDFGZXCVB])(ua|uan|uang)([1-5])$/$1Z$2$3/
+    - xform/^([QWERTASDFGZXCVB])(uai|uei|uao)([1-5])$/$1X$2$3/
+    - xform/^([QWERTASDFGZXCVB])(uo|uou|uong|u)([1-5])$/$1C$2$3/
+    - xform/^([QWERTASDFGZXCVB])(ue|uen|ueng)([1-5])$/$1V$2$3/
+    
+    - xform/^([QWERTASDFGZXCVB])(va|van|vang|er)([1-5])$/$1T$2$3/
+    - xform/^([QWERTASDFGZXCVB])(vo|vou|vong|vai|vei|vao|v)([1-5])$/$1G$2$3/
+    - xform/^([QWERTASDFGZXCVB])(ve|ven|veng)([1-5])$/$1B$2$3/
+   # 第3碼：韻尾+聲調
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)1$/$1Q/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)2$/$1W/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)3$/$1E/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)4$/$1R/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)5$/$1T/
+    
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)1$/$1A/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)2$/$1S/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)3$/$1D/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)4$/$1F/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)5$/$1G/
+    
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])1$/$1Z/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])2$/$1X/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])3$/$1C/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])4$/$1V/
+    - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])5$/$1B/
+    
+    - erase/^[QWERTASDFGZXCVB][a-z]+/
+    - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/
+    - erase/^[yuiophjklnm]\w*/
+    
+   # 簡拼
+    - derive/^t([qwertasdfgzxcvb]{2})$/y$1/
+    - derive/^g([qwertasdfgzxcvb]{2})$/h$1/
+    - derive/^b([qwertasdfgzxcvb]{2})$/n$1/
+    - abbrev/^([qwertasdfgzxcvbyhn])[qwertasdfgzxcvb]{2}$/$1/     # 首碼簡拼
+    - derive/^([qwertasdfgzxcvbyhn])t([qwertasdfgzxcvb])$/$1y$2/
+    - derive/^([qwertasdfgzxcvbyhn])g([qwertasdfgzxcvb])$/$1h$2/
+    - derive/^([qwertasdfgzxcvbyhn])b([qwertasdfgzxcvb])$/$1n$2/
+    - derive/^([qwertasdfgzxcvbyhn]{2})[qwertasdfgzxcvb]$/$1/     # 前兩碼簡拼
+    - derive/^([qwertasdfgzxcvbyhn]{2})[qwert]$/$1y/
+    - derive/^([qwertasdfgzxcvbyhn]{2})[asdfg]$/$1h/
+    - derive/^([qwertasdfgzxcvbyhn]{2})[zxcvb]$/$1n/
+
+translator:
+  dictionary: terra_pinyin
+  prism: triple_pinyin_smpyaoe
+  spelling_hints: 5 # ～字以內候選標註完整帶調拼音
+  comment_format:  # 提示碼爲带调拼音
+    - xform/([aoeiuv])(ng?|r)([1-4])/$1$3$2
+    - xform/([aoe])([iuo])([1-4])/$1$3$2
+    - xform/a1/ā
+    - xform/a2/á
+    - xform/a3/ǎ
+    - xform/a4/à
+    - xform/e1/ē
+    - xform/e2/é
+    - xform/e3/ě
+    - xform/e4/è
+    - xform/o1/ō
+    - xform/o2/ó
+    - xform/o3/ǒ
+    - xform/o4/ò
+    - xform/i1/ī
+    - xform/i2/í
+    - xform/i3/ǐ
+    - xform/i4/ì
+    - xform/u1/ū
+    - xform/u2/ú
+    - xform/u3/ǔ
+    - xform/u4/ù
+    - xform/v1/ǖ
+    - xform/v2/ǘ
+    - xform/v3/ǚ
+    - xform/v4/ǜ
+    - xform/eh1/ê̄
+    - xform/eh2/ế
+    - xform/eh3/ê̌
+    - xform/eh4/ề
+    - xform/eh5?/ê
+    - xform/([nlzcs])v/$1ü/
+    - xform/([jqxy])v/$1u/
+    - xform/([a-z|ü]+)[1-5]/$1/                            # 未處理聲調轉換
+
+luna_pinyin_lookup:
+  tag: luna_pinyin_lookup
+  dictionary: luna_pinyin
+  enable_completion: true
+  prefix: "`"
+  suffix: "'"
+  tips: 〔拼音反查〕
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+  comment_format: &comment  # 反查提示碼爲三碼拼音aoe輸入碼
+   # 音節修正合併
+    - erase/\<xx\>/
+    - xform/\<m([1-5])\>/mu$1/        # 鼻音m（呣）轉化爲mu
+    - xform/\<r5\>/er5/               # r5（兒）轉化爲er5
+    - xform/\<eh([1-5])\>/e$1/        # 模糊音：eh（誒欸）、e合併
+    - xform/\<wong([1-5])\>/weng$1/   # 模糊音：wong、weng合併
+   # 拼音完整形式
+    - xform/\<([jqx])u/$1v/
+    - xform/iu/iou/
+    - xform/ui/uei/
+    - xform/ong/ung/
+    - xform/\<yi?/i/
+    - xform/\<wu?/u/
+    - xform/iu/v/
+    - xform/([iuv])n/$1en/
+   # 異拼
+    - derive/\<([jqx])?veng/$1iong/            # veng->iong
+    - derive/\<(\w|[zcs]h)ueng/$1ong/          # ueng->ong
+   # 尖音處理
+    - xform/\<zii([1-5])\>/buei$1/
+    - xform/\<zi(\w+[1-5])\>/bu$1/
+    - xform/\<z(v\w*[1-5])\>/b$1/
+    - xform/\<cii([1-5])\>/puei$1/
+    - xform/\<ci(\w+[1-5])\>/pu$1/
+    - xform/\<c(v\w*[1-5])\>/p$1/
+    - xform/\<sii([1-5])\>/muei$1/
+    - xform/\<si(\w+[1-5])\>/mu$1/
+    - xform/\<s(v\w*[1-5])\>/m$1/
+   # 音節合併
+    - xform/\<([zcs]h?|r)i([1-5])\>/$1o$2/
+    - xform/\<([zcs])([aoe]\w*)([1-5])\>/$1hi$2$3/
+    - xform/\<([zcs])u(an|eng?|ei|o)?([1-5])\>/$1hv$2$3/
+    - xform/\<fiao([1-5])\>/riao$1/
+    - xform/\<fu(eng)?([1-5])\>/rv$1$2/
+    - xform/\<f(\w+)([1-5])\>/ri$1$2/
+    
+   # 第1碼：聲母
+    - xform/\<b/Q/
+    - xform/\<p/W/
+    - xform/\<m/E/
+    - xform/\<[fr]/R/
+    - xform/\<d/A/
+    - xform/\<t/S/
+    - xform/\<n/D/
+    - xform/\<l/F/
+    - xform/\<[gj]/Z/
+    - xform/\<[kq]/X/
+    - xform/\<[hx]/C/
+    - xform/\<([aoeiuv])/V$1/
+    - xform/\<zh?/T/
+    - xform/\<ch?/G/
+    - xform/\<sh?/B/
+   # 第2碼：韻頭+韻腹
+    - xform/\<([QWERTASDFGZXCVB])(a|an|ang)([1-5])\>/$1Q$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(ai|ei|ao)([1-5])\>/$1W$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(o|ou|ong)([1-5])\>/$1E$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(e|en|eng)([1-5])\>/$1R$2$3/
+    
+    - xform/\<([QWERTASDFGZXCVB])(ia|ian|iang)([1-5])\>/$1A$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(iai|iei|iao|i)([1-5])\>/$1S$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(io|iou|iong)([1-5])\>/$1D$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(ie|ien|ieng)([1-5])\>/$1F$2$3/
+    
+    - xform/\<([QWERTASDFGZXCVB])(ua|uan|uang)([1-5])\>/$1Z$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(uai|uei|uao)([1-5])\>/$1X$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(uo|uou|uong|u)([1-5])\>/$1C$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(ue|uen|ueng)([1-5])\>/$1V$2$3/
+    
+    - xform/\<([QWERTASDFGZXCVB])(va|van|vang|er)([1-5])\>/$1T$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(vo|vou|vong|vai|vei|vao|v)([1-5])\>/$1G$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(ve|ven|veng)([1-5])\>/$1B$2$3/
+   # 第3碼：韻尾+聲調
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)1\>/$1Q/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)2\>/$1W/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)3\>/$1E/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)4\>/$1R/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)5\>/$1T/
+    
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)1\>/$1A/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)2\>/$1S/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)3\>/$1D/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)4\>/$1F/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[ae]n|[iuv]?ou|[iuv]?ei|i)5\>/$1G/
+    
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])1\>/$1Z/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])2\>/$1X/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])3\>/$1C/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])4\>/$1V/
+    - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]ng|[iuv]?ao|[uv])5\>/$1B/
+    
+    - erase/\<[QWERTASDFGZXCVB][a-z]+/
+    - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/
+    - erase/\<[yuiophjklnm]\w*/
+    
+   # 簡拼
+    # - derive/\<t([qwertasdfgzxcvb]{2})\>/y$1/
+    # - derive/\<g([qwertasdfgzxcvb]{2})\>/h$1/
+    # - derive/\<b([qwertasdfgzxcvb]{2})\>/n$1/
+    # - abbrev/\<([qwertasdfgzxcvbyhn])[qwertasdfgzxcvb]{2}\>/$1/     # 首碼簡拼
+    # - derive/\<([qwertasdfgzxcvbyhn])t([qwertasdfgzxcvb])\>/$1y$2/
+    # - derive/\<([qwertasdfgzxcvbyhn])g([qwertasdfgzxcvb])\>/$1h$2/
+    # - derive/\<([qwertasdfgzxcvbyhn])b([qwertasdfgzxcvb])\>/$1n$2/
+    # - derive/\<([qwertasdfgzxcvbyhn]{2})[qwertasdfgzxcvb]\>/$1/     # 前兩碼簡拼
+    # - derive/\<([qwertasdfgzxcvbyhn]{2})[qwert]\>/$1y/
+    # - derive/\<([qwertasdfgzxcvbyhn]{2})[asdfg]\>/$1h/
+    # - derive/\<([qwertasdfgzxcvbyhn]{2})[zxcvb]\>/$1n/
+   # 變形
+    # - xlit/qwertasdfgzxcvb/123*A4560B789#C/
+
+stroke_lookup:
+  tag: stroke_lookup
+  dictionary: stroke
+  enable_completion: true
+  prefix: "~"
+  suffix: "'"
+  tips: 〔笔画反查〕
+  preedit_format:
+    - xlit/hspnz/一丨丿丶乙/
+  comment_format: *comment
+
+punctuator:
+  import_preset: symbols
+
+key_binder:
+  import_preset: default
+  bindings:
+    - { accept: Return, send: "Shift+Return", when: composing }
+    - { accept: "Shift+Return", send: Return, when: composing }
+    
+    - { accept: minus, send: minus, when: has_menu }
+    - { accept: minus, send: Page_Up, when: paging }
+    # - { accept: minus, send: Page_Up, when: has_menu }
+    # - { accept: equal, send: Page_Down, when: has_menu }
+    
+    - { accept: comma, send: comma, when: paging }
+    # - { accept: comma, send: Page_Up, when: paging }
+    - { accept: period, send: period, when: has_menu }
+    # - { accept: period, send: Page_Down, when: has_menu }
+    
+    # - { accept: semicolon, send: 2, when: has_menu }
+    # - { accept: apostrophe, send: 3, when: has_menu }
+    
+    - {accept: "Control+Shift+5", toggle: ascii_punct, when: always}
+    - {accept: "Control+Shift+percent", toggle: ascii_punct, when: always}
+    
+    - {accept: "Control+Shift+F", toggle: simplification, when: always}
+
+recognizer:
+  import_preset: default
+  patterns:
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+    luna_pinyin_lookup: "`[a-z]*'?$"
+    stroke_lookup: "~[a-z]*'?$"
