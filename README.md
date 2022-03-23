@@ -41,7 +41,7 @@
 :---:|:---:|:---:|:---:|:---:|:---:
 1行|a,an,ang|e,en,eng|o,ou,ong|ai,ei,ao|er,üan,\_
 2行|ia,ian,iang|ie,in,ing|io,iu,iong|iai,i,iao|üe,ün,\_
-3行|ua,uan,uang|\_,un,\_|uo,\_,\_|uai,ui,u|\_,\_,ü
+3行|ua,uan,uang|\_,un,ueng|uo,\_,\_|uai,ui,u|\_,\_,ü
 
 39个韵母合并在15键上，分布规律是：
 
