@@ -4,13 +4,13 @@
 schema:
   schema_id: triple_pinyin_smpy_express
   name: 三码拼音快打
-  version: "1.0"
+  version: "1.2"
   author:
     - 佛振 <chen.sst@gmail.com>
     - 阿森納裡 <15678407@qq.com>
   description: |
-    左手15键内实现“声母+韵头韵腹+韵尾声调”三码输入一个带调音节；
-    基础韵母按韵腹大致分为4组：a/an/ang,e/en/eng,o/ou/ong,ai/ei/ao；
+    15键内实现“声母+韵母+去重码&声调”三码输入一个带调音节；
+    基础韵母大致按韵头分为4组：a/an/ang,e/en/eng,o/ou/ong,ai/ei/ao；
     i=iei,u=uao,v=vao,er=va；
     支持首码简拼和前两码简拼，支持云输入。
   dependencies:
@@ -21,12 +21,43 @@ switches:
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
+    
   - name: full_shape
     states: [ 半角, 全角 ]
+    
   - name: simplification
+    reset: 1
     states: [ 繁體, 简体 ]
+    
   - name: ascii_punct
     states: [ ，。, ，． ]
+    
+  - options: [ VOICE_ASSIST1 ]
+    states: [ "🎙" ]
+    
+  - options: [ _Keyboard_emoji ]
+    states: [ "😊" ]
+    
+  - options: [ _Keyboard_symbols ]
+    states: [ "🔣" ]
+    
+  - options: [ _Keyboard_clip ]
+    states: [ "📋" ]
+    
+  - options: [ Menu ]
+    states: [ "方案" ]
+    
+  - options: [ Theme_settings ]
+    states: [ "主题" ]
+    
+  - options: [ Color_switch ]
+    states: [ "配色" ]
+    
+  - options: [ Hint_switch ]
+    states: [ "助记" ]
+    
+  - options: [ IME_switch ]
+    states: [ "🌐" ]
 
 engine:
   processors:
@@ -349,35 +380,36 @@ translator:
     - xform/ (\S+-)/ '$1/                                   # 簡拼前+隔音符
     - xform/- /-' /                                         # 簡拼後+隔音符
     - xform/' '?/ '/
-    - xform/gi([aeoj]-)/ji$1/                                # 前兩碼簡拼
-    - xform/ki([aeoj]-)/qi$1/
-    - xform/hi([aeoj]-)/xi$1/
-    - xform/gv([ae]-)/jü$1/
-    - xform/kv([ae]-)/qü$1/
-    - xform/hv([ae]-)/xü$1/
-    - xform/gv([o]-)/jü-/
-    - xform/kv([o]-)/qü-/
-    - xform/hv([o]-)/xü-/
+    - xform/\<gi([aeoj]-)/ji$1/                                # 前兩碼簡拼
+    - xform/\<ki([aeoj]-)/qi$1/
+    - xform/\<hi([aeoj]-)/xi$1/
+    - xform/\<gv([ae]-)/jü$1/
+    - xform/\<kv([ae]-)/qü$1/
+    - xform/\<hv([ae]-)/xü$1/
+    - xform/\<gv([o]-)/jü-/
+    - xform/\<kv([o]-)/qü-/
+    - xform/\<hv([o]-)/xü-/
     - xform/(?<![yzcsr])v([ae]-)/ü$1/
     - xform/(?<![yzcsr])v([o]-)/ü-/
-    - xform/y([aeoj]-)/’$1/
-    - xform/yi([aeoj]-)/y$1/
-    - xform/yu([aeoj]-)/w$1/
-    - xform/yv([ae]-)/yu$1/
-    - xform/yv([o]-)/yu-/
-    - xform/([zcs])(u)?([aeoj]-)/$1h$2$3/
-    - xform/([zcs])i([aeoj]-)/$1$2/
-    - xform/([zcs])v([ae]-)/$1u$2/
-    - xform/([zcs])v([o]-)/$1u-/
-    - xform/ri([aeoj]-)/f$1/
-    - xform/rv([ae]-)/fu$1/
-    - xform/rv([o]-)/fu-/
-    - xform/g(?!\w)/g\x2Fj/                                 # 首碼簡拼
-    - xform/k(?!\w)/k\x2Fq/
-    - xform/h(?!\w)/h\x2Fx/
-    - xform/y(?!\w)/’\x2Fy\x2Fw/
-    - xform/([zcs])(?!\w)/$1h\x2F$1/
-    - xform/r(?!\w)/r\x2Ff/
+    - xform/\<y([aeoj]-)/’$1/
+    - xform/\<yi([aeoj]-)/y$1/
+    - xform/\<yu([aeoj]-)/w$1/
+    - xform/\<yv([a]-)/yur-/
+    - xform/\<yv([e]-)/yu$1/
+    - xform/\<yv([o]-)/yu-/
+    - xform/\<([zcs])(u)?([aeoj]-)/$1h$2$3/
+    - xform/\<([zcs])i([aeoj]-)/$1$2/
+    - xform/\<([zcs])v([ae]-)/$1u$2/
+    - xform/\<([zcs])v([o]-)/$1u-/
+    - xform/\<ri([aeoj]-)/f$1/
+    - xform/\<rv([ae]-)/fu$1/
+    - xform/\<rv([o]-)/fu-/
+    - xform/\<g(?!\w)/g\x2Fj/                                 # 首碼簡拼
+    - xform/\<k(?!\w)/k\x2Fq/
+    - xform/\<h(?!\w)/h\x2Fx/
+    - xform/\<y(?!\w)/’\x2Fy\x2Fw/
+    - xform/\<([zcs])(?!\w)/$1h\x2F$1/
+    - xform/\<r(?!\w)/r\x2Ff/
     - xform/(?<!\x2F)j-/ι-/
     - xform/-\x2F/\x2F/
     
@@ -559,7 +591,7 @@ luna_pinyin_lookup:
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[asdfg]\>/$1h/
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[zxcvb]\>/$1n/
    # 變形
-    # - xlit/qwertasdfgzxcvb/123*A4560B789#C/
+    - xlit/qwertasdfgzxcvb/QWERTASDFGZXCVB/
 
 stroke_lookup:
   tag: stroke_lookup

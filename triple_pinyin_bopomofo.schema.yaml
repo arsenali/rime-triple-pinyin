@@ -4,14 +4,14 @@
 schema:
   schema_id: triple_pinyin_bopomofo
   name: 三碼注音
-  version: "1.0"
+  version: "1.2"
   author:
     - 佛振 <chen.sst@gmail.com>
     - 阿森納裡 <15678407@qq.com>
   description: |
-    左手15鍵內實現“聲母+介韻+聲調”三碼輸入一個帶調音節；
-    基本韻母按所在位置分為四區：ㄚ/ㄞ/ㄢ,ㄛ/ㄟ/ㄣ,ㄜ/ㄠ/ㄤ,ㄝ/ㄡ/ㄥ；
-    第2碼輸入介母和韻母所在區域，第3碼輸入具體韻母和聲調；
+    15鍵內實現“聲母+介韻+去重碼&聲調”三碼輸入一個帶調音節；
+    基礎韻母按所在位置分為四區：ㄚ/ㄞ/ㄢ,ㄛ/ㄟ/ㄣ,ㄜ/ㄠ/ㄤ,ㄝ/ㄡ/ㄥ；
+    第二碼輸入介母和韻母所在區域，第三碼輸入確切韻母和聲調；
     ㄧ=ㄧㄟ,ㄨ=ㄨㄠ,ㄩ=ㄩㄠ,ㄦ=ㄩㄚ。
   dependencies:
     - luna_pinyin
@@ -21,12 +21,43 @@ switches:
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
+    
   - name: full_shape
     states: [ 半角, 全角 ]
+    
   - name: simplification
+    reset: 1
     states: [ 繁體, 简体 ]
+    
   - name: ascii_punct
     states: [ ，。, ，． ]
+    
+  - options: [ VOICE_ASSIST1 ]
+    states: [ "🎙" ]
+    
+  - options: [ _Keyboard_emoji ]
+    states: [ "😊" ]
+    
+  - options: [ _Keyboard_symbols ]
+    states: [ "🔣" ]
+    
+  - options: [ _Keyboard_clip ]
+    states: [ "📋" ]
+    
+  - options: [ Menu ]
+    states: [ "方案" ]
+    
+  - options: [ Theme_settings ]
+    states: [ "主题" ]
+    
+  - options: [ Color_switch ]
+    states: [ "配色" ]
+    
+  - options: [ Hint_switch ]
+    states: [ "助记" ]
+    
+  - options: [ IME_switch ]
+    states: [ "🌐" ]
 
 engine:
   processors:
@@ -171,42 +202,74 @@ speller:
 translator:
   dictionary: terra_pinyin
   prism: triple_pinyin_bopomofo
-  spelling_hints: 5 # ～字以內候選標註完整帶調拼音
-  comment_format:  # 提示碼爲带调拼音
-    - xform/([aoeiuv])(ng?|r)([1-4])/$1$3$2
-    - xform/([aoe])([iuo])([1-4])/$1$3$2
-    - xform/a1/ā
-    - xform/a2/á
-    - xform/a3/ǎ
-    - xform/a4/à
-    - xform/e1/ē
-    - xform/e2/é
-    - xform/e3/ě
-    - xform/e4/è
-    - xform/o1/ō
-    - xform/o2/ó
-    - xform/o3/ǒ
-    - xform/o4/ò
-    - xform/i1/ī
-    - xform/i2/í
-    - xform/i3/ǐ
-    - xform/i4/ì
-    - xform/u1/ū
-    - xform/u2/ú
-    - xform/u3/ǔ
-    - xform/u4/ù
-    - xform/v1/ǖ
-    - xform/v2/ǘ
-    - xform/v3/ǚ
-    - xform/v4/ǜ
-    - xform/eh1/ê̄
-    - xform/eh2/ế
-    - xform/eh3/ê̌
-    - xform/eh4/ề
-    - xform/eh5?/ê
-    - xform/([nlzcs])v/$1ü/
-    - xform/([jqxy])v/$1u/
-    - xform/([a-z|ü]+)[1-5]/$1/                            # 未處理聲調轉換
+  spelling_hints: 4 # ～字以內候選標註完整帶調拼音
+  comment_format:  # 提示碼爲注音符號
+    - xform/([jqx])u(?!.*-)/$1v/
+    - xform/iu(?!.*-)/iou/
+    - xform/ui(?!.*-)/uei/
+    - xform/ong(?!.*-)/ung/
+    - xform/yi?(?!.*-)/i/
+    - xform/wu?(?!.*-)/u/
+    - xform/iu(?!.*-)/v/
+    - xform/([iuv])n(?!.*-)/$1en/
+    - xform/zh(?!.*-)/Z/
+    - xform/ch(?!.*-)/C/
+    - xform/sh(?!.*-)/S/
+    - xform/ai(?!.*-)/A/
+    - xform/ei(?!.*-)/I/
+    - xform/ao(?!.*-)/O/
+    - xform/ou(?!.*-)/U/
+    - xform/ang(?!.*-)/K/
+    - xform/eng(?!.*-)/G/
+    - xform/an(?!.*-)/M/
+    - xform/en(?!.*-)/N/
+    - xform/er(?!.*-)/R/
+    - xform/eh(?!.*-)/E/
+    - xform/([iv])e(?!.*-)/$1E/
+    - xform/([ZCSrzcs])i(i|[0-5]|\>)(?!.*-)/$1$2/
+    - xform/b(?!.*-)/ㄅ/
+    - xform/p(?!.*-)/ㄆ/
+    - xform/m(?!.*-)/ㄇ/
+    - xform/f(?!.*-)/ㄈ/
+    - xform/d(?!.*-)/ㄉ/
+    - xform/t(?!.*-)/ㄊ/
+    - xform/n(?!.*-)/ㄋ/
+    - xform/l(?!.*-)/ㄌ/
+    - xform/g(?!.*-)/ㄍ/
+    - xform/k(?!.*-)/ㄎ/
+    - xform/h(?!.*-)/ㄏ/
+    - xform/j(?!.*-)/ㄐ/
+    - xform/q(?!.*-)/ㄑ/
+    - xform/x(?!.*-)/ㄒ/
+    - xform/Z(?!.*-)/ㄓ/
+    - xform/C(?!.*-)/ㄔ/
+    - xform/S(?!.*-)/ㄕ/
+    - xform/r(?!.*-)/ㄖ/
+    - xform/z(?!.*-)/ㄗ/
+    - xform/c(?!.*-)/ㄘ/
+    - xform/s(?!.*-)/ㄙ/
+    - xform/i(?!.*-)/ㄧ/
+    - xform/u(?!.*-)/ㄨ/
+    - xform/v(?!.*-)/ㄩ/
+    - xform/a(?!.*-)/ㄚ/
+    - xform/o(?!.*-)/ㄛ/
+    - xform/e(?!.*-)/ㄜ/
+    - xform/E(?!.*-)/ㄝ/
+    - xform/A(?!.*-)/ㄞ/
+    - xform/I(?!.*-)/ㄟ/
+    - xform/O(?!.*-)/ㄠ/
+    - xform/U(?!.*-)/ㄡ/
+    - xform/M(?!.*-)/ㄢ/
+    - xform/N(?!.*-)/ㄣ/
+    - xform/K(?!.*-)/ㄤ/
+    - xform/G(?!.*-)/ㄥ/
+    - xform/R(?!.*-)/ㄦ/
+    - xform/1(?!.*-)/ˉ/
+    - xform/2(?!.*-)/ˊ/
+    - xform/3(?!.*-)/ˇ/
+    - xform/4(?!.*-)/ˋ/
+    - xform/5(?!.*-)/˙/
+    - xform/ //     # 取消空格
 
 luna_pinyin_lookup:
   tag: luna_pinyin_lookup
@@ -330,7 +393,7 @@ luna_pinyin_lookup:
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[asdfg]\>/$1h/
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[zxcvb]\>/$1n/
    # 變形
-    # - xlit/qwertasdfgzxcvb/123*A4560B789#C/
+    - xlit/qwertasdfgzxcvb/QWERTASDFGZXCVB/
 
 stroke_lookup:
   tag: stroke_lookup

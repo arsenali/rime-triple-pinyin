@@ -4,13 +4,13 @@
 schema:
   schema_id: triple_pinyin_smpyaoe
   name: 三码拼音aoe
-  version: "1.0"
+  version: "1.2"
   author:
     - 佛振 <chen.sst@gmail.com>
     - 阿森納裡 <15678407@qq.com>
   description: |
-    左手15键内实现“声母+韵头韵腹+韵尾声调”三码输入一个带调音节；
-    基础韵母按韵腹大致分为4组：a/an/ang,ai/ei/ao,o/ou/ong,e/en/eng；
+    15键内实现“声母+韵母+去重码&声调”三码输入一个带调音节；
+    基础韵母大致按韵头分为4组：a/an/ang,ai/ei/ao,o/ou/ong,e/en/eng；
     i=iei,u=uong,v=vao,er=va。
   dependencies:
     - luna_pinyin
@@ -20,12 +20,43 @@ switches:
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
+    
   - name: full_shape
     states: [ 半角, 全角 ]
+    
   - name: simplification
+    reset: 1
     states: [ 繁體, 简体 ]
+    
   - name: ascii_punct
     states: [ ，。, ，． ]
+    
+  - options: [ VOICE_ASSIST1 ]
+    states: [ "🎙" ]
+    
+  - options: [ _Keyboard_emoji ]
+    states: [ "😊" ]
+    
+  - options: [ _Keyboard_symbols ]
+    states: [ "🔣" ]
+    
+  - options: [ _Keyboard_clip ]
+    states: [ "📋" ]
+    
+  - options: [ Menu ]
+    states: [ "方案" ]
+    
+  - options: [ Theme_settings ]
+    states: [ "主题" ]
+    
+  - options: [ Color_switch ]
+    states: [ "配色" ]
+    
+  - options: [ Hint_switch ]
+    states: [ "助记" ]
+    
+  - options: [ IME_switch ]
+    states: [ "🌐" ]
 
 engine:
   processors:
@@ -323,7 +354,7 @@ luna_pinyin_lookup:
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[asdfg]\>/$1h/
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[zxcvb]\>/$1n/
    # 變形
-    # - xlit/qwertasdfgzxcvb/123*A4560B789#C/
+    - xlit/qwertasdfgzxcvb/QWERTASDFGZXCVB/
 
 stroke_lookup:
   tag: stroke_lookup
