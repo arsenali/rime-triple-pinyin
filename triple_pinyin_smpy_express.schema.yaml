@@ -144,7 +144,7 @@ speller:
     - xform/^zh?/T/
     - xform/^ch?/G/
     - xform/^sh?/B/
-   # 第2碼：韻頭+韻腹
+   # 第2碼：韻母
     - xform/^([QWERTASDFGZXCVB])(a|an|ang)([1-5])$/$1Q$2$3/
     - xform/^([QWERTASDFGZXCVB])(e|en|eng)([1-5])$/$1W$2$3/
     - xform/^([QWERTASDFGZXCVB])(o|ou|ong)([1-5])$/$1E$2$3/
@@ -163,7 +163,7 @@ speller:
     - xform/^([QWERTASDFGZXCVB])(va|van|vang|er)([1-5])$/$1T$2$3/
     - xform/^([QWERTASDFGZXCVB])(ve|ven|veng)([1-5])$/$1G$2$3/
     - xform/^([QWERTASDFGZXCVB])(vo|vou|vong|vai|vei|vao|v)([1-5])$/$1B$2$3/
-   # 第3碼：韻尾+聲調
+   # 第3碼：去重碼&聲調
     - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)1$/$1Q/
     - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)2$/$1W/
     - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)3$/$1E/
@@ -220,8 +220,8 @@ translator:
     - xform/\<[ty](\w*)/Z$1/
     - xform/\<[gh](\w*)/C$1/
     - xform/\<[bn](\w*)/S$1/
-    - xform/([BPMDTNLGKHYZCSR])(?!\w)\>/$1-/
-    - xform/\<([BPMDTNLGKHYZCSR])q(\w|\>)/$1Q$2/         # 第2碼：韻頭+韻腹
+    - xform/\<([BPMDTNLGKHYZCSR])(?!\w)\>/$1-/
+    - xform/\<([BPMDTNLGKHYZCSR])q(\w|\>)/$1Q$2/         # 第2碼：韻母
     - xform/\<([BPMDTNLGKHYZCSR])w(\w|\>)/$1W$2/
     - xform/\<([BPMDTNLGKHYZCSR])e(\w|\>)/$1E$2/
     - xform/\<([BPMDTNLGKHYZCSR])r(\w|\>)/$1R$2/
@@ -239,22 +239,22 @@ translator:
     - xform/\<([BPMDTNLGKHYZCSR])h(\w|\>)/$1vH$2/
     - xform/\<([BPMDTNLGKHYZCSR])b(\w|\>)/$1vB$2/
     - xform/\<([BPMDTNLGKHYZCSR])n(\w|\>)/$1vN$2/
-    - xform/([BPMDTNLGKHYZCSR])Q(?!\w)\>/$1a-/
-    - xform/([BPMDTNLGKHYZCSR])iA(?!\w)\>/$1ia-/
-    - xform/([BPMDTNLGKHYZCSR])uZ(?!\w)\>/$1ua-/
-    - xform/([BPMDTNLGKHYZCSR])v[TY](?!\w)\>/$1va-/
-    - xform/([BPMDTNLGKHYZCSR])W(?!\w)\>/$1e-/
-    - xform/([BPMDTNLGKHYZCSR])iS(?!\w)\>/$1ie-/
-    - xform/([BPMDTNLGKHYZCSR])uX(?!\w)\>/$1ue-/
-    - xform/([BPMDTNLGKHYZCSR])v[GH](?!\w)\>/$1ve-/
-    - xform/([BPMDTNLGKHYZCSR])E(?!\w)\>/$1o-/
-    - xform/([BPMDTNLGKHYZCSR])iD(?!\w)\>/$1io-/
-    - xform/([BPMDTNLGKHYZCSR])uC(?!\w)\>/$1uo-/
-    - xform/([BPMDTNLGKHYZCSR])v[BN](?!\w)\>/$1vo-/
-    - xform/([BPMDTNLGKHYZCSR])R(?!\w)\>/$1j-/
-    - xform/([BPMDTNLGKHYZCSR])iF(?!\w)\>/$1ij-/
-    - xform/([BPMDTNLGKHYZCSR])uV(?!\w)\>/$1uj-/
-    - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]q(?!-)\>/$1$2A\x31/     # 第3碼：韻尾+聲調
+    - xform/\<([BPMDTNLGKHYZCSR])Q(?!\w)\>/$1a-/
+    - xform/\<([BPMDTNLGKHYZCSR])iA(?!\w)\>/$1ia-/
+    - xform/\<([BPMDTNLGKHYZCSR])uZ(?!\w)\>/$1ua-/
+    - xform/\<([BPMDTNLGKHYZCSR])v[TY](?!\w)\>/$1va-/
+    - xform/\<([BPMDTNLGKHYZCSR])W(?!\w)\>/$1e-/
+    - xform/\<([BPMDTNLGKHYZCSR])iS(?!\w)\>/$1ie-/
+    - xform/\<([BPMDTNLGKHYZCSR])uX(?!\w)\>/$1ue-/
+    - xform/\<([BPMDTNLGKHYZCSR])v[GH](?!\w)\>/$1ve-/
+    - xform/\<([BPMDTNLGKHYZCSR])E(?!\w)\>/$1o-/
+    - xform/\<([BPMDTNLGKHYZCSR])iD(?!\w)\>/$1io-/
+    - xform/\<([BPMDTNLGKHYZCSR])uC(?!\w)\>/$1uo-/
+    - xform/\<([BPMDTNLGKHYZCSR])v[BN](?!\w)\>/$1vj-/
+    - xform/\<([BPMDTNLGKHYZCSR])R(?!\w)\>/$1j-/
+    - xform/\<([BPMDTNLGKHYZCSR])iF(?!\w)\>/$1ij-/
+    - xform/\<([BPMDTNLGKHYZCSR])uV(?!\w)\>/$1uj-/
+    - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]q(?!-)\>/$1$2A\x31/     # 第3碼：去重碼&聲調
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]w(?!-)\>/$1$2A\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]e(?!-)\>/$1$2A\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]r(?!-)\>/$1$2A\x34/
@@ -375,43 +375,30 @@ translator:
     - xform/\<yu([in])(?!\S*-)/we$1/
     - xform/\<yv(?!\S*-)/yu/
     
-   # 2.1：數字標調拼音->帶調拼音（隔音符、簡拼處理）：帶調拼音形式
+   # 2.1：數字標調拼音->帶調拼音（隔音符、簡拼處理）：漢語拼音
     - xform/'/"/                                            # 輸入的隔音符號'變換為"
     - xform/ (\S+-)/ '$1/                                   # 簡拼前+隔音符
     - xform/- /-' /                                         # 簡拼後+隔音符
     - xform/' '?/ '/
-    - xform/\<gi([aeoj]-)/ji$1/                                # 前兩碼簡拼
-    - xform/\<ki([aeoj]-)/qi$1/
-    - xform/\<hi([aeoj]-)/xi$1/
-    - xform/\<gv([ae]-)/jü$1/
-    - xform/\<kv([ae]-)/qü$1/
-    - xform/\<hv([ae]-)/xü$1/
-    - xform/\<gv([o]-)/jü-/
-    - xform/\<kv([o]-)/qü-/
-    - xform/\<hv([o]-)/xü-/
-    - xform/(?<![yzcsr])v([ae]-)/ü$1/
-    - xform/(?<![yzcsr])v([o]-)/ü-/
+    - xform/\<g([iv][aeoj]-)/j$1/                                # 前兩碼簡拼
+    - xform/\<k([iv][aeoj]-)/q$1/
+    - xform/\<h([iv][aeoj]-)/x$1/
+    - xform/(?<![yzcsr])v([aej]-)/ü$1/
     - xform/\<y([aeoj]-)/’$1/
-    - xform/\<yi([aeoj]-)/y$1/
     - xform/\<yu([aeoj]-)/w$1/
-    - xform/\<yv([a]-)/yur-/
-    - xform/\<yv([e]-)/yu$1/
-    - xform/\<yv([o]-)/yu-/
     - xform/\<([zcs])(u)?([aeoj]-)/$1h$2$3/
-    - xform/\<([zcs])i([aeoj]-)/$1$2/
-    - xform/\<([zcs])v([ae]-)/$1u$2/
-    - xform/\<([zcs])v([o]-)/$1u-/
+    - xform/\<([yzcs])i([aeoj]-)/$1$2/
+    - xform/\<([yzcs])v([aej]-)/$1u$2/
+    - xform/\<yua-/yur-/
     - xform/\<ri([aeoj]-)/f$1/
-    - xform/\<rv([ae]-)/fu$1/
-    - xform/\<rv([o]-)/fu-/
-    - xform/\<g(?!\w)/g\x2Fj/                                 # 首碼簡拼
-    - xform/\<k(?!\w)/k\x2Fq/
-    - xform/\<h(?!\w)/h\x2Fx/
-    - xform/\<y(?!\w)/’\x2Fy\x2Fw/
-    - xform/\<([zcs])(?!\w)/$1h\x2F$1/
-    - xform/\<r(?!\w)/r\x2Ff/
-    - xform/(?<!\x2F)j-/ι-/
-    - xform/-\x2F/\x2F/
+    - xform/\<rv([aej]-)/fu$1/
+    - xform/j-/ι-/
+    - xform/\<g-/g\x2Fj-/                                 # 首碼簡拼
+    - xform/\<k-/k\x2Fq-/
+    - xform/\<h-/h\x2Fx-/
+    - xform/\<y-/’\x2Fy\x2Fw-/
+    - xform/\<([zcs])-/$1h\x2F$1-/
+    - xform/\<r-/r\x2Ff-/
     
    # 2.2：數字標調拼音->帶調拼音（全碼轉換）：漢語拼音全拼，去掉聲調
     - xform/([bpmfw])on(g?[0-5])/$1en$2/                    # 異拼
@@ -426,14 +413,18 @@ translator:
     - xform/sv([a-z]*[0-5])/xu$1/
     # - xform/([nl])v([a-z]*[0-5])/$1ü$2/                   # [nl]v(-)轉換為ü
     - xform/([nl])v([a-z]+[0-5])/$1u$2/                     # [nl]v-轉換為u-
-    - xform/[0-5']//                                        # 去掉聲調和隔音符
+    - xform/[0-5]//                                         # 去掉聲調
     
-   # 3：  隔音符;替換為空格
-    # - xform/([^aeoιuü])-/$1/    # 取消首碼簡拼後的-
-    # - xform/ //   # 取消空格
-    - xlit|;"| '|   # 把;替換為空格，恢復輸入的隔音符號'
+   # 3：  取消空格：取消零聲母音節前的隔音符，保留空格
+    - xform/(?<!-) '(?!\S*-)/ /         # 取消零聲母音節前的隔音符
+    # - xform/([bpmfdtnljqxwzcs])-/$1/    # 取消首碼簡拼後的-
+    # - xform/ //                         # 取消空格
+    - xlit|;"| '|                       # 把;替換為空格，恢復輸入的隔音符號'
 
   comment_format:  # 提示碼爲带调拼音
+    - erase/^xx$/
+    - xform/^m([1-5])$/mu$1/        # 鼻音m（呣）轉化爲mu
+    - xform/^r5$/er5/               # r5（兒）轉化爲er5
     - xform/([aoeiuv])(ng?|r)([1-4])/$1$3$2
     - xform/([aoe])([iuo])([1-4])/$1$3$2
     - xform/a1/ā
@@ -536,7 +527,7 @@ luna_pinyin_lookup:
     - xform/\<zh?/T/
     - xform/\<ch?/G/
     - xform/\<sh?/B/
-   # 第2碼：韻頭+韻腹
+   # 第2碼：韻母
     - xform/\<([QWERTASDFGZXCVB])(a|an|ang)([1-5])\>/$1Q$2$3/
     - xform/\<([QWERTASDFGZXCVB])(e|en|eng)([1-5])\>/$1W$2$3/
     - xform/\<([QWERTASDFGZXCVB])(o|ou|ong)([1-5])\>/$1E$2$3/
@@ -555,7 +546,7 @@ luna_pinyin_lookup:
     - xform/\<([QWERTASDFGZXCVB])(va|van|vang|er)([1-5])\>/$1T$2$3/
     - xform/\<([QWERTASDFGZXCVB])(ve|ven|veng)([1-5])\>/$1G$2$3/
     - xform/\<([QWERTASDFGZXCVB])(vo|vou|vong|vai|vei|vao|v)([1-5])\>/$1B$2$3/
-   # 第3碼：韻尾+聲調
+   # 第3碼：去重碼&聲調
     - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)1\>/$1Q/
     - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)2\>/$1W/
     - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)3\>/$1E/
