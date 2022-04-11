@@ -6,9 +6,11 @@ name: 三码拼音  #方案名稱
 author: 阿森納裡  #作者資訊
 
 # ────錨點標籤────
-labels:  # 简体中文
+labels:
   1: &lb_SLEEP 睡眠
+  1: &lb_SLEEP_ft 睡眠
   2: &lb_VOICE_ASSIST 语音
+  2: &lb_VOICE_ASSIST_ft 語音
   3: &lb_VOICE_ASSIST0 '🎤'
   4: &lb_Shift_L Shift
   5: &lb_Shift_L1 ⇪
@@ -16,10 +18,12 @@ labels:  # 简体中文
   7: &lb_Caps_Lock Caps
   8: &lb_Return Enter
   9: &lb_Hide 隐藏
+  9: &lb_Hide_ft 隱藏
   10: &lb_BackSpace ⌫
   11: &lb_spacelskg ␣
   12: &lb_Escape Esc
   13: &lb_Escapecx 重输
+  13: &lb_Escapecx_ft 重輸
   14: &lb_Home Home
   15: &lb_Insert Ins
   16: &lb_Delete Del
@@ -36,86 +40,154 @@ labels:  # 简体中文
   27: &lb_RightS ↠
   28: &lb_select_all ☑
   29: &lb_Clear 全清
+  29: &lb_Clear_ft 全清
   30: &lb_cut ✂
   31: &lb_cut_all 全挪
+  31: &lb_cut_all_ft 全挪
   32: &lb_copy ❐
   33: &lb_copy_all 全誊
+  33: &lb_copy_all_ft 全謄
   34: &lb_paste ▣
   35: &lb_clip_board 剪切板
+  35: &lb_clip_board_ft 剪切板
   36: &lb_paste_text 贴上文本
+  36: &lb_paste_text_ft 貼上文本
   37: &lb_share_text 分享文本
+  37: &lb_share_text_ft 分享文本
   38: &lb_undo ↶
   39: &lb_redo ↷
   40: &lb_delimiter 分词
+  40: &lb_delimiter_ft 分詞
   41: &lb_lsjp_1x 首选
+  41: &lb_lsjp_1x_ft 首選
   42: &lb_lsjp_2x 次选
+  42: &lb_lsjp_2x_ft 次選
   43: &lb_lsjp_3x 三选
+  43: &lb_lsjp_3x_ft 三選
   44: &lb_F4 方案菜单
+  44: &lb_F4_ft 方案菜單
   45: &lb_BackToPreviousSyllable 删音节
+  45: &lb_BackToPreviousSyllable_ft 刪音節
   46: &lb_BackToPreSyl '⇦'
   47: &lb_BackToSentence 删句
+  47: &lb_BackToSentence_ft 刪句
   48: &lb_CommitRawInput 语句流输入码
+  48: &lb_CommitRawInput_ft 語句流輸入碼
   49: &lb_CommitScriptText 编辑器上屏码
+  49: &lb_CommitScriptText_ft 編輯器上屏碼
   50: &lb_CommitComment 提示码
+  50: &lb_CommitComment_ft 提示碼
   51: &lb_DeleteCandidate 删词
+  51: &lb_DeleteCandidate_ft 刪詞
   52: &lb_IME_switch '🌐'
   53: &lb_IME_last 上一输入法
+  53: &lb_IME_last_ft 上一輸入法
   54: &lb_IME_next 下一输入法
+  54: &lb_IME_next_ft 下一輸入法
   55: &lb_Keyboard_default 返回
+  55: &lb_Keyboard_default_ft 返回
   56: &lb_Keyboard_switch 键盘
+  56: &lb_Keyboard_switch_ft 鍵盤
   57: &lb_Keyboard_move ❖
   58: &lb_Keyboard_next 前进
+  58: &lb_Keyboard_next_ft 前進
   59: &lb_Keyboard_last 返回
+  59: &lb_Keyboard_last_ft 返回
   60: &lb_Keyboard_symbols 符号
+  60: &lb_Keyboard_symbols_ft 符號
   61: &lb_Keyboard_number 数字
+  61: &lb_Keyboard_number_ft 數字
   62: &lb_Keyboard_letter 'abc'
   63: &lb_Keyboard_emoji '😊'
   64: &lb_Keyboard_symbolsyou '!?#'
   65: &lb_Keyboard_numberyou '123'
   66: &lb_Keyboard_lsedit '‹ɪ›'
   67: &lb_Keyboard_ls15bz1bz 帮助
+  67: &lb_Keyboard_ls15bz1bz_ft 幫助
   68: &lb_Keyboard_lsfc 反查
+  68: &lb_Keyboard_lsfc_ft 反查
   69: &lb_Keyboard_ls15_Mode 英中
+  69: &lb_Keyboard_ls15_Mode_ft 英中
   70: &lb_Keyboard_ls15qwerty_Mode 中英
+  70: &lb_Keyboard_ls15qwerty_Mode_ft 中英
   71: &lb_Keyboard_ls15dtyjw 总览
+  71: &lb_Keyboard_ls15dtyjw_ft 總覽
   72: &lb_Schema_switch 切换
+  72: &lb_Schema_switch_ft 切換
   73: &lb_Color_switch 配色
+  73: &lb_Color_switch_ft 配色
   74: &lb_Help 说明
+  74: &lb_Help_ft 說明
   75: &lb_Info 关于
+  75: &lb_Info_ft 關於
   76: &lb_Menu 菜单
+  76: &lb_Menu_ft 菜單
   77: &lb_Settings 设置
+  77: &lb_Settings_ft 設置
   78: &lb_Theme_settings 主题
+  78: &lb_Theme_settings_ft 主題
   79: &lb_Schema_settings 方案
+  79: &lb_Schema_settings_ft 方案
   80: &lb_Candidate_switch [ 有候选, 无候选]
+  80: &lb_Candidate_switch_ft [ 有候選, 無候選]
   81: &lb_Comment_switch [ 有注释, 无注释]
+  81: &lb_Comment_switch_ft [ 有注釋, 無注釋]
   82: &lb_Hint_switch [ 有助记, 无助记]
+  82: &lb_Hint_switch_ft [ 有助記, 無助記]
   83: &lb_Hint_switch_1 有助记
+  83: &lb_Hint_switch_1_ft 有助記
   84: &lb__Keyboard_edit 编辑
+  84: &lb__Keyboard_edit_ft 編輯
   85: &lb__Keyboard_phrase 短语
+  85: &lb__Keyboard_phrase_ft 短語
   86: &lb__Keyboard_candidate 候选
+  86: &lb__Keyboard_candidate_ft 候選
   87: &lb__add_phrase 添加
+  87: &lb__add_phrase_ft 添加
   88: &lb__Keyboard_script 脚本
+  88: &lb__Keyboard_script_ft 腳本
   89: &lb_Date 日期
+  89: &lb_Date_ft 日期
   90: &lb_ChineseDate 农历
+  90: &lb_ChineseDate_ft 農曆
   91: &lb_Time 时间
+  91: &lb_Time_ft 時間
   92: &lb_TrimeApp 同文
+  92: &lb_TrimeApp_ft 同文
   93: &lb_TrimeCmp 同文设置
+  93: &lb_TrimeCmp_ft 同文設置
   94: &lb_Homepage 同文主页
+  94: &lb_Homepage_ft 同文主頁
   95: &lb_CommitHomepage 同文网址
+  95: &lb_CommitHomepage_ft 同文網址
   96: &lb_Wiki 维基
+  96: &lb_Wiki_ft 維基
   97: &lb_Google 谷歌
+  97: &lb_Google_ft 谷歌
   98: &lb_MoeDict 萌典
+  98: &lb_MoeDict_ft 萌典
   99: &lb_Baidu 百度搜索
+  99: &lb_Baidu_ft 百度搜索
   100: &lb_Zdic 汉典
+  100: &lb_Zdic_ft 漢典
   101: &lb_WebSearch 搜索网页
+  101: &lb_WebSearch_ft 搜索網頁
   102: &lb_Search 搜索
+  102: &lb_Search_ft 搜索
   103: &lb_Share 分享
+  103: &lb_Share_ft 分享
   104: &lb_Deploy 部署
+  104: &lb_Deploy_ft 部署
   105: &lb_Sync 同步
+  105: &lb_Sync_ft 同步
   106: &lb_help_ls 详解
+  106: &lb_help_ls_ft 詳解
   107: &lb_ls15dtshow 声母
+  107: &lb_ls15dtshow_ft 聲母
   108: &lb_ls15dtjshow 介调
+  108: &lb_ls15dtjshow_ft 介調
   109: &lb_ls15dtyshow 韵母
+  109: &lb_ls15dtyshow_ft 韻母
   
 # ────────────────
 
@@ -126,18 +198,10 @@ style:
   proximity_correction: true #按鍵糾錯
   __patch: # v補充鍵盤
     keyboards/+: [numberyou, symbolsyou, lsedit, lsjpqwerty, lsjp, lsfc_pinyin, lsfc_stroke, lsfc_pinyinP, lsfc_strokeB]
-  __patch: # v李氏三拼鍵盤
-    keyboards/+: [ls15bz1, ls15bz1p2, ls15bz1p3, ls15bz21, ls15bz22, ls15bz22p2, ls15bz22p3, ls15bz23, ls15bz21jw, ls15bz22jw, ls15bz22jwz, ls15bz22jwy, ls15bz23jw, ls15bz23jw1, ls15bz23jw2, ls15bz23jw3, ls15bz23jwz1, ls15bz23jwz2, ls15bz23jwz3, ls15bz23jwy1, ls15bz23jwy2, ls15bz23jwy3, ls15bz21jwsm1, ls15bz21jwsm2, ls15bz22jwsm1, ls15bz22jwsm2, ls15bz22jwsm3, ls15bz22jwsm4, ls15bz22jwsm5, ls15bz22jwsm6, ls15bz22jwsm7, ls15bz23jwsm1, ls15bz23jwsm2, ls15bz23jwsm3, ls15bz23jwsm4, ls15bz23jwsm5, ls15bz23jwsm6, ls15bz23jwsm7, ls15qwerty, ls15wsdqwerty, ls15, ls15wsd]
-  __patch: # v李氏三拼注音鍵盤
-    keyboards/+: [ls15zyqwerty, ls15zywsdqwerty, ls15zy, ls15zywsd]
-  __patch: # v廿六三拼鍵盤
-    keyboards/+: [ls26bz1, ls26bz2, ls26bz2p2, ls26zybz1, ls26zybz2, ls26zybz2p2, ls26zybz3]
-  __patch: # v三碼拼音鍵盤
-    keyboards/+: [smpy1bz1, smpy1bz1p2, smpy1bz1p3, smpy1bz21, smpy1bz22, smpy1bz23, smpy1bz21sm, smpy1bz22sm, smpy1bz22smp2, smpy1bz22smp3, smpy1bz22smp4, smpy1bz22smp5, smpy1bz22smp6, smpy1bz23sm, smpy1bz23smp2, smpy1qwerty, smpy1wsdqwerty, smpy1, smpy1wsd, smpy2qwerty, smpy2wsdqwerty, smpy2, smpy2wsd, smpy3qwerty, smpy3wsdqwerty, smpy3, smpy3wsd]
+  __patch: # v三碼拼音系列靜態鍵盤
+    keyboards/+: [smpy1bz1, smpy1bz1p2, smpy1bz1p3, smpy1bz21, smpy1bz22, smpy1bz23, smpy1bz21sm, smpy1bz22sm, smpy1bz22smp2, smpy1bz22smp3, smpy1bz22smp4, smpy1bz22smp5, smpy1bz22smp6, smpy1bz23sm, smpy1bz23smp2, smpy1qwerty, smpy1wsdqwerty, smpy1, smpy1wsd, smpy1zyqwerty, smpy1zywsdqwerty, smpy1zy, smpy1zywsd, smpy2qwerty, smpy2wsdqwerty, smpy2, smpy2wsd, smpy3bz1, smpy3bz1p2, smpy3bz1p3, smpy3bz21, smpy3bz22, smpy3bz23, smpy3bz21sm, smpy3bz22sm, smpy3bz22smp2, smpy3bz22smp3, smpy3bz22smp4, smpy3bz22smp5, smpy3bz22smp6, smpy3bz23sm, smpy3bz23smp2, smpy3qwerty, smpy3wsdqwerty, smpy3, smpy3wsd]
   __patch: # v三碼拼音動態鍵盤
     keyboards/+: [smpy1dtqwerty, smpy1dt, smpy1dt2b1, smpy1dtwsdqwerty, smpy1dtwsd, smpy1dtwsd2b1, smpy1dtjb, smpy1dtjp, smpy1dtjm, smpy1dtjd, smpy1dtjt, smpy1dtjn, smpy1dtjl, smpy1dtjg, smpy1dtjk, smpy1dtjh, smpy1dtjy, smpy1dtjz, smpy1dtjc, smpy1dtjs, smpy1dtjr, smpy1dtyb1, smpy1dtyb2, smpy1dtyb3, smpy1dtyb4, smpy1dtybi1, smpy1dtybi2, smpy1dtybi3, smpy1dtybi4, smpy1dtybu1, smpy1dtybu2, smpy1dtybu3, smpy1dtybu4, smpy1dtybv1, smpy1dtybv2, smpy1dtybv3, smpy1dtyp1, smpy1dtyp2, smpy1dtyp3, smpy1dtyp4, smpy1dtypi1, smpy1dtypi2, smpy1dtypi3, smpy1dtypi4, smpy1dtypu1, smpy1dtypu2, smpy1dtypu3, smpy1dtypu4, smpy1dtypv1, smpy1dtypv2, smpy1dtypv3, smpy1dtym1, smpy1dtym2, smpy1dtym3, smpy1dtym4, smpy1dtymi1, smpy1dtymi2, smpy1dtymi3, smpy1dtymi4, smpy1dtymu1, smpy1dtymu2, smpy1dtymu3, smpy1dtymu4, smpy1dtymv1, smpy1dtymv2, smpy1dtymv3, smpy1dtyd1, smpy1dtyd2, smpy1dtyd3, smpy1dtyd4, smpy1dtydi1, smpy1dtydi2, smpy1dtydi3, smpy1dtydi4, smpy1dtydu1, smpy1dtydu2, smpy1dtydu3, smpy1dtydu4, smpy1dtydv1, smpy1dtydv2, smpy1dtydv3, smpy1dtyt1, smpy1dtyt2, smpy1dtyt3, smpy1dtyt4, smpy1dtyti1, smpy1dtyti2, smpy1dtyti3, smpy1dtyti4, smpy1dtytu1, smpy1dtytu2, smpy1dtytu3, smpy1dtytu4, smpy1dtytv1, smpy1dtytv2, smpy1dtytv3, smpy1dtyn1, smpy1dtyn2, smpy1dtyn3, smpy1dtyn4, smpy1dtyni1, smpy1dtyni2, smpy1dtyni3, smpy1dtyni4, smpy1dtynu1, smpy1dtynu2, smpy1dtynu3, smpy1dtynu4, smpy1dtynv1, smpy1dtynv2, smpy1dtynv3, smpy1dtyl1, smpy1dtyl2, smpy1dtyl3, smpy1dtyl4, smpy1dtyli1, smpy1dtyli2, smpy1dtyli3, smpy1dtyli4, smpy1dtylu1, smpy1dtylu2, smpy1dtylu3, smpy1dtylu4, smpy1dtylv1, smpy1dtylv2, smpy1dtylv3, smpy1dtyg1, smpy1dtyg2, smpy1dtyg3, smpy1dtyg4, smpy1dtygi1, smpy1dtygi2, smpy1dtygi3, smpy1dtygi4, smpy1dtygu1, smpy1dtygu2, smpy1dtygu3, smpy1dtygu4, smpy1dtygv1, smpy1dtygv2, smpy1dtygv3, smpy1dtyk1, smpy1dtyk2, smpy1dtyk3, smpy1dtyk4, smpy1dtyki1, smpy1dtyki2, smpy1dtyki3, smpy1dtyki4, smpy1dtyku1, smpy1dtyku2, smpy1dtyku3, smpy1dtyku4, smpy1dtykv1, smpy1dtykv2, smpy1dtykv3, smpy1dtyh1, smpy1dtyh2, smpy1dtyh3, smpy1dtyh4, smpy1dtyhi1, smpy1dtyhi2, smpy1dtyhi3, smpy1dtyhi4, smpy1dtyhu1, smpy1dtyhu2, smpy1dtyhu3, smpy1dtyhu4, smpy1dtyhv1, smpy1dtyhv2, smpy1dtyhv3, smpy1dtyy1, smpy1dtyy2, smpy1dtyy3, smpy1dtyy4, smpy1dtyyi1, smpy1dtyyi2, smpy1dtyyi3, smpy1dtyyi4, smpy1dtyyu1, smpy1dtyyu2, smpy1dtyyu3, smpy1dtyyu4, smpy1dtyyv1, smpy1dtyyv2, smpy1dtyyv3, smpy1dtyz1, smpy1dtyz2, smpy1dtyz3, smpy1dtyz4, smpy1dtyzi1, smpy1dtyzi2, smpy1dtyzi3, smpy1dtyzi4, smpy1dtyzu1, smpy1dtyzu2, smpy1dtyzu3, smpy1dtyzu4, smpy1dtyzv1, smpy1dtyzv2, smpy1dtyzv3, smpy1dtyc1, smpy1dtyc2, smpy1dtyc3, smpy1dtyc4, smpy1dtyci1, smpy1dtyci2, smpy1dtyci3, smpy1dtyci4, smpy1dtycu1, smpy1dtycu2, smpy1dtycu3, smpy1dtycu4, smpy1dtycv1, smpy1dtycv2, smpy1dtycv3, smpy1dtys1, smpy1dtys2, smpy1dtys3, smpy1dtys4, smpy1dtysi1, smpy1dtysi2, smpy1dtysi3, smpy1dtysi4, smpy1dtysu1, smpy1dtysu2, smpy1dtysu3, smpy1dtysu4, smpy1dtysv1, smpy1dtysv2, smpy1dtysv3, smpy1dtyr1, smpy1dtyr2, smpy1dtyr3, smpy1dtyr4, smpy1dtyri1, smpy1dtyri2, smpy1dtyri3, smpy1dtyri4, smpy1dtyru1, smpy1dtyru2, smpy1dtyru3, smpy1dtyru4, smpy1dtyrv1, smpy1dtyrv2, smpy1dtyrv3, smpy1dtjbwsd, smpy1dtjpwsd, smpy1dtjmwsd, smpy1dtjdwsd, smpy1dtjtwsd, smpy1dtjnwsd, smpy1dtjlwsd, smpy1dtjgwsd, smpy1dtjkwsd, smpy1dtjhwsd, smpy1dtjywsd, smpy1dtjzwsd, smpy1dtjcwsd, smpy1dtjswsd, smpy1dtjrwsd, smpy1dtyb1wsd, smpy1dtyb2wsd, smpy1dtyb3wsd, smpy1dtyb4wsd, smpy1dtybi1wsd, smpy1dtybi2wsd, smpy1dtybi3wsd, smpy1dtybi4wsd, smpy1dtybu1wsd, smpy1dtybu2wsd, smpy1dtybu3wsd, smpy1dtybu4wsd, smpy1dtybv1wsd, smpy1dtybv2wsd, smpy1dtybv3wsd, smpy1dtyp1wsd, smpy1dtyp2wsd, smpy1dtyp3wsd, smpy1dtyp4wsd, smpy1dtypi1wsd, smpy1dtypi2wsd, smpy1dtypi3wsd, smpy1dtypi4wsd, smpy1dtypu1wsd, smpy1dtypu2wsd, smpy1dtypu3wsd, smpy1dtypu4wsd, smpy1dtypv1wsd, smpy1dtypv2wsd, smpy1dtypv3wsd, smpy1dtym1wsd, smpy1dtym2wsd, smpy1dtym3wsd, smpy1dtym4wsd, smpy1dtymi1wsd, smpy1dtymi2wsd, smpy1dtymi3wsd, smpy1dtymi4wsd, smpy1dtymu1wsd, smpy1dtymu2wsd, smpy1dtymu3wsd, smpy1dtymu4wsd, smpy1dtymv1wsd, smpy1dtymv2wsd, smpy1dtymv3wsd, smpy1dtyd1wsd, smpy1dtyd2wsd, smpy1dtyd3wsd, smpy1dtyd4wsd, smpy1dtydi1wsd, smpy1dtydi2wsd, smpy1dtydi3wsd, smpy1dtydi4wsd, smpy1dtydu1wsd, smpy1dtydu2wsd, smpy1dtydu3wsd, smpy1dtydu4wsd, smpy1dtydv1wsd, smpy1dtydv2wsd, smpy1dtydv3wsd, smpy1dtyt1wsd, smpy1dtyt2wsd, smpy1dtyt3wsd, smpy1dtyt4wsd, smpy1dtyti1wsd, smpy1dtyti2wsd, smpy1dtyti3wsd, smpy1dtyti4wsd, smpy1dtytu1wsd, smpy1dtytu2wsd, smpy1dtytu3wsd, smpy1dtytu4wsd, smpy1dtytv1wsd, smpy1dtytv2wsd, smpy1dtytv3wsd, smpy1dtyn1wsd, smpy1dtyn2wsd, smpy1dtyn3wsd, smpy1dtyn4wsd, smpy1dtyni1wsd, smpy1dtyni2wsd, smpy1dtyni3wsd, smpy1dtyni4wsd, smpy1dtynu1wsd, smpy1dtynu2wsd, smpy1dtynu3wsd, smpy1dtynu4wsd, smpy1dtynv1wsd, smpy1dtynv2wsd, smpy1dtynv3wsd, smpy1dtyl1wsd, smpy1dtyl2wsd, smpy1dtyl3wsd, smpy1dtyl4wsd, smpy1dtyli1wsd, smpy1dtyli2wsd, smpy1dtyli3wsd, smpy1dtyli4wsd, smpy1dtylu1wsd, smpy1dtylu2wsd, smpy1dtylu3wsd, smpy1dtylu4wsd, smpy1dtylv1wsd, smpy1dtylv2wsd, smpy1dtylv3wsd, smpy1dtyg1wsd, smpy1dtyg2wsd, smpy1dtyg3wsd, smpy1dtyg4wsd, smpy1dtygi1wsd, smpy1dtygi2wsd, smpy1dtygi3wsd, smpy1dtygi4wsd, smpy1dtygu1wsd, smpy1dtygu2wsd, smpy1dtygu3wsd, smpy1dtygu4wsd, smpy1dtygv1wsd, smpy1dtygv2wsd, smpy1dtygv3wsd, smpy1dtyk1wsd, smpy1dtyk2wsd, smpy1dtyk3wsd, smpy1dtyk4wsd, smpy1dtyki1wsd, smpy1dtyki2wsd, smpy1dtyki3wsd, smpy1dtyki4wsd, smpy1dtyku1wsd, smpy1dtyku2wsd, smpy1dtyku3wsd, smpy1dtyku4wsd, smpy1dtykv1wsd, smpy1dtykv2wsd, smpy1dtykv3wsd, smpy1dtyh1wsd, smpy1dtyh2wsd, smpy1dtyh3wsd, smpy1dtyh4wsd, smpy1dtyhi1wsd, smpy1dtyhi2wsd, smpy1dtyhi3wsd, smpy1dtyhi4wsd, smpy1dtyhu1wsd, smpy1dtyhu2wsd, smpy1dtyhu3wsd, smpy1dtyhu4wsd, smpy1dtyhv1wsd, smpy1dtyhv2wsd, smpy1dtyhv3wsd, smpy1dtyy1wsd, smpy1dtyy2wsd, smpy1dtyy3wsd, smpy1dtyy4wsd, smpy1dtyyi1wsd, smpy1dtyyi2wsd, smpy1dtyyi3wsd, smpy1dtyyi4wsd, smpy1dtyyu1wsd, smpy1dtyyu2wsd, smpy1dtyyu3wsd, smpy1dtyyu4wsd, smpy1dtyyv1wsd, smpy1dtyyv2wsd, smpy1dtyyv3wsd, smpy1dtyz1wsd, smpy1dtyz2wsd, smpy1dtyz3wsd, smpy1dtyz4wsd, smpy1dtyzi1wsd, smpy1dtyzi2wsd, smpy1dtyzi3wsd, smpy1dtyzi4wsd, smpy1dtyzu1wsd, smpy1dtyzu2wsd, smpy1dtyzu3wsd, smpy1dtyzu4wsd, smpy1dtyzv1wsd, smpy1dtyzv2wsd, smpy1dtyzv3wsd, smpy1dtyc1wsd, smpy1dtyc2wsd, smpy1dtyc3wsd, smpy1dtyc4wsd, smpy1dtyci1wsd, smpy1dtyci2wsd, smpy1dtyci3wsd, smpy1dtyci4wsd, smpy1dtycu1wsd, smpy1dtycu2wsd, smpy1dtycu3wsd, smpy1dtycu4wsd, smpy1dtycv1wsd, smpy1dtycv2wsd, smpy1dtycv3wsd, smpy1dtys1wsd, smpy1dtys2wsd, smpy1dtys3wsd, smpy1dtys4wsd, smpy1dtysi1wsd, smpy1dtysi2wsd, smpy1dtysi3wsd, smpy1dtysi4wsd, smpy1dtysu1wsd, smpy1dtysu2wsd, smpy1dtysu3wsd, smpy1dtysu4wsd, smpy1dtysv1wsd, smpy1dtysv2wsd, smpy1dtysv3wsd, smpy1dtyr1wsd, smpy1dtyr2wsd, smpy1dtyr3wsd, smpy1dtyr4wsd, smpy1dtyri1wsd, smpy1dtyri2wsd, smpy1dtyri3wsd, smpy1dtyri4wsd, smpy1dtyru1wsd, smpy1dtyru2wsd, smpy1dtyru3wsd, smpy1dtyru4wsd, smpy1dtyrv1wsd, smpy1dtyrv2wsd, smpy1dtyrv3wsd]
-  __patch: # v三碼拼音注音鍵盤
-    keyboards/+: [smpy1zyqwerty, smpy1zywsdqwerty, smpy1zy, smpy1zywsd]
 
 fallback_colors:
   __include: trime:/fallback_colors
@@ -889,435 +953,7 @@ preset_keys:
   Acazj_lsjpshow: {text: ''}
   Bcazj_lsjpshow: {text: '{Beginning}', preview: *lb_Beginning}
   Ccazj_lsjpshow: {text: '{Ending}', preview: *lb_Ending}
- # v李氏三拼鍵盤
-  # trime設定
-  Keyboard_ls15bz1bz: {label: *lb_Keyboard_ls15bz1bz, text: '{Keyboard_ls15bz1}', functional: false}
-  Keyboard_ls15bz1bzEsc: {label: *lb_Keyboard_ls15bz1bz, text: '{Escape}{Keyboard_ls15bz1bz}'}
-  Keyboard_ls15bz1: {send: Eisu_toggle, select: ls15bz1, preview: " ", functional: false}
-  Keyboard_ls15bz1p2: {send: Eisu_toggle, select: ls15bz1p2, preview: " ", functional: false}
-  Keyboard_ls15bz1p3: {send: Eisu_toggle, select: ls15bz1p3, preview: " ", functional: false}
-  Keyboard_ls15bz21: {send: Eisu_toggle, select: ls15bz21, preview: " ", functional: false}
-  Keyboard_ls15bz22: {send: Eisu_toggle, select: ls15bz22, preview: " ", functional: false}
-  Keyboard_ls15bz22p2: {send: Eisu_toggle, select: ls15bz22p2, preview: " ", functional: false}
-  Keyboard_ls15bz22p3: {send: Eisu_toggle, select: ls15bz22p3, preview: " ", functional: false}
-  Keyboard_ls15bz23: {send: Eisu_toggle, select: ls15bz23, preview: " ", functional: false}
-  Keyboard_ls15bz21jw: {send: Eisu_toggle, select: ls15bz21jw, preview: " ", functional: false}
-  Keyboard_ls15bz22jw: {send: Eisu_toggle, select: ls15bz22jw, preview: " ", functional: false}
-  Keyboard_ls15bz22jwz: {send: Eisu_toggle, select: ls15bz22jwz, preview: " ", functional: false}
-  Keyboard_ls15bz22jwy: {send: Eisu_toggle, select: ls15bz22jwy, preview: " ", functional: false}
-  Keyboard_ls15bz23jw: {send: Eisu_toggle, select: ls15bz23jw, preview: " ", functional: false}
-  Keyboard_ls15bz23jw1: {send: Eisu_toggle, select: ls15bz23jw1, preview: " ", functional: false}
-  Keyboard_ls15bz23jw2: {send: Eisu_toggle, select: ls15bz23jw2, preview: " ", functional: false}
-  Keyboard_ls15bz23jw3: {send: Eisu_toggle, select: ls15bz23jw3, preview: " ", functional: false}
-  Keyboard_ls15bz23jwz1: {send: Eisu_toggle, select: ls15bz23jwz1, preview: " ", functional: false}
-  Keyboard_ls15bz23jwz2: {send: Eisu_toggle, select: ls15bz23jwz2, preview: " ", functional: false}
-  Keyboard_ls15bz23jwz3: {send: Eisu_toggle, select: ls15bz23jwz3, preview: " ", functional: false}
-  Keyboard_ls15bz23jwy1: {send: Eisu_toggle, select: ls15bz23jwy1, preview: " ", functional: false}
-  Keyboard_ls15bz23jwy2: {send: Eisu_toggle, select: ls15bz23jwy2, preview: " ", functional: false}
-  Keyboard_ls15bz23jwy3: {send: Eisu_toggle, select: ls15bz23jwy3, preview: " ", functional: false}
-  Keyboard_ls15bz21jwsm1: {send: Eisu_toggle, select: ls15bz21jwsm1, preview: " ", functional: false}
-  Keyboard_ls15bz21jwsm2: {send: Eisu_toggle, select: ls15bz21jwsm2, preview: " ", functional: false}
-  Keyboard_ls15bz22jwsm1: {send: Eisu_toggle, select: ls15bz22jwsm1, preview: " ", functional: false}
-  Keyboard_ls15bz22jwsm2: {send: Eisu_toggle, select: ls15bz22jwsm2, preview: " ", functional: false}
-  Keyboard_ls15bz22jwsm3: {send: Eisu_toggle, select: ls15bz22jwsm3, preview: " ", functional: false}
-  Keyboard_ls15bz22jwsm4: {send: Eisu_toggle, select: ls15bz22jwsm4, preview: " ", functional: false}
-  Keyboard_ls15bz22jwsm5: {send: Eisu_toggle, select: ls15bz22jwsm5, preview: " ", functional: false}
-  Keyboard_ls15bz22jwsm6: {send: Eisu_toggle, select: ls15bz22jwsm6, preview: " ", functional: false}
-  Keyboard_ls15bz22jwsm7: {send: Eisu_toggle, select: ls15bz22jwsm7, preview: " ", functional: false}
-  Keyboard_ls15bz23jwsm1: {send: Eisu_toggle, select: ls15bz23jwsm1, preview: " ", functional: false}
-  Keyboard_ls15bz23jwsm2: {send: Eisu_toggle, select: ls15bz23jwsm2, preview: " ", functional: false}
-  Keyboard_ls15bz23jwsm3: {send: Eisu_toggle, select: ls15bz23jwsm3, preview: " ", functional: false}
-  Keyboard_ls15bz23jwsm4: {send: Eisu_toggle, select: ls15bz23jwsm4, preview: " ", functional: false}
-  Keyboard_ls15bz23jwsm5: {send: Eisu_toggle, select: ls15bz23jwsm5, preview: " ", functional: false}
-  Keyboard_ls15bz23jwsm6: {send: Eisu_toggle, select: ls15bz23jwsm6, preview: " ", functional: false}
-  Keyboard_ls15bz23jwsm7: {send: Eisu_toggle, select: ls15bz23jwsm7, preview: " ", functional: false}
-  
-  Keyboard_ls15: {send: Eisu_toggle, select: ls15}
-  Keyboard_ls15_Mode: {label: *lb_Keyboard_ls15_Mode, text: '{Keyboard_ls15}{Mode_switch}'}
-  Keyboard_ls15wsd: {send: Eisu_toggle, select: ls15wsd}
-  Keyboard_ls15wsd_Mode: {label: *lb_Keyboard_ls15_Mode, text: '{Keyboard_ls15wsd}{Mode_switch}'}
-  Keyboard_ls15qwerty: {send: Eisu_toggle, select: ls15qwerty}
-  Keyboard_ls15qwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_ls15qwerty}{Mode_switch}'}
-  Keyboard_ls15wsdqwerty: {send: Eisu_toggle, select: ls15wsdqwerty}
-  Keyboard_ls15wsdqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_ls15wsdqwerty}{Mode_switch}'}
-  # 按鍵設置
-  ls15bz21jw11jm: {label: "1", preview: " "}
-  ls15bz21jw12jm: {label: "2", preview: " "}
-  ls15bz21jw13jm: {label: "3", preview: " "}
-  ls15bz21jw14jm: {label: "*", preview: " "}
-  ls15bz21jw15jm: {label: "A", preview: " "}
-  ls15bz21jw21jm: {label: "4", preview: " "}
-  ls15bz21jw22jm: {label: "5", preview: " "}
-  ls15bz21jw23jm: {label: "6", preview: " "}
-  ls15bz21jw24jm: {label: "0", preview: " "}
-  ls15bz21jw25jm: {label: "B", preview: " "}
-  ls15bz21jw31jm: {label: "7", preview: " "}
-  ls15bz21jw32jm: {label: "8", preview: " "}
-  ls15bz21jw33jm: {label: "9", preview: " "}
-  ls15bz21jw34jm: {label: "#", preview: " "}
-  ls15bz21jw35jm: {label: "C", preview: " "}
-  
-  ls15bz22jw11jm: {label: "", preview: " "}
-  ls15bz22jw12jm: {label: "", preview: " "}
-  ls15bz22jw13jm: {label: "", preview: " "}
-  ls15bz22jw14jm: {label: "", preview: " "}
-  ls15bz22jw15jm: {label: "", preview: " "}
-  ls15bz22jw21jm: {label: "", preview: " "}
-  ls15bz22jw22jm: {label: "", preview: " "}
-  ls15bz22jw23jm: {label: "", preview: " "}
-  ls15bz22jw24jm: {label: "", preview: " "}
-  ls15bz22jw25jm: {label: "", preview: " "}
-  ls15bz22jw31jm: {label: "", preview: " "}
-  ls15bz22jw32jm: {label: "", preview: " "}
-  ls15bz22jw33jm: {label: "", preview: " "}
-  ls15bz22jw34jm: {label: "", preview: " "}
-  ls15bz22jw35jm: {label: "", preview: " "}
-  
-  ls15bz23jw11jm: {label: "", preview: " "}
-  ls15bz23jw12jm: {label: "", preview: " "}
-  ls15bz23jw13jm: {label: "", preview: " "}
-  ls15bz23jw14jm: {label: "", preview: " "}
-  ls15bz23jw15jm: {label: "", preview: " "}
-  ls15bz23jw21jm: {label: "", preview: " "}
-  ls15bz23jw22jm: {label: "", preview: " "}
-  ls15bz23jw23jm: {label: "", preview: " "}
-  ls15bz23jw24jm: {label: "", preview: " "}
-  ls15bz23jw25jm: {label: "", preview: " "}
-  ls15bz23jw31jm: {label: "", preview: " "}
-  ls15bz23jw32jm: {label: "", preview: " "}
-  ls15bz23jw33jm: {label: "", preview: " "}
-  ls15bz23jw34jm: {label: "", preview: " "}
-  ls15bz23jw35jm: {label: "", preview: " "}
-  
-  ls15bz21jw11: {label: {__include: preset_keys/1_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw12: {label: {__include: preset_keys/2_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw13: {label: {__include: preset_keys/3_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw14: {label: {__include: preset_keys/x_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jwz}', functional: false}
-  ls15bz21jw15: {label: {__include: preset_keys/A_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jwz}', functional: false}
-  ls15bz21jw21: {label: {__include: preset_keys/4_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw22: {label: {__include: preset_keys/5_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw23: {label: {__include: preset_keys/6_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw24: {label: {__include: preset_keys/0_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw25: {label: {__include: preset_keys/B_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jwz}', functional: false}
-  ls15bz21jw31: {label: {__include: preset_keys/7_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw32: {label: {__include: preset_keys/8_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw33: {label: {__include: preset_keys/9_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jw}', functional: false}
-  ls15bz21jw34: {label: {__include: preset_keys/j_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jwy}', functional: false}
-  ls15bz21jw35: {label: {__include: preset_keys/C_ls15show/label}, preview: " ", text: '{Keyboard_ls15bz22jwz}', functional: false}
-  
-  ls15bz22jw11: {label: "āōē", preview: " ", text: '{Keyboard_ls15bz23jw1}', functional: false}
-  ls15bz22jw12: {label: "áóé", preview: " ", text: '{Keyboard_ls15bz23jw1}', functional: false}
-  ls15bz22jw13: {label: "ǎǒě", preview: " ", text: '{Keyboard_ls15bz23jw1}', functional: false}
-  ls15bz22jw14: {label: "àòè", preview: " ", text: '{Keyboard_ls15bz23jw1}', functional: false}
-  ls15bz22jw15: {label: "ȧȯė", preview: " ", text: '{Keyboard_ls15bz23jw1}', functional: false}
-  ls15bz22jw21: {label: "𝗶̄", preview: " ", text: '{Keyboard_ls15bz23jw2}', functional: false}
-  ls15bz22jw22: {label: "𝗶́", preview: " ", text: '{Keyboard_ls15bz23jw2}', functional: false}
-  ls15bz22jw23: {label: "𝗶̌", preview: " ", text: '{Keyboard_ls15bz23jw2}', functional: false}
-  ls15bz22jw24: {label: "𝗶̀", preview: " ", text: '{Keyboard_ls15bz23jw2}', functional: false}
-  ls15bz22jw25: {label: "𝗶̇", preview: " ", text: '{Keyboard_ls15bz23jw2}', functional: false}
-  ls15bz22jw31: {label: "ū𝘂̈̄", preview: " ", text: '{Keyboard_ls15bz23jw3}', functional: false}
-  ls15bz22jw32: {label: "ú𝘂̈́", preview: " ", text: '{Keyboard_ls15bz23jw3}', functional: false}
-  ls15bz22jw33: {label: "ǔ𝘂̈̌", preview: " ", text: '{Keyboard_ls15bz23jw3}', functional: false}
-  ls15bz22jw34: {label: "ù𝘂̈̀", preview: " ", text: '{Keyboard_ls15bz23jw3}', functional: false}
-  ls15bz22jw35: {label: "u̇𝘂̈̇", preview: " ", text: '{Keyboard_ls15bz23jw3}', functional: false}
-  
-  ls15bz22jwz11: {label: "āōē", preview: " ", text: '{Keyboard_ls15bz23jwz1}', functional: false}
-  ls15bz22jwz12: {label: "áóé", preview: " ", text: '{Keyboard_ls15bz23jwz1}', functional: false}
-  ls15bz22jwz13: {label: "ǎǒě", preview: " ", text: '{Keyboard_ls15bz23jwz1}', functional: false}
-  ls15bz22jwz14: {label: "àòè", preview: " ", text: '{Keyboard_ls15bz23jwz1}', functional: false}
-  ls15bz22jwz15: {label: "ȧȯė", preview: " ", text: '{Keyboard_ls15bz23jwz1}', functional: false}
-  ls15bz22jwz21: {label: "𝗮̄𝗼̄𝗲̄", preview: " ", text: '{Keyboard_ls15bz23jwz2}', functional: false}
-  ls15bz22jwz22: {label: "𝗮́𝗼́𝗲́", preview: " ", text: '{Keyboard_ls15bz23jwz2}', functional: false}
-  ls15bz22jwz23: {label: "𝗮̌𝗼̌𝗲̌", preview: " ", text: '{Keyboard_ls15bz23jwz2}', functional: false}
-  ls15bz22jwz24: {label: "𝗮̀𝗼̀𝗲̀", preview: " ", text: '{Keyboard_ls15bz23jwz2}', functional: false}
-  ls15bz22jwz25: {label: "𝗮̇𝗼̇𝗲̇", preview: " ", text: '{Keyboard_ls15bz23jwz2}', functional: false}
-  ls15bz22jwz31: {label: "ū𝘂̄", preview: " ", text: '{Keyboard_ls15bz23jwz3}', functional: false}
-  ls15bz22jwz32: {label: "ú𝘂́", preview: " ", text: '{Keyboard_ls15bz23jwz3}', functional: false}
-  ls15bz22jwz33: {label: "ǔ𝘂̌", preview: " ", text: '{Keyboard_ls15bz23jwz3}', functional: false}
-  ls15bz22jwz34: {label: "ù𝘂̀", preview: " ", text: '{Keyboard_ls15bz23jwz3}', functional: false}
-  ls15bz22jwz35: {label: "u̇𝘂̇", preview: " ", text: '{Keyboard_ls15bz23jwz3}', functional: false}
-  
-  ls15bz22jwy11: {label: "零̄", preview: " ", text: '{Keyboard_ls15bz23jwy1}', functional: false}
-  ls15bz22jwy12: {label: "零́", preview: " ", text: '{Keyboard_ls15bz23jwy1}', functional: false}
-  ls15bz22jwy13: {label: "零̌", preview: " ", text: '{Keyboard_ls15bz23jwy1}', functional: false}
-  ls15bz22jwy14: {label: "零̀", preview: " ", text: '{Keyboard_ls15bz23jwy1}', functional: false}
-  ls15bz22jwy15: {label: "零̇", preview: " ", text: '{Keyboard_ls15bz23jwy1}', functional: false}
-  ls15bz22jwy21: {label: "𝘆̄", preview: " ", text: '{Keyboard_ls15bz23jwy2}', functional: false}
-  ls15bz22jwy22: {label: "𝘆́", preview: " ", text: '{Keyboard_ls15bz23jwy2}', functional: false}
-  ls15bz22jwy23: {label: "𝘆̌", preview: " ", text: '{Keyboard_ls15bz23jwy2}', functional: false}
-  ls15bz22jwy24: {label: "𝘆̀", preview: " ", text: '{Keyboard_ls15bz23jwy2}', functional: false}
-  ls15bz22jwy25: {label: "𝘆̇", preview: " ", text: '{Keyboard_ls15bz23jwy2}', functional: false}
-  ls15bz22jwy31: {label: "w̄𝘆𝘂̄", preview: " ", text: '{Keyboard_ls15bz23jwy3}', functional: false}
-  ls15bz22jwy32: {label: "ẃ𝘆𝘂́", preview: " ", text: '{Keyboard_ls15bz23jwy3}', functional: false}
-  ls15bz22jwy33: {label: "w̌𝘆𝘂̌", preview: " ", text: '{Keyboard_ls15bz23jwy3}', functional: false}
-  ls15bz22jwy34: {label: "ẁ𝘆𝘂̀", preview: " ", text: '{Keyboard_ls15bz23jwy3}', functional: false}
-  ls15bz22jwy35: {label: "ẇ𝘆𝘂̇", preview: " ", text: '{Keyboard_ls15bz23jwy3}', functional: false}
-  
-  ls15bz23jw011: {label: "a", preview: " ", functional: false}
-  ls15bz23jw012: {label: "o/-i", preview: " ", functional: false}
-  ls15bz23jw013: {label: "e/ie/üe", preview: " ", functional: false}
-  ls15bz23jw014: {label: "er", preview: " ", functional: false}
-  ls15bz23jw015: {label: "üan", preview: " ", functional: false}
-  ls15bz23jw021: {label: "ai", preview: " ", functional: false}
-  ls15bz23jw022: {label: "i/ei/ui", preview: " ", functional: false}
-  ls15bz23jw023: {label: "u/ao", preview: " ", functional: false}
-  ls15bz23jw024: {label: "ü/ou/iu", preview: " ", functional: false}
-  ls15bz23jw025: {label: "ün", preview: " ", functional: false}
-  ls15bz23jw031: {label: "an", preview: " ", functional: false}
-  ls15bz23jw032: {label: "en/in/un", preview: " ", functional: false}
-  ls15bz23jw033: {label: "ang", preview: " ", functional: false}
-  ls15bz23jw034: {label: "eng/ing", preview: " ", functional: false}
-  ls15bz23jw035: {label: "ong", preview: " ", functional: false}
-  
-  ls15bz23jw111: {label: "a", preview: " ", functional: false}
-  ls15bz23jw112: {label: "o", preview: " ", functional: false}
-  ls15bz23jw113: {label: "e", preview: " ", functional: false}
-  ls15bz23jw114: {label: "e", preview: "e飞键", functional: false}
-  ls15bz23jw115: {label: "", preview: " ", functional: false}
-  ls15bz23jw121: {label: "ai", preview: " ", functional: false}
-  ls15bz23jw122: {label: "ei", preview: " ", functional: false}
-  ls15bz23jw123: {label: "ao", preview: " ", functional: false}
-  ls15bz23jw124: {label: "ou", preview: " ", functional: false}
-  ls15bz23jw125: {label: "", preview: " ", functional: false}
-  ls15bz23jw131: {label: "an", preview: " ", functional: false}
-  ls15bz23jw132: {label: "en", preview: " ", functional: false}
-  ls15bz23jw133: {label: "ang", preview: " ", functional: false}
-  ls15bz23jw134: {label: "eng", preview: " ", functional: false}
-  ls15bz23jw135: {label: "ong", preview: " ", functional: false}
-  
-  ls15bz23jw211: {label: "𝗶𝗮", preview: " ", functional: false}
-  ls15bz23jw212: {label: "𝗶𝗼", preview: " ", functional: false}
-  ls15bz23jw213: {label: "𝗶𝗲", preview: " ", functional: false}
-  ls15bz23jw214: {label: "𝗶𝗲", preview: " ", functional: false}
-  ls15bz23jw215: {label: "", preview: " ", functional: false}
-  ls15bz23jw221: {label: "𝗶𝗮𝗶", preview: " ", functional: false}
-  ls15bz23jw222: {label: "𝗶", preview: " ", functional: false}
-  ls15bz23jw223: {label: "𝗶𝗮𝗼", preview: " ", functional: false}
-  ls15bz23jw224: {label: "𝗶𝘂", preview: "iu=iou", functional: false}
-  ls15bz23jw225: {label: "", preview: " ", functional: false}
-  ls15bz23jw231: {label: "𝗶𝗮𝗻", preview: " ", functional: false}
-  ls15bz23jw232: {label: "𝗶𝗻", preview: "in=ien", functional: false}
-  ls15bz23jw233: {label: "𝗶𝗮𝗻𝗴", preview: " ", functional: false}
-  ls15bz23jw234: {label: "𝗶𝗻𝗴", preview: "ing=ieng", functional: false}
-  ls15bz23jw235: {label: "𝗶𝗼𝗻𝗴", preview: " ", functional: false}
-  
-  ls15bz23jw311: {label: "ua", preview: " ", functional: false}
-  ls15bz23jw312: {label: "uo", preview: " ", functional: false}
-  ls15bz23jw313: {label: "𝘂̈𝗲", preview: " ", functional: false}
-  ls15bz23jw314: {label: "𝘂̈𝗲", preview: " ", functional: false}
-  ls15bz23jw315: {label: "𝘂̈𝗮𝗻", preview: " ", functional: false}
-  ls15bz23jw321: {label: "uai", preview: " ", functional: false}
-  ls15bz23jw322: {label: "ui", preview: "ui=uei", functional: false}
-  ls15bz23jw323: {label: "u", preview: " ", functional: false}
-  ls15bz23jw324: {label: "𝘂̈", preview: " ", functional: false}
-  ls15bz23jw325: {label: "𝘂̈𝗻", preview: "ün=üen", functional: false}
-  ls15bz23jw331: {label: "uan", preview: " ", functional: false}
-  ls15bz23jw332: {label: "un", preview: "un=uen", functional: false}
-  ls15bz23jw333: {label: "uang", preview: " ", functional: false}
-  ls15bz23jw334: {label: "ueng", preview: "ueng=ong", functional: false}
-  ls15bz23jw335: {label: "𝘂̈𝗲𝗻𝗴", preview: "üeng=iong", functional: false}
-  
-  ls15bz23jwz111: {label: "a", preview: " ", functional: false}
-  ls15bz23jwz112: {label: "-i", preview: "整体认读音节", functional: false}
-  ls15bz23jwz113: {label: "e", preview: " ", functional: false}
-  ls15bz23jwz114: {label: "e", preview: " ", functional: false}
-  ls15bz23jwz115: {label: "", preview: " ", functional: false}
-  ls15bz23jwz121: {label: "ai", preview: " ", functional: false}
-  ls15bz23jwz122: {label: "ei", preview: " ", functional: false}
-  ls15bz23jwz123: {label: "ao", preview: " ", functional: false}
-  ls15bz23jwz124: {label: "ou", preview: " ", functional: false}
-  ls15bz23jwz125: {label: "", preview: " ", functional: false}
-  ls15bz23jwz131: {label: "an", preview: " ", functional: false}
-  ls15bz23jwz132: {label: "en", preview: " ", functional: false}
-  ls15bz23jwz133: {label: "ang", preview: " ", functional: false}
-  ls15bz23jwz134: {label: "eng", preview: " ", functional: false}
-  ls15bz23jwz135: {label: "ong", preview: " ", functional: false}
-  
-  ls15bz23jwz211: {label: "𝗮", preview: " ", functional: false}
-  ls15bz23jwz212: {label: "-𝗶", preview: "整体认读音节", functional: false}
-  ls15bz23jwz213: {label: "𝗲", preview: " ", functional: false}
-  ls15bz23jwz214: {label: "𝗲", preview: " ", functional: false}
-  ls15bz23jwz215: {label: "", preview: " ", functional: false}
-  ls15bz23jwz221: {label: "𝗮𝗶", preview: " ", functional: false}
-  ls15bz23jwz222: {label: "𝗲𝗶", preview: " ", functional: false}
-  ls15bz23jwz223: {label: "𝗮𝗼", preview: " ", functional: false}
-  ls15bz23jwz224: {label: "𝗼𝘂", preview: " ", functional: false}
-  ls15bz23jwz225: {label: "", preview: " ", functional: false}
-  ls15bz23jwz231: {label: "𝗮𝗻", preview: " ", functional: false}
-  ls15bz23jwz232: {label: "𝗲𝗻", preview: " ", functional: false}
-  ls15bz23jwz233: {label: "𝗮𝗻𝗴", preview: " ", functional: false}
-  ls15bz23jwz234: {label: "𝗲𝗻𝗴", preview: " ", functional: false}
-  ls15bz23jwz235: {label: "𝗼𝗻𝗴", preview: " ", functional: false}
-  
-  ls15bz23jwz311: {label: "ua", preview: " ", functional: false}
-  ls15bz23jwz312: {label: "uo", preview: " ", functional: false}
-  ls15bz23jwz313: {label: "𝘂𝗼", preview: " ", functional: false}
-  ls15bz23jwz314: {label: "𝘂𝗶", preview: "ui=uei", functional: false}
-  ls15bz23jwz315: {label: "𝘂𝗮𝗻", preview: " ", functional: false}
-  ls15bz23jwz321: {label: "uai", preview: " ", functional: false}
-  ls15bz23jwz322: {label: "ui", preview: "ui=uei", functional: false}
-  ls15bz23jwz323: {label: "u", preview: " ", functional: false}
-  ls15bz23jwz324: {label: "𝘂", preview: " ", functional: false}
-  ls15bz23jwz325: {label: "𝘂𝗻", preview: "un=uen", functional: false}
-  ls15bz23jwz331: {label: "uan", preview: " ", functional: false}
-  ls15bz23jwz332: {label: "un", preview: "un=uen", functional: false}
-  ls15bz23jwz333: {label: "uang", preview: " ", functional: false}
-  ls15bz23jwz334: {label: "ueng", preview: "ueng=ong", functional: false}
-  ls15bz23jwz335: {label: "𝘂𝗲𝗻𝗴", preview: "ueng=ong", functional: false}
-  
-  ls15bz23jwy111: {label: "a", preview: " ", functional: false}
-  ls15bz23jwy112: {label: "o", preview: " ", functional: false}
-  ls15bz23jwy113: {label: "e", preview: " ", functional: false}
-  ls15bz23jwy114: {label: "er", preview: "零声母er", functional: false}
-  ls15bz23jwy115: {label: "er", preview: "er飞键", functional: false}
-  ls15bz23jwy121: {label: "ai", preview: " ", functional: false}
-  ls15bz23jwy122: {label: "ei", preview: " ", functional: false}
-  ls15bz23jwy123: {label: "ao", preview: " ", functional: false}
-  ls15bz23jwy124: {label: "ou", preview: " ", functional: false}
-  ls15bz23jwy125: {label: "", preview: " ", functional: false}
-  ls15bz23jwy131: {label: "an", preview: " ", functional: false}
-  ls15bz23jwy132: {label: "en", preview: " ", functional: false}
-  ls15bz23jwy133: {label: "ang", preview: " ", functional: false}
-  ls15bz23jwy134: {label: "eng", preview: " ", functional: false}
-  ls15bz23jwy135: {label: "wong", preview: "wong=weng", functional: false}
-  
-  ls15bz23jwy211: {label: "𝘆𝗮", preview: " ", functional: false}
-  ls15bz23jwy212: {label: "𝘆𝗼", preview: " ", functional: false}
-  ls15bz23jwy213: {label: "𝘆𝗲", preview: " ", functional: false}
-  ls15bz23jwy214: {label: "𝘆𝗲", preview: " ", functional: false}
-  ls15bz23jwy215: {label: "", preview: " ", functional: false}
-  ls15bz23jwy221: {label: "𝘆𝗮𝗶", preview: "崖", functional: false}
-  ls15bz23jwy222: {label: "𝘆𝗶", preview: " ", functional: false}
-  ls15bz23jwy223: {label: "𝘆𝗮𝗼", preview: " ", functional: false}
-  ls15bz23jwy224: {label: "𝘆𝗼𝘂", preview: " ", functional: false}
-  ls15bz23jwy225: {label: "", preview: " ", functional: false}
-  ls15bz23jwy231: {label: "𝘆𝗮𝗻", preview: " ", functional: false}
-  ls15bz23jwy232: {label: "𝘆𝗶𝗻", preview: "yin=yen", functional: false}
-  ls15bz23jwy233: {label: "𝘆𝗮𝗻𝗴", preview: " ", functional: false}
-  ls15bz23jwy234: {label: "𝘆𝗶𝗻𝗴", preview: "ying=yeng", functional: false}
-  ls15bz23jwy235: {label: "𝘆𝗼𝗻𝗴", preview: " ", functional: false}
-  
-  ls15bz23jwy311: {label: "wa", preview: " ", functional: false}
-  ls15bz23jwy312: {label: "wo", preview: " ", functional: false}
-  ls15bz23jwy313: {label: "𝘆𝘂𝗲", preview: " ", functional: false}
-  ls15bz23jwy314: {label: "𝘆𝘂𝗲", preview: " ", functional: false}
-  ls15bz23jwy315: {label: "𝘆𝘂𝗮𝗻", preview: " ", functional: false}
-  ls15bz23jwy321: {label: "wai", preview: " ", functional: false}
-  ls15bz23jwy322: {label: "wei", preview: " ", functional: false}
-  ls15bz23jwy323: {label: "wu", preview: " ", functional: false}
-  ls15bz23jwy324: {label: "𝘆𝘂", preview: " ", functional: false}
-  ls15bz23jwy325: {label: "𝘆𝘂𝗻", preview: "yun=yuen", functional: false}
-  ls15bz23jwy331: {label: "wan", preview: " ", functional: false}
-  ls15bz23jwy332: {label: "wen", preview: " ", functional: false}
-  ls15bz23jwy333: {label: "wang", preview: " ", functional: false}
-  ls15bz23jwy334: {label: "weng", preview: " ", functional: false}
-  ls15bz23jwy335: {label: "𝘆𝘂𝗲𝗻𝗴", preview: "yueng=yong", functional: false}
-  
-  1_ls15show: {preview: "1", text: 'q', label: "b", functional: false}
-  2_ls15show: {preview: "2", text: 'w', label: "p", functional: false}
-  3_ls15show: {preview: "3", text: 'e', label: "m", functional: false}
-  x_ls15show: {preview: "*", text: 'r', label: "𝗳 r", functional: false}
-  A_ls15show: {preview: "A", text: 't', label: "zh 𝘇", functional: false}
-  4_ls15show: {preview: "4", text: 'a', label: "d", functional: false}
-  5_ls15show: {preview: "5", text: 's', label: "t", functional: false}
-  6_ls15show: {preview: "6", text: 'd', label: "n", functional: false}
-  0_ls15show: {preview: "0", text: 'f', label: "l", functional: false}
-  B_ls15show: {preview: "B", text: 'g', label: "ch 𝗰", functional: false}
-  7_ls15show: {preview: "7", text: 'z', label: "g 𝗷", functional: false}
-  8_ls15show: {preview: "8", text: 'x', label: "k 𝗾", functional: false}
-  9_ls15show: {preview: "9", text: 'c', label: "h 𝘅", functional: false}
-  j_ls15show: {preview: "#", text: 'v', label: "零𝘆w", functional: false}
-  C_ls15show: {preview: "C", text: 'b', label: "sh 𝘀", functional: false}
-  A_ls15wsdshow: {__include: preset_keys/A_ls15show, text: 'y'}
-  B_ls15wsdshow: {__include: preset_keys/B_ls15show, text: 'h'}
-  C_ls15wsdshow: {__include: preset_keys/C_ls15show, text: 'n'}
-  1cazj_ls15show: {label: '1-āōē-', text: 1, preview: 1}
-  2cazj_ls15show: {label: '2-áóé-', text: 2, preview: 2}
-  3cazj_ls15show: {label: '3-ǎǒě-', text: 3, preview: 3}
-  4cazj_ls15show: {label: '4-ī-', text: 4, preview: 4}
-  5cazj_ls15show: {label: '5-í-', text: 5, preview: 5}
-  6cazj_ls15show: {label: '6-ǐ-', text: 6, preview: 6}
-  7cazj_ls15show: {label: '7-ūǖ-', text: 7, preview: 7}
-  8cazj_ls15show: {label: '8-úǘ-', text: 8, preview: 8}
-  9cazj_ls15show: {label: '9-ǔǚ-', text: 9, preview: 9}
-  xcazj_ls15show: {label: '*-àòè-✂', text: '{cut}', preview: *lb_cut}
-  0cazj_ls15show: {label: '0-ì-❐', text: '{copy}', preview: *lb_copy}
-  jcazj_ls15show: {label: '#-ùǜ-▣', text: '{paste}', preview: *lb_paste}
-  Acazj_ls15show: {label: 'A-ȧȯė-', preview: '无声调', text: '{Keyboard_ls15wsd}'}
-  Acazj_ls15wsdshow: {label: 'A-aoe-', preview: '轻声', text: '{Keyboard_ls15}'}
-  Acazj_ls15showpp: {label: '轻声', text: '{Keyboard_ls15}'}
-  Acazj_ls15wsdshowpp: {label: '无声调', text: '{Keyboard_ls15wsd}'}
-  Bcazj_ls15show: {label: 'B-i̇-', text: '{Beginning}', preview: *lb_Beginning}
-  Ccazj_ls15show: {label: 'C-u̇ü̇-', text: '{Ending}', preview: *lb_Ending}
-  Bcazj_ls15wsdshow: {__include: preset_keys/Bcazj_ls15show, label: 'B-i-'}
-  Ccazj_ls15wsdshow: {__include: preset_keys/Ccazj_ls15show, label: 'C-uü-'}
- # v李氏三拼注音鍵盤
-  # trime設定
-  Keyboard_ls15zy: {send: Eisu_toggle, select: ls15zy}
-  Keyboard_ls15zy_Mode: {label: *lb_Keyboard_ls15_Mode, text: '{Keyboard_ls15zy}{Mode_switch}'}
-  Keyboard_ls15zywsd: {send: Eisu_toggle, select: ls15zywsd}
-  Keyboard_ls15zywsd_Mode: {label: *lb_Keyboard_ls15_Mode, text: '{Keyboard_ls15zywsd}{Mode_switch}'}
-  Keyboard_ls15zyqwerty: {send: Eisu_toggle, select: ls15zyqwerty}
-  Keyboard_ls15zyqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_ls15zyqwerty}{Mode_switch}'}
-  Keyboard_ls15zywsdqwerty: {send: Eisu_toggle, select: ls15zywsdqwerty}
-  Keyboard_ls15zywsdqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_ls15zywsdqwerty}{Mode_switch}'}
-  # 按鍵設置
-  1_ls15zyshow: {__include: preset_keys/1_ls15show, label: "ㄅ"}
-  2_ls15zyshow: {__include: preset_keys/2_ls15show, label: "ㄆ"}
-  3_ls15zyshow: {__include: preset_keys/3_ls15show, label: "ㄇ"}
-  x_ls15zyshow: {__include: preset_keys/x_ls15show, label: "ㄈㄖ"}
-  A_ls15zyshow: {__include: preset_keys/A_ls15show, label: "ㄓㄗ"}
-  4_ls15zyshow: {__include: preset_keys/4_ls15show, label: "ㄉ"}
-  5_ls15zyshow: {__include: preset_keys/5_ls15show, label: "ㄊ"}
-  6_ls15zyshow: {__include: preset_keys/6_ls15show, label: "ㄋ"}
-  0_ls15zyshow: {__include: preset_keys/0_ls15show, label: "ㄌ"}
-  B_ls15zyshow: {__include: preset_keys/B_ls15show, label: "ㄔㄘ"}
-  7_ls15zyshow: {__include: preset_keys/7_ls15show, label: "ㄍㄐ"}
-  8_ls15zyshow: {__include: preset_keys/8_ls15show, label: "ㄎㄑ"}
-  9_ls15zyshow: {__include: preset_keys/9_ls15show, label: "ㄏㄒ"}
-  j_ls15zyshow: {__include: preset_keys/j_ls15show, label: "零"}
-  C_ls15zyshow: {__include: preset_keys/C_ls15show, label: "ㄕㄙ"}
-  A_ls15zywsdshow: {__include: preset_keys/A_ls15zyshow, text: 'y'}
-  B_ls15zywsdshow: {__include: preset_keys/B_ls15zyshow, text: 'h'}
-  C_ls15zywsdshow: {__include: preset_keys/C_ls15zyshow, text: 'n'}
-  1cazj_ls15zyshow: {__include: preset_keys/1cazj_ls15show, label: '1 空介ˉ'}
-  2cazj_ls15zyshow: {__include: preset_keys/2cazj_ls15show, label: '2 空介ˊ'}
-  3cazj_ls15zyshow: {__include: preset_keys/3cazj_ls15show, label: '3 空介ˇ'}
-  4cazj_ls15zyshow: {__include: preset_keys/4cazj_ls15show, label: '4 ㄧˉ'}
-  5cazj_ls15zyshow: {__include: preset_keys/5cazj_ls15show, label: '5 ㄧˊ'}
-  6cazj_ls15zyshow: {__include: preset_keys/6cazj_ls15show, label: '6 ㄧˇ'}
-  7cazj_ls15zyshow: {__include: preset_keys/7cazj_ls15show, label: '7 ㄨㄩˉ'}
-  8cazj_ls15zyshow: {__include: preset_keys/8cazj_ls15show, label: '8 ㄨㄩˊ'}
-  9cazj_ls15zyshow: {__include: preset_keys/9cazj_ls15show, label: '9 ㄨㄩˇ'}
-  xcazj_ls15zyshow: {__include: preset_keys/xcazj_ls15show, label: '*空介ˋ✂'}
-  0cazj_ls15zyshow: {__include: preset_keys/0cazj_ls15show, label: '0 ㄧˋ❐'}
-  jcazj_ls15zyshow: {__include: preset_keys/jcazj_ls15show, label: '#ㄨㄩˋ▣'}
-  Acazj_ls15zyshow: {__include: preset_keys/Acazj_ls15show, label: 'A 空介̇', text: '{Keyboard_ls15zywsd}'}
-  Acazj_ls15zywsdshow: {__include: preset_keys/Acazj_ls15wsdshow, label: 'A 空介', text: '{Keyboard_ls15zy}'}
-  Acazj_ls15zyshowpp: {__include: preset_keys/Acazj_ls15showpp, text: '{Keyboard_ls15zy}'}
-  Acazj_ls15zywsdshowpp: {__include: preset_keys/Acazj_ls15wsdshowpp, text: '{Keyboard_ls15zywsd}'}
-  Bcazj_ls15zyshow: {__include: preset_keys/Bcazj_ls15show, label: 'B ㄧ̇'}
-  Ccazj_ls15zyshow: {__include: preset_keys/Ccazj_ls15show, label: 'C ㄨㄩ̇'}
-  Bcazj_ls15zywsdshow: {__include: preset_keys/Bcazj_ls15wsdshow, label: 'B ㄧ'}
-  Ccazj_ls15zywsdshow: {__include: preset_keys/Ccazj_ls15wsdshow, label: 'C ㄨㄩ'}
- # v廿六三拼鍵盤
-  # trime設定
-  Keyboard_ls26bz1bz: {label: *lb_Keyboard_ls15bz1bz, text: '{Keyboard_ls26bz1}', functional: false}
-  Keyboard_ls26bz1: {send: Eisu_toggle, select: ls26bz1, preview: " ", functional: false}
-  Keyboard_ls26bz2: {send: Eisu_toggle, select: ls26bz2, preview: " ", functional: false}
-  Keyboard_ls26bz2p2: {send: Eisu_toggle, select: ls26bz2p2, preview: " ", functional: false}
-  Keyboard_ls26zybz1bz: {label: *lb_Keyboard_ls15bz1bz, text: '{Keyboard_ls26zybz1}', functional: false}
-  Keyboard_ls26zybz1: {send: Eisu_toggle, select: ls26zybz1, preview: " ", functional: false}
-  Keyboard_ls26zybz2: {send: Eisu_toggle, select: ls26zybz2, preview: " ", functional: false}
-  Keyboard_ls26zybz2p2: {send: Eisu_toggle, select: ls26zybz2p2, preview: " ", functional: false}
-  Keyboard_ls26zybz3: {send: Eisu_toggle, select: ls26zybz3, preview: " ", functional: false}
-  # 按鍵設置
-  w_26show: {label: "ˇ", text: 'w', functional: false}
-  e_26show: {label: "ˊ", text: 'e', functional: false}
-  y_26show: {label: "˙", text: 'y', functional: false}
-  o_26show: {label: "ˉ", text: 'o', functional: false}
-  a_26show: {label: "ˋ", text: 'a', functional: false}
- # v三碼拼音鍵盤
+ # v三碼拼音系列靜態鍵盤
   # v三碼拼音1鍵盤
   # trime設定
   Keyboard_smpy1bz1bz: {label: *lb_Keyboard_ls15bz1bz, text: '{Keyboard_smpy1bz1}', functional: false}
@@ -1449,6 +1085,55 @@ preset_keys:
   Ccazj_smpy1show: {label: 'B 轻声', text: '{CommitScriptText}', preview: *lb_CommitScriptText}
   Bcazj_smpy1wsdshow: {__include: preset_keys/Bcazj_smpy1show, label: 'G无声调'}
   Ccazj_smpy1wsdshow: {__include: preset_keys/Ccazj_smpy1show, label: 'B无声调'}
+  # v三碼拼音注音鍵盤
+  # trime設定
+  Keyboard_smpy1zy: {send: Eisu_toggle, select: smpy1zy}
+  Keyboard_smpy1zy_Mode: {label: *lb_Keyboard_ls15_Mode_ft, text: '{Keyboard_smpy1zy}{Mode_switch}'}
+  Keyboard_smpy1zywsd: {send: Eisu_toggle, select: smpy1zywsd}
+  Keyboard_smpy1zywsd_Mode: {label: *lb_Keyboard_ls15_Mode_ft, text: '{Keyboard_smpy1zywsd}{Mode_switch}'}
+  Keyboard_smpy1zyqwerty: {send: Eisu_toggle, select: smpy1zyqwerty}
+  Keyboard_smpy1zyqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode_ft, text: '{Keyboard_smpy1zyqwerty}{Mode_switch}'}
+  Keyboard_smpy1zywsdqwerty: {send: Eisu_toggle, select: smpy1zywsdqwerty}
+  Keyboard_smpy1zywsdqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode_ft, text: '{Keyboard_smpy1zywsdqwerty}{Mode_switch}'}
+  # 按鍵設置
+  1_smpy1zyshow: {__include: preset_keys/1_smpy1show, label: "ㄅ"}
+  2_smpy1zyshow: {__include: preset_keys/2_smpy1show, label: "ㄆ"}
+  3_smpy1zyshow: {__include: preset_keys/3_smpy1show, label: "ㄇ"}
+  x_smpy1zyshow: {__include: preset_keys/x_smpy1show, label: "ㄖㄈ"}
+  A_smpy1zyshow: {__include: preset_keys/A_smpy1show, label: "ㄓㄗ"}
+  4_smpy1zyshow: {__include: preset_keys/4_smpy1show, label: "ㄉ"}
+  5_smpy1zyshow: {__include: preset_keys/5_smpy1show, label: "ㄊ"}
+  6_smpy1zyshow: {__include: preset_keys/6_smpy1show, label: "ㄋ"}
+  0_smpy1zyshow: {__include: preset_keys/0_smpy1show, label: "ㄌ"}
+  B_smpy1zyshow: {__include: preset_keys/B_smpy1show, label: "ㄔㄘ"}
+  7_smpy1zyshow: {__include: preset_keys/7_smpy1show, label: "ㄍㄐ"}
+  8_smpy1zyshow: {__include: preset_keys/8_smpy1show, label: "ㄎㄑ"}
+  9_smpy1zyshow: {__include: preset_keys/9_smpy1show, label: "ㄏㄒ"}
+  j_smpy1zyshow: {__include: preset_keys/j_smpy1show, label: "零"}
+  C_smpy1zyshow: {__include: preset_keys/C_smpy1show, label: "ㄕㄙ"}
+  A_smpy1zywsdshow: {__include: preset_keys/A_smpy1zyshow, text: 'y', preview: "y"}
+  B_smpy1zywsdshow: {__include: preset_keys/B_smpy1zyshow, text: 'h', preview: "h"}
+  C_smpy1zywsdshow: {__include: preset_keys/C_smpy1zyshow, text: 'n', preview: "n"}
+  1cazj_smpy1zyshow: {__include: preset_keys/1cazj_smpy1show}
+  2cazj_smpy1zyshow: {__include: preset_keys/2cazj_smpy1show}
+  3cazj_smpy1zyshow: {__include: preset_keys/3cazj_smpy1show}
+  4cazj_smpy1zyshow: {__include: preset_keys/4cazj_smpy1show}
+  5cazj_smpy1zyshow: {__include: preset_keys/5cazj_smpy1show}
+  6cazj_smpy1zyshow: {__include: preset_keys/6cazj_smpy1show}
+  7cazj_smpy1zyshow: {__include: preset_keys/7cazj_smpy1show}
+  8cazj_smpy1zyshow: {__include: preset_keys/8cazj_smpy1show}
+  9cazj_smpy1zyshow: {__include: preset_keys/9cazj_smpy1show}
+  xcazj_smpy1zyshow: {__include: preset_keys/xcazj_smpy1show}
+  0cazj_smpy1zyshow: {__include: preset_keys/0cazj_smpy1show}
+  jcazj_smpy1zyshow: {__include: preset_keys/jcazj_smpy1show}
+  Acazj_smpy1zyshow: {__include: preset_keys/Acazj_smpy1show, text: '{Keyboard_smpy1zywsd}'}
+  Acazj_smpy1zywsdshow: {__include: preset_keys/Acazj_smpy1wsdshow, text: '{Keyboard_smpy1zy}'}
+  Acazj_smpy1zyshowpp: {__include: preset_keys/Acazj_smpy1showpp, text: '{Keyboard_smpy1zy}'}
+  Acazj_smpy1zywsdshowpp: {__include: preset_keys/Acazj_smpy1wsdshowpp, text: '{Keyboard_smpy1zywsd}'}
+  Bcazj_smpy1zyshow: {__include: preset_keys/Bcazj_smpy1show}
+  Ccazj_smpy1zyshow: {__include: preset_keys/Ccazj_smpy1show}
+  Bcazj_smpy1zywsdshow: {__include: preset_keys/Bcazj_smpy1wsdshow}
+  Ccazj_smpy1zywsdshow: {__include: preset_keys/Ccazj_smpy1wsdshow}
   # v三碼拼音2鍵盤
   # trime設定
   Keyboard_smpy2: {send: Eisu_toggle, select: smpy2}
@@ -1500,15 +1185,97 @@ preset_keys:
   Ccazj_smpy2wsdshow: {__include: preset_keys/Ccazj_smpy1wsdshow}
   # v三碼拼音3鍵盤
   # trime設定
+  Keyboard_smpy3bz1bz: {label: *lb_Keyboard_ls15bz1bz_ft, text: '{Keyboard_smpy3bz1}', functional: false}
+  Keyboard_smpy3bz1bzEsc: {label: *lb_Keyboard_ls15bz1bz_ft, text: '{Escape}{Keyboard_smpy3bz1bz}'}
+  Keyboard_smpy3bz1: {send: Eisu_toggle, select: smpy3bz1, preview: " ", functional: false}
+  Keyboard_smpy3bz1p2: {send: Eisu_toggle, select: smpy3bz1p2, preview: " ", functional: false}
+  Keyboard_smpy3bz1p3: {send: Eisu_toggle, select: smpy3bz1p3, preview: " ", functional: false}
+  Keyboard_smpy3bz21: {send: Eisu_toggle, select: smpy3bz21, preview: " ", functional: false}
+  Keyboard_smpy3bz22: {send: Eisu_toggle, select: smpy3bz22, preview: " ", functional: false}
+  Keyboard_smpy3bz23: {send: Eisu_toggle, select: smpy3bz23, preview: " ", functional: false}
+  Keyboard_smpy3bz21sm: {send: Eisu_toggle, select: smpy3bz21sm, preview: " ", functional: false}
+  Keyboard_smpy3bz22sm: {send: Eisu_toggle, select: smpy3bz22sm, preview: " ", functional: false}
+  Keyboard_smpy3bz22smp2: {send: Eisu_toggle, select: smpy3bz22smp2, preview: " ", functional: false}
+  Keyboard_smpy3bz22smp3: {send: Eisu_toggle, select: smpy3bz22smp3, preview: " ", functional: false}
+  Keyboard_smpy3bz22smp4: {send: Eisu_toggle, select: smpy3bz22smp4, preview: " ", functional: false}
+  Keyboard_smpy3bz22smp5: {send: Eisu_toggle, select: smpy3bz22smp5, preview: " ", functional: false}
+  Keyboard_smpy3bz22smp6: {send: Eisu_toggle, select: smpy3bz22smp6, preview: " ", functional: false}
+  Keyboard_smpy3bz23sm: {send: Eisu_toggle, select: smpy3bz23sm, preview: " ", functional: false}
+  Keyboard_smpy3bz23smp2: {send: Eisu_toggle, select: smpy3bz23smp2, preview: " ", functional: false}
+  
   Keyboard_smpy3: {send: Eisu_toggle, select: smpy3}
-  Keyboard_smpy3_Mode: {label: *lb_Keyboard_ls15_Mode, text: '{Keyboard_smpy3}{Mode_switch}'}
+  Keyboard_smpy3_Mode: {label: *lb_Keyboard_ls15_Mode_ft, text: '{Keyboard_smpy3}{Mode_switch}'}
   Keyboard_smpy3wsd: {send: Eisu_toggle, select: smpy3wsd}
-  Keyboard_smpy3wsd_Mode: {label: *lb_Keyboard_ls15_Mode, text: '{Keyboard_smpy3wsd}{Mode_switch}'}
+  Keyboard_smpy3wsd_Mode: {label: *lb_Keyboard_ls15_Mode_ft, text: '{Keyboard_smpy3wsd}{Mode_switch}'}
   Keyboard_smpy3qwerty: {send: Eisu_toggle, select: smpy3qwerty}
-  Keyboard_smpy3qwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_smpy3qwerty}{Mode_switch}'}
+  Keyboard_smpy3qwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode_ft, text: '{Keyboard_smpy3qwerty}{Mode_switch}'}
   Keyboard_smpy3wsdqwerty: {send: Eisu_toggle, select: smpy3wsdqwerty}
-  Keyboard_smpy3wsdqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_smpy3wsdqwerty}{Mode_switch}'}
+  Keyboard_smpy3wsdqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode_ft, text: '{Keyboard_smpy3wsdqwerty}{Mode_switch}'}
   # 按鍵設置
+  smpy3bzjw11jm: {label: "Q", preview: " "}
+  smpy3bzjw12jm: {label: "W", preview: " "}
+  smpy3bzjw13jm: {label: "E", preview: " "}
+  smpy3bzjw14jm: {label: "R", preview: " "}
+  smpy3bzjw15jm: {label: "T", preview: " "}
+  smpy3bzjw21jm: {label: "A", preview: " "}
+  smpy3bzjw22jm: {label: "S", preview: " "}
+  smpy3bzjw23jm: {label: "D", preview: " "}
+  smpy3bzjw24jm: {label: "F", preview: " "}
+  smpy3bzjw25jm: {label: "G", preview: " "}
+  smpy3bzjw31jm: {label: "Z", preview: " "}
+  smpy3bzjw32jm: {label: "X", preview: " "}
+  smpy3bzjw33jm: {label: "C", preview: " "}
+  smpy3bzjw34jm: {label: "V", preview: " "}
+  smpy3bzjw35jm: {label: "B", preview: " "}
+  
+  smpy3bz21jw11: {label: {__include: preset_keys/1_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw12: {label: {__include: preset_keys/2_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw13: {label: {__include: preset_keys/3_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw14: {label: {__include: preset_keys/x_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw15: {label: {__include: preset_keys/A_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw21: {label: {__include: preset_keys/4_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw22: {label: {__include: preset_keys/5_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw23: {label: {__include: preset_keys/6_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw24: {label: {__include: preset_keys/0_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw25: {label: {__include: preset_keys/B_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw31: {label: {__include: preset_keys/7_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw32: {label: {__include: preset_keys/8_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw33: {label: {__include: preset_keys/9_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw34: {label: {__include: preset_keys/j_smpy3show/label}, preview: " ", functional: false}
+  smpy3bz21jw35: {label: {__include: preset_keys/C_smpy3show/label}, preview: " ", functional: false}
+  
+  smpy3bz22jw11: {label: {__include: preset_keyboards/smpy3/keys/@11/hint}, preview: " ", functional: false}
+  smpy3bz22jw12: {label: {__include: preset_keyboards/smpy3/keys/@12/hint}, preview: " ", functional: false}
+  smpy3bz22jw13: {label: {__include: preset_keyboards/smpy3/keys/@13/hint}, preview: " ", functional: false}
+  smpy3bz22jw14: {label: {__include: preset_keyboards/smpy3/keys/@14/hint}, preview: " ", functional: false}
+  smpy3bz22jw15: {label: {__include: preset_keyboards/smpy3/keys/@15/hint}, preview: " ", functional: false}
+  smpy3bz22jw21: {label: {__include: preset_keyboards/smpy3/keys/@18/hint}, preview: " ", functional: false}
+  smpy3bz22jw22: {label: {__include: preset_keyboards/smpy3/keys/@19/hint}, preview: " ", functional: false}
+  smpy3bz22jw23: {label: {__include: preset_keyboards/smpy3/keys/@20/hint}, preview: " ", functional: false}
+  smpy3bz22jw24: {label: {__include: preset_keyboards/smpy3/keys/@21/hint}, preview: " ", functional: false}
+  smpy3bz22jw25: {label: {__include: preset_keyboards/smpy3/keys/@22/hint}, preview: " ", functional: false}
+  smpy3bz22jw31: {label: {__include: preset_keyboards/smpy3/keys/@25/hint}, preview: " ", functional: false}
+  smpy3bz22jw32: {label: {__include: preset_keyboards/smpy3/keys/@26/hint}, preview: " ", functional: false}
+  smpy3bz22jw33: {label: {__include: preset_keyboards/smpy3/keys/@27/hint}, preview: " ", functional: false}
+  smpy3bz22jw34: {label: {__include: preset_keyboards/smpy3/keys/@28/hint}, preview: " ", functional: false}
+  smpy3bz22jw35: {label: {__include: preset_keyboards/smpy3/keys/@29/hint}, preview: " ", functional: false}
+  
+  smpy3bz23jw11: {label: {__include: preset_keyboards/smpy3dty1/keys/@11/label}, preview: " ", functional: false}
+  smpy3bz23jw12: {label: {__include: preset_keyboards/smpy3dty1/keys/@12/label}, preview: " ", functional: false}
+  smpy3bz23jw13: {label: {__include: preset_keyboards/smpy3dty1/keys/@13/label}, preview: " ", functional: false}
+  smpy3bz23jw14: {label: {__include: preset_keyboards/smpy3dty1/keys/@14/label}, preview: " ", functional: false}
+  smpy3bz23jw15: {label: {__include: preset_keyboards/smpy3dty1/keys/@15/label}, preview: " ", functional: false}
+  smpy3bz23jw21: {label: {__include: preset_keyboards/smpy3dty1/keys/@18/label}, preview: " ", functional: false}
+  smpy3bz23jw22: {label: {__include: preset_keyboards/smpy3dty1/keys/@19/label}, preview: " ", functional: false}
+  smpy3bz23jw23: {label: {__include: preset_keyboards/smpy3dty1/keys/@20/label}, preview: " ", functional: false}
+  smpy3bz23jw24: {label: {__include: preset_keyboards/smpy3dty1/keys/@21/label}, preview: " ", functional: false}
+  smpy3bz23jw25: {label: {__include: preset_keyboards/smpy3dty1/keys/@22/label}, preview: " ", functional: false}
+  smpy3bz23jw31: {label: {__include: preset_keyboards/smpy3dty1/keys/@25/label}, preview: " ", functional: false}
+  smpy3bz23jw32: {label: {__include: preset_keyboards/smpy3dty1/keys/@26/label}, preview: " ", functional: false}
+  smpy3bz23jw33: {label: {__include: preset_keyboards/smpy3dty1/keys/@27/label}, preview: " ", functional: false}
+  smpy3bz23jw34: {label: {__include: preset_keyboards/smpy3dty1/keys/@28/label}, preview: " ", functional: false}
+  smpy3bz23jw35: {label: {__include: preset_keyboards/smpy3dty1/keys/@29/label}, preview: " ", functional: false}
+  
   1_smpy3show: {__include: preset_keys/1_smpy1show, label: "ㄅ"}
   2_smpy3show: {__include: preset_keys/2_smpy1show, label: "ㄆ"}
   3_smpy3show: {__include: preset_keys/3_smpy1show, label: "ㄇ"}
@@ -1522,7 +1289,7 @@ preset_keys:
   7_smpy3show: {__include: preset_keys/7_smpy1show, label: "ㄍㄐ"}
   8_smpy3show: {__include: preset_keys/8_smpy1show, label: "ㄎㄑ"}
   9_smpy3show: {__include: preset_keys/9_smpy1show, label: "ㄏㄒ"}
-  j_smpy3show: {__include: preset_keys/j_smpy1show, label: "零"}
+  j_smpy3show: {__include: preset_keys/j_smpy1show, label: "〇"}
   C_smpy3show: {__include: preset_keys/C_smpy1show, label: "ㄕㄙ"}
   A_smpy3wsdshow: {__include: preset_keys/A_smpy3show, text: 'y', preview: "y"}
   B_smpy3wsdshow: {__include: preset_keys/B_smpy3show, text: 'h', preview: "h"}
@@ -2119,55 +1886,6 @@ preset_keys:
   Acazj_smpy1dtshowpp: {label: '轻声', text: '{Keyboard_smpy1dt}'}
   Acazj_smpy1dtwsdshowpp: {label: '无声调', text: '{Keyboard_smpy1dtwsd}'}
   
- # v三碼拼音注音鍵盤
-  # trime設定
-  Keyboard_smpy1zy: {send: Eisu_toggle, select: smpy1zy}
-  Keyboard_smpy1zy_Mode: {label: *lb_Keyboard_ls15_Mode, text: '{Keyboard_smpy1zy}{Mode_switch}'}
-  Keyboard_smpy1zywsd: {send: Eisu_toggle, select: smpy1zywsd}
-  Keyboard_smpy1zywsd_Mode: {label: *lb_Keyboard_ls15_Mode, text: '{Keyboard_smpy1zywsd}{Mode_switch}'}
-  Keyboard_smpy1zyqwerty: {send: Eisu_toggle, select: smpy1zyqwerty}
-  Keyboard_smpy1zyqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_smpy1zyqwerty}{Mode_switch}'}
-  Keyboard_smpy1zywsdqwerty: {send: Eisu_toggle, select: smpy1zywsdqwerty}
-  Keyboard_smpy1zywsdqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_smpy1zywsdqwerty}{Mode_switch}'}
-  # 按鍵設置
-  1_smpy1zyshow: {__include: preset_keys/1_smpy1show, label: "ㄅ"}
-  2_smpy1zyshow: {__include: preset_keys/2_smpy1show, label: "ㄆ"}
-  3_smpy1zyshow: {__include: preset_keys/3_smpy1show, label: "ㄇ"}
-  x_smpy1zyshow: {__include: preset_keys/x_smpy1show, label: "ㄖㄈ"}
-  A_smpy1zyshow: {__include: preset_keys/A_smpy1show, label: "ㄓㄗ"}
-  4_smpy1zyshow: {__include: preset_keys/4_smpy1show, label: "ㄉ"}
-  5_smpy1zyshow: {__include: preset_keys/5_smpy1show, label: "ㄊ"}
-  6_smpy1zyshow: {__include: preset_keys/6_smpy1show, label: "ㄋ"}
-  0_smpy1zyshow: {__include: preset_keys/0_smpy1show, label: "ㄌ"}
-  B_smpy1zyshow: {__include: preset_keys/B_smpy1show, label: "ㄔㄘ"}
-  7_smpy1zyshow: {__include: preset_keys/7_smpy1show, label: "ㄍㄐ"}
-  8_smpy1zyshow: {__include: preset_keys/8_smpy1show, label: "ㄎㄑ"}
-  9_smpy1zyshow: {__include: preset_keys/9_smpy1show, label: "ㄏㄒ"}
-  j_smpy1zyshow: {__include: preset_keys/j_smpy1show, label: "零"}
-  C_smpy1zyshow: {__include: preset_keys/C_smpy1show, label: "ㄕㄙ"}
-  A_smpy1zywsdshow: {__include: preset_keys/A_smpy1zyshow, text: 'y', preview: "y"}
-  B_smpy1zywsdshow: {__include: preset_keys/B_smpy1zyshow, text: 'h', preview: "h"}
-  C_smpy1zywsdshow: {__include: preset_keys/C_smpy1zyshow, text: 'n', preview: "n"}
-  1cazj_smpy1zyshow: {__include: preset_keys/1cazj_smpy1show}
-  2cazj_smpy1zyshow: {__include: preset_keys/2cazj_smpy1show}
-  3cazj_smpy1zyshow: {__include: preset_keys/3cazj_smpy1show}
-  4cazj_smpy1zyshow: {__include: preset_keys/4cazj_smpy1show}
-  5cazj_smpy1zyshow: {__include: preset_keys/5cazj_smpy1show}
-  6cazj_smpy1zyshow: {__include: preset_keys/6cazj_smpy1show}
-  7cazj_smpy1zyshow: {__include: preset_keys/7cazj_smpy1show}
-  8cazj_smpy1zyshow: {__include: preset_keys/8cazj_smpy1show}
-  9cazj_smpy1zyshow: {__include: preset_keys/9cazj_smpy1show}
-  xcazj_smpy1zyshow: {__include: preset_keys/xcazj_smpy1show}
-  0cazj_smpy1zyshow: {__include: preset_keys/0cazj_smpy1show}
-  jcazj_smpy1zyshow: {__include: preset_keys/jcazj_smpy1show}
-  Acazj_smpy1zyshow: {__include: preset_keys/Acazj_smpy1show, text: '{Keyboard_smpy1zywsd}'}
-  Acazj_smpy1zywsdshow: {__include: preset_keys/Acazj_smpy1wsdshow, text: '{Keyboard_smpy1zy}'}
-  Acazj_smpy1zyshowpp: {__include: preset_keys/Acazj_smpy1showpp, text: '{Keyboard_smpy1zy}'}
-  Acazj_smpy1zywsdshowpp: {__include: preset_keys/Acazj_smpy1wsdshowpp, text: '{Keyboard_smpy1zywsd}'}
-  Bcazj_smpy1zyshow: {__include: preset_keys/Bcazj_smpy1show}
-  Ccazj_smpy1zyshow: {__include: preset_keys/Ccazj_smpy1show}
-  Bcazj_smpy1zywsdshow: {__include: preset_keys/Bcazj_smpy1wsdshow}
-  Ccazj_smpy1zywsdshow: {__include: preset_keys/Ccazj_smpy1wsdshow}
 
 preset_keyboards:
   __include: trime:/preset_keyboards
@@ -2187,7 +1905,7 @@ preset_keyboards:
       - {click: '1', long_click: Beginning, swipe_up: Beginning, swipe_down: Home, hint: *lb_Home}
       - {click: '2', long_click: select_all, swipe_up: select_all}
       - {click: '3', long_click: Page_Up, swipe_up: Page_Up}
-      - {click: BackSpace, swipe_down: Delete, hint: *lb_Delete, swipe_left: BackToPreviousSyllable}
+      - {__include: preset_keyboards/lsqwerty/keys/@39}
      # 第二行
       - {click: '-', long_click: Insert, swipe_up: Insert}
       - {click: '4', long_click: Ending, swipe_up: Ending, swipe_down: End, hint: *lb_End}
@@ -2204,14 +1922,14 @@ preset_keyboards:
       - {click: '/', long_click: redo, swipe_up: redo}
       - {click: '=', long_click: Left, swipe_up: Left}
       - {click: '0', long_click: Down, swipe_up: Down}
-      - {click: '。', ascii: '.', long_click: Right, swipe_up: Right}
-      - {click: '：', ascii: ':', long_click: paste, swipe_up: paste, popup: [_Keyboard_clip, _Keyboard_phrase]}
+      - {click: '.', label: '。', long_click: Right, swipe_up: Right}
+      - {click: ':', label: '：', long_click: paste, swipe_up: paste, popup: [_Keyboard_clip, _Keyboard_phrase]}
      # 第五行
       - {click: Keyboard_last_lock, long_click: Menu, swipe_right: Return, swipe_up: Hide}
       - {click: Keyboard_lsedit, long_click: Keyboard_symbolsyou, swipe_up: Keyboard_symbolsyou, swipe_right: select_all}
-      - {click: spacelskg, long_click: VOICE_ASSIST0, swipe_up: Keyboard_last_lock, swipe_left: undo, swipe_right: redo}
-      - {click: '，', ascii: ',', long_click: ';', swipe_up: ';', swipe_left: select_all}
-      - {click: Return, long_click: Color_settings, swipe_left: Return, swipe_up: Hide}
+      - {__include: preset_keyboards/lsqwerty/keys/@43, click: spacelskg, swipe_up: Keyboard_last_lock, width: 20}
+      - {__include: preset_keyboards/lsjp/keys/@34, long_click: ';', swipe_up: ';'}
+      - {__include: preset_keyboards/lsqwerty/keys/@46, width: 20}
   symbolsyou:
     name: 符號右手鍵盤
     author: 阿森納裡
@@ -2265,15 +1983,15 @@ preset_keyboards:
       - {click: '”', ascii: "'", long_click: '’', swipe_up: '’'}
       - {click: '，', ascii: ','}
       - {click: '？', ascii: '?'}
-      - {click: BackSpace, swipe_down: Delete, hint: *lb_Delete, swipe_left: BackToPreviousSyllable}
+      - {__include: preset_keyboards/lsqwerty/keys/@39}
      # 第五行
-      - {click: Keyboard_last_lock, long_click: Menu, swipe_right: Return, swipe_up: Hide, width: 15}
+      - {__include: preset_keyboards/numberyou/keys/@20, width: 15}
       - {click: Keyboard_lsedit, long_click: Keyboard_numberyou, swipe_up: Keyboard_numberyou, swipe_right: select_all}
-      - {click: ',', long_click: '<', swipe_up: '<', label: " ，"}
-      - {click: spacelskg, long_click: VOICE_ASSIST0, swipe_up: Keyboard_last_lock, swipe_left: undo, swipe_right: redo, width: 30}
-      - {click: '.', long_click: '>', swipe_up: '>', label: " 。"}
+      - {__include: preset_keyboards/lsqwerty/keys/@42}
+      - {__include: preset_keyboards/numberyou/keys/@22, width: 30}
+      - {__include: preset_keyboards/lsqwerty/keys/@44}
       - {click: Keyboard_lsedit, long_click: Keyboard_numberyou, swipe_up: Keyboard_numberyou, swipe_left: select_all}
-      - {click: Return, long_click: Color_settings, swipe_left: Return, swipe_up: Hide, width: 15}
+      - {__include: preset_keyboards/lsqwerty/keys/@46, width: 15}
   lsedit:
     name: "數字+操作鍵"
     author: 阿森納裡
@@ -2289,7 +2007,7 @@ preset_keyboards:
       - {click: Home, long_click: Beginning, swipe_up: Beginning}
       - {click: select_all}
       - {click: Page_UpR}
-      - {click: BackSpace, swipe_down: Delete, hint: *lb_Delete, swipe_left: BackToPreviousSyllable}
+      - {__include: preset_keyboards/lsqwerty/keys/@39}
      # 第二行
       - {click: Insert, key_back_color: key_back_color}
       - {click: End, long_click: Ending, swipe_up: Ending}
@@ -2309,11 +2027,11 @@ preset_keyboards:
       - {click: RightR}
       - {click: paste, long_click: paste, popup: [_Keyboard_clip, _Keyboard_phrase], key_back_color: key_back_color}
      # 第五行
-      - {click: Keyboard_last_lock, long_click: Menu, swipe_right: Return, swipe_up: Hide}
+      - {__include: preset_keyboards/numberyou/keys/@20}
       - {click: Keyboard_symbolsyou, long_click: Keyboard_numberyou, swipe_up: Keyboard_numberyou, swipe_right: select_all}
-      - {click: spacelskg, long_click: VOICE_ASSIST0, swipe_up: Keyboard_last_lock, swipe_left: undo, swipe_right: redo}
-      - {click: "，", ascii: ',', long_click: '.', swipe_up: '.', swipe_left: select_all}
-      - {click: Return, long_click: Color_settings, swipe_left: Return, swipe_up: Hide}
+      - {__include: preset_keyboards/numberyou/keys/@22, width: 20}
+      - {__include: preset_keyboards/lsjp/keys/@34}
+      - {__include: preset_keyboards/lsqwerty/keys/@46, width: 20}
   lsqwerty:
     name: qwerty鍵盤
     author: 阿森納裡
@@ -2355,7 +2073,7 @@ preset_keyboards:
       - {click: 'g', long_click: Page_Down, swipe_up: Page_Down}
       - {click: 'h', long_click: Left, swipe_up: Left}
       - {click: 'j', long_click: Right, swipe_up: Right}
-      - {click: 'k', long_click: Beginning, swipe_up: Beginning, swipe_right: CommitComment}
+      - {click: 'k', long_click: Beginning, swipe_up: Beginning, swipe_left: CommitComment, swipe_right: CommitComment}
       - {click: 'l', long_click: Ending, swipe_up: Ending}
       - {click: ';', label: " ；", long_click: ":", swipe_up: ":"}
      # 第四行
@@ -2366,15 +2084,15 @@ preset_keyboards:
       - {click: 'v', long_click: paste, swipe_up: paste, popup: [_Keyboard_clip, _Keyboard_phrase]}
       - {click: 'b', long_click: Up, swipe_up: Up}
       - {click: 'n', long_click: Down, swipe_up: Down}
-      - {click: 'm', long_click: '~', swipe_up: '~', swipe_right: CommitScriptText}
+      - {click: 'm', long_click: '~', swipe_up: '~', swipe_left: CommitScriptText, swipe_right: CommitScriptText}
       - {click: "'", label: " ’", long_click: '"', swipe_up: '"'}
       - {click: BackSpace, swipe_left: BackToPreviousSyllable, swipe_up: Escape, swipe_down: Delete, hint: *lb_Delete}
      # 第五行
       - {click: Mode_switch, long_click: Menu, swipe_right: Return, swipe_up: Hide, composing: Escapecx, width: 15}
       - {click: Keyboard_symbolsyouMs, ascii: Keyboard_symbolsyou, long_click: Keyboard_numberyou, swipe_up: Keyboard_numberyou, swipe_right: select_all, composing: lsjp_2x}
-      - {click: ',', long_click: '<', swipe_up: '<', label: " ，"}
+      - {click: ',', long_click: '<', swipe_up: '<', swipe_right: select_all, label: " ，"}
       - {click: spacels, long_click: VOICE_ASSIST0, swipe_up: Mode_switch, swipe_left: undo, swipe_right: redo, width: 30}  # 空格
-      - {click: '.', long_click: '>', swipe_up: '>', label: " 。"}
+      - {click: '.', long_click: '>', swipe_up: '>', swipe_left: select_all, label: " 。"}
       - {click: '/', long_click: '?', swipe_up: '?', swipe_left: select_all, label: " 、", composing: lsjp_3x}
       - {click: Return, long_click: Color_settings, swipe_left: Return, swipe_up: Hide, width: 15}
   esperanto:
@@ -2430,7 +2148,7 @@ preset_keyboards:
       - {click: 3_ls15show, ascii: '3', long_click: 3cazj_lsjpshow, key_text_size: 18}
       - {click: x_ls15show, ascii: '*', long_click: xcazj_lsjpshow, swipe_up: xcazj_lsjpshow, key_text_size: 18}
       - {click: A_ls15show, ascii: 'A', long_click: Acazj_lsjpshow, swipe_up: Acazj_lsjpshow, key_text_size: 18}
-      - {click: BackSpace, swipe_left: BackToPreviousSyllable, swipe_up: Escape, swipe_down: Delete, hint: *lb_Delete, width: 15}
+      - {__include: preset_keyboards/lsqwerty/keys/@39, width: 15}
      # 第三行
       - {click: "'", ascii: "'", long_click: '"', swipe_up: '"', composing: "{space}'", width: 15}
       - {click: 4_ls15show, ascii: '4', long_click: 4cazj_lsjpshow, key_text_size: 18}
@@ -2450,9 +2168,9 @@ preset_keyboards:
      # 第五行
       - {click: Keyboard_lsjpqwerty_Mode, long_click: Menu, swipe_right: Return, swipe_up: Hide, composing: Escapecx, width: 15}
       - {click: Keyboard_symbolsyouMs, ascii: Keyboard_symbolsyou, long_click: Keyboard_numberyou, swipe_right: select_all, swipe_up: Keyboard_numberyou, composing: lsjp_2x}
-      - {click: spacels, long_click: VOICE_ASSIST0, swipe_up: Keyboard_lsjpqwerty_Mode, swipe_left: undo, swipe_right: redo, width: 42}
-      - {click: ',', long_click: '.', swipe_up: '.', swipe_left: select_all, label: ' ，'}
-      - {click: Return, long_click: Color_settings, swipe_left: Return, swipe_up: Hide, width: 15}
+      - {__include: preset_keyboards/lsqwerty/keys/@43, swipe_up: Keyboard_lsjpqwerty_Mode, width: 42}
+      - {click: ',', label: ' ，', long_click: '.', swipe_up: '.', swipe_left: select_all}
+      - {__include: preset_keyboards/lsqwerty/keys/@46, width: 15}
   lsjpqwerty:
     __include: preset_keyboards/lsqwerty
     __patch:
@@ -2580,20 +2298,20 @@ preset_keyboards:
       - {click: '?', label: ' ？', long_click: '!'}
       - {click: lsfc_strokeshow_h, composing: lsfc_strokeshow_hCo, ascii: 'h'}
       - {click: lsfc_strokeshow_s, composing: lsfc_strokeshow_sCo, ascii: 's'}
-      - {click: lsfc_strokeshow_p, composing: lsfc_strokeshow_pCo, ascii: 'p'}
-      - {click: BackSpace, swipe_left: BackToPreviousSyllable, swipe_down: Delete, hint: *lb_Delete}
+      - {click: lsfc_strokeshow_p, composing: lsfc_strokeshow_pCo, ascii: 'p', swipe_up: CommitComment}
+      - {__include: preset_keyboards/lsqwerty/keys/@39}
      # 第二行
       - {click: ';', label: ' ；', long_click: ':', composing: "{space};"}
       - {click: lsfc_strokeshow_n, composing: lsfc_strokeshow_nCo, ascii: 'n'}
       - {click: lsfc_strokeshow_z, composing: lsfc_strokeshow_zCo, ascii: 'z'}
-      - {click: ''}
+      - {click: '', swipe_up: CommitScriptText}
       - {click: Keyboard_last_lock, long_click: '^', ascii: Keyboard_last_lockMs, composing: Escapecx}
      # 第三行
       - {click: Keyboard_last_lock, long_click: Menu, ascii: Keyboard_last_lockMs, composing: Keyboard_last_lockEsc, width: 20}
-      - {click: ',', label: ' ，', width: 10}
-      - {click: spacels, long_click: VOICE_ASSIST0, width: 40}
-      - {click: '.', label: ' 。', width: 10}
-      - {click: Return, long_click: Color_settings, width: 20}
+      - {__include: preset_keyboards/lsqwerty/keys/@42, width: 10}
+      - {__include: preset_keyboards/lsqwerty/keys/@43, width: 40}
+      - {__include: preset_keyboards/lsqwerty/keys/@44, width: 10}
+      - {__include: preset_keyboards/lsqwerty/keys/@46, width: 20}
   lsfc_strokeB:
     __include: preset_keyboards/lsfc_stroke
     __patch:
@@ -2620,1841 +2338,19 @@ preset_keyboards:
       - {click: K_back, key_back_color: key_back_color}
       - {click: '', label: 'QQ群：150478288', width: 76}
       - {click: help_ls, key_back_color: key_back_color}
- # v李氏三拼鍵盤
-  triple_lishi15_express:
-    __include: preset_keyboards/ls15
-  triple_lishi15_romatzyh:
-    __include: preset_keyboards/ls15
-  triple_lishi15:
-    __include: preset_keyboards/ls15
-  ls15bz1:
-    __include: preset_keyboards/lsbz
-    __patch:
-      keys/@0: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls15bz1, label: "①基本原理", width: 50, key_border_color: key_symbol_color}
-      keys/@1: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls15bz21, label: "②编码方案", width: 50}
-      keys/@2:
-      keys/@3: {__include: preset_keyboards/lsbz/keys/@1, label: "所谓“三拼”，是指汉语“声-介-韵”的发音规律，　　"}
-      keys/@4: {__include: preset_keyboards/lsbz/keys/@1, label: "例如dian=d-i-an，中间的i就是介母，　　　　　　"}
-      keys/@5: {__include: preset_keyboards/lsbz/keys/@1, label: "介母只有iuü三个，例如dian,duan,lüe，　　　　　 "}
-      keys/@6: {__include: preset_keyboards/lsbz/keys/@1, label: "有的音节没有介母,可视为空介,例如dan=d-空-an。"}
-      keys/@7: {__include: preset_keyboards/lsbz/keys/@1}
-      keys/@8: {__include: preset_keyboards/lsbz/keys/@1, width: 76}
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz1, label: "(1)", width: 8, key_border_color: key_symbol_color}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz1p2, label: "(2)", width: 8}
-      keys/@11: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz1p3, label: "(3)", width: 8}
-      keys/@12: {__include: preset_keyboards/lsbz/keys/@2}
-      keys/@13: {__include: preset_keyboards/lsbz/keys/@3}
-      keys/@14: {__include: preset_keyboards/lsbz/keys/@4}
-  ls15bz1p2:
-    __include: preset_keyboards/ls15bz1
-    __patch:
-      keys/@3/label: "习惯上，把介母和韵母统称为韵母，介母就是韵母的 "
-      keys/@4/label: "第一个字母(或为空),所有韵母都是以aoeiuü开头的,"
-      keys/@5/label: "其中，aoe开头的韵母是空介韵母，又叫做基本韵母,"
-      keys/@6/label: "例如a,o,e；iuü开头的韵母是合成韵母，它们是由介 "
-      keys/@7/label: "母iuü和基本韵母组合而成的，例如ia,uo,üe。　　　"
-      keys/@9/key_border_color:
-      keys/@10/key_border_color: key_symbol_color
-      keys/@11/key_border_color:
-  ls15bz1p3:
-    __include: preset_keyboards/ls15bz1
-    __patch:
-      keys/@3/label: "可利用汉语的发音特点，按照“声-介-韵”的顺序输入"
-      keys/@4/label: "音节，如果在输入介母的同时也输入声调，则可用　"
-      keys/@5/label: "“声母-介调-韵母”三拼输入一个完整的带调汉语音节,"
-      keys/@6/label: "例如：diǎ=d-iˇ-a, guó=g-uˊ-o, lüè=l-üˋ-e。　　"
-      keys/@7/label: ' '
-      keys/@9/key_border_color:
-      keys/@10/key_border_color:
-      keys/@11/key_border_color: key_symbol_color
-  ls15bz21:
-    __include: preset_keyboards/lsbz
-    __patch:
-      keys/@0: {__include: preset_keyboards/ls15bz1/keys/@0, __patch: {key_border_color:}}
-      keys/@1: {__include: preset_keyboards/ls15bz1/keys/@1, key_border_color: key_symbol_color}
-      keys/@2:
-      keys/@3: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls15bz21, label: "第1键:声母", width: 20.5, key_text_size: 13, key_border_color: key_symbol_color}
-      keys/@4: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls15bz21jw, label: "键位", width: 9, key_text_size: 12, key_border_color: key_symbol_color}
-      keys/@5: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls15bz22, label: "第2键:介母+声调", width: 32, key_text_size: 13}
-      keys/@6: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls15bz22jw, label: "键位", width: 9, key_text_size: 12}
-      keys/@7: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls15bz23, label: "第3键:韵母", width: 20.5, key_text_size: 13}
-      keys/@8: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls15bz23jw, label: "键位", width: 9, key_text_size: 12}
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, label: "把汉语拼音的23个声母安排在15个按键上,按照汉语"}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, label: "拼音声母表的顺序排列，其中部分声母共键，但由于"}
-      keys/@11: {__include: preset_keyboards/lsbz/keys/@1, label: "声韵组合不同,所以不像九宫键一样会产生重复音节,"}
-      keys/@12: {__include: preset_keyboards/lsbz/keys/@1, label: "详见键位说明。　　　　　　　　　　　　　　　　"}
-      keys/@13: {__include: preset_keyboards/lsbz/keys/@1}
-      keys/@14: {__include: preset_keyboards/lsbz/keys/@2}
-      keys/@15: {__include: preset_keyboards/lsbz/keys/@3}
-      keys/@16: {__include: preset_keyboards/lsbz/keys/@4}
-  ls15bz22:
-    __include: preset_keyboards/ls15bz21
-    __patch:
-      keys/@3/key_border_color:
-      keys/@4/key_border_color:
-      keys/@5/key_border_color: key_symbol_color
-      keys/@6/key_border_color: key_symbol_color
-      keys/@7/key_border_color:
-      keys/@8/key_border_color:
-      keys/@9/label: "所有韵母都是以aoeiuü六个字母开头的，其中，　　"
-      keys/@10/label: "aoe开头的韵母是基本韵母(空介韵母)，如a,o,e等，"
-      keys/@11/label: "iuü开头的韵母是合成韵母(有介韵母),如ia,uo,üe等,"
-      keys/@12/label: "iuü三个韵母又叫介母，它们可和基本韵母结合构成"
-      keys/@13/label: "合成韵母。　　　　　　　　　　　　　　　　　 "
-      
-      keys/@15/width: 55
-      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22, label: "(1)", width: 7, key_border_color: key_symbol_color}
-      keys/@after 16: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22p2, label: "(2)", width: 7}
-      keys/@after 17: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22p3, label: "(3)", width: 7}
-  ls15bz22p2:
-    __include: preset_keyboards/ls15bz22
-    __patch:
-      keys/@9/label: "根据韵母首字母(介母)的不同，可以把韵母分为三类:"
-      keys/@10/label: "一是空介韵母(即aoe开头的基本韵母),如a,an,ang等;"
-      keys/@11/label: "二是介母i开头的韵母,如ia,ian,iang等，由i+基本韵母"
-      keys/@12/label: "构成；三是介母uü开头的韵母,如ua,uan,üe等，由uü"
-      keys/@13/label: "+基本韵母构成。　　　　　　　　　　　　　　　 "
-      keys/@16/key_border_color:
-      keys/@17/key_border_color: key_symbol_color
-      keys/@18/key_border_color:
-  ls15bz22p3:
-    __include: preset_keyboards/ls15bz22
-    __patch:
-      keys/@9/label: "在第2键中，分别以1-3行引导三类介母，　　　　　 "
-      keys/@10/label: "以1-5列区分五种声调(1-4声和轻声)。　　　　　　"
-      keys/@11/label: ' '
-      keys/@12/label: ' '
-      keys/@13/label: ' '
-      keys/@16/key_border_color:
-      keys/@17/key_border_color:
-      keys/@18/key_border_color: key_symbol_color
-  ls15bz23:
-    __include: preset_keyboards/ls15bz21
-    __patch:
-      keys/@3/key_border_color:
-      keys/@4/key_border_color:
-      keys/@5/key_border_color:
-      keys/@6/key_border_color:
-      keys/@7/key_border_color: key_symbol_color
-      keys/@8/key_border_color: key_symbol_color
-      keys/@9/label: "24个韵母按照韵母表顺序排列,根据介母(韵母首字母)"
-      keys/@10/label: "的不同分三类:空介韵母(aoe开头的基本韵母)、i开头"
-      keys/@11/label: "的韵母和uü开头的韵母,分别由相应的第2键引导出。"
-      keys/@12/label: "三类声母引导的介韵键盘各有不同特点,具体请看键位"
-      keys/@13/label: "说明。　　　　　　　　　　　　　　　　　　　　 "
-  ls15bz21jw:
-    __include: preset_keyboards/ls15bz21
-    __patch:
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, width: 8.5}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, width: 6.5}
-      keys/@11: {__include: preset_keyboards/lsbz/keys/@1, width: 70}
-      keys/@12:
-      keys/@13:
-      keys/@after 13:
-      keys/@after 14:
-      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 16:
-      keys/@after 17:
-      
-      keys/@after 18: {__include: preset_keyboards/lsbz/keys/@1, width: 15, height: 40}
-      keys/@after 19:
-      keys/@after 20: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw11, long_click: ls15bz21jw11jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 21: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw12, long_click: ls15bz21jw12jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 22: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw13, long_click: ls15bz21jw13jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 23: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw14, long_click: ls15bz21jw14jm, symbol_text_size: 8, key_text_color: hilited_text_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 24: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw15, long_click: ls15bz21jw15jm, symbol_text_size: 8, key_text_color: hilited_text_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 25: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 26:
-      keys/@after 27:
-      
-      keys/@after 28: {__include: preset_keyboards/lsbz/keys/@1, width: 15, height: 40}
-      keys/@after 29:
-      keys/@after 30: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw21, long_click: ls15bz21jw21jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 31: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw22, long_click: ls15bz21jw22jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 32: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw23, long_click: ls15bz21jw23jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 33: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw24, long_click: ls15bz21jw24jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 34: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw25, long_click: ls15bz21jw25jm, symbol_text_size: 8, key_text_color: hilited_text_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 35: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 36:
-      keys/@after 37:
-      
-      keys/@after 38: {__include: preset_keyboards/lsbz/keys/@1, width: 15, height: 40}
-      keys/@after 39:
-      keys/@after 40: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw31, long_click: ls15bz21jw31jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 41: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw32, long_click: ls15bz21jw32jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 42: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw33, long_click: ls15bz21jw33jm, symbol_text_size: 8, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 43: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw34, long_click: ls15bz21jw34jm, symbol_text_size: 8, key_text_color: key_symbol_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 44: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz21jw35, long_click: ls15bz21jw35jm, symbol_text_size: 8, key_text_color: hilited_text_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 45: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 46:
-      keys/@after 47:
-      
-      keys/@15: {__include: preset_keyboards/lsbz/keys/@1, width: 64}
-      keys/@after 50: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz21jwsm1, label: "说明⇨", width: 12}
-  ls15bz22jw:
-    __include: preset_keyboards/ls15bz22
-    __patch:
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, label: '«1', click: Keyboard_ls15bz21jw, width: 10}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, width: 5}
-      keys/@11:
-      keys/@12: {__include: preset_keyboards/lsbz/keys/@1, label: '+ 第2键', width: 70}
-      keys/@13:
-      keys/@after 13:
-      keys/@after 14:
-      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 16:
-      keys/@after 17:
-      
-      keys/@after 18: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jw, label: '常规', key_border_color: key_symbol_color, round_corner: 8, key_text_size: 12, width: 10, height: 40}
-      keys/@after 19: {__include: preset_keyboards/lsbz/keys/@1, width: 5}
-      keys/@after 20: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw11, long_click: ls15bz22jw11jm, key_back_color: text_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 21: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw12, long_click: ls15bz22jw12jm, key_back_color: text_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 22: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw13, long_click: ls15bz22jw13jm, key_back_color: text_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 23: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw14, long_click: ls15bz22jw14jm, key_back_color: text_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 24: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw15, long_click: ls15bz22jw15jm, key_back_color: text_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 25: {__include: preset_keyboards/lsbz/keys/@1, label: '☜', key_text_size: 12, width: 3}
-      keys/@after 26: {__include: preset_keyboards/lsbz/keys/@1, label: '空介', key_text_size: 12, width: 12}
-      keys/@after 27:
-      
-      keys/@after 28: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwz, label: 'zh 𝘇', key_text_color: hilited_text_color, round_corner: 8, key_text_size: 12, width: 10, height: 40}
-      keys/@after 29: {__include: preset_keyboards/lsbz/keys/@1, width: 5}
-      keys/@after 30: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw21, long_click: ls15bz22jw21jm, key_back_color: hilited_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 31: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw22, long_click: ls15bz22jw22jm, key_back_color: hilited_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 32: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw23, long_click: ls15bz22jw23jm, key_back_color: hilited_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 33: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw24, long_click: ls15bz22jw24jm, key_back_color: hilited_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 34: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw25, long_click: ls15bz22jw25jm, key_back_color: hilited_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 35: {__include: preset_keyboards/lsbz/keys/@1, label: '☜', key_text_size: 12, width: 3}
-      keys/@after 36: {__include: preset_keyboards/lsbz/keys/@1, label: '介母𝗶', key_text_size: 12, width: 12}
-      keys/@after 37:
-      
-      keys/@after 38: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwy, label: '零𝘆w', key_text_color: key_symbol_color, round_corner: 8, key_text_size: 12, width: 10, height: 40}
-      keys/@after 39: {__include: preset_keyboards/lsbz/keys/@1, width: 5}
-      keys/@after 40: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw31, long_click: ls15bz22jw31jm, key_back_color: off_key_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 41: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw32, long_click: ls15bz22jw32jm, key_back_color: off_key_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 42: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw33, long_click: ls15bz22jw33jm, key_back_color: off_key_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 43: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw34, long_click: ls15bz22jw34jm, key_back_color: off_key_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 44: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz22jw35, long_click: ls15bz22jw35jm, key_back_color: off_key_back_color, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 45: {__include: preset_keyboards/lsbz/keys/@1, label: '☜', key_text_size: 12, width: 3}
-      keys/@after 46: {__include: preset_keyboards/lsbz/keys/@1, label: '介母u𝘂̈', key_text_size: 12, width: 12}
-      keys/@after 47:
-      
-      keys/@15: {__include: preset_keyboards/lsbz/keys/@1, width: 64}
-      keys/@16: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwsm1, label: "说明⇨", width: 12}
-      keys/@17:
-      keys/@18:
-  ls15bz22jwz:
-    __include: preset_keyboards/ls15bz22jw
-    __patch:
-      keys/@19/key_border_color:
-      keys/@29/key_border_color: key_symbol_color
-      keys/@39/key_border_color:
-      
-      keys/@21/click: ls15bz22jwz11
-      keys/@22/click: ls15bz22jwz12
-      keys/@23/click: ls15bz22jwz13
-      keys/@24/click: ls15bz22jwz14
-      keys/@25/click: ls15bz22jwz15
-      keys/@27/label: 'zh'
-      
-      keys/@31/click: ls15bz22jwz21
-      keys/@32/click: ls15bz22jwz22
-      keys/@33/click: ls15bz22jwz23
-      keys/@34/click: ls15bz22jwz24
-      keys/@35/click: ls15bz22jwz25
-      keys/@37/label: '𝘇'
-      
-      keys/@41/click: ls15bz22jwz31
-      keys/@42/click: ls15bz22jwz32
-      keys/@43/click: ls15bz22jwz33
-      keys/@44/click: ls15bz22jwz34
-      keys/@45/click: ls15bz22jwz35
-      keys/@47/label: 'zhu 𝘇𝘂'
-      
-      keys/@51/click: Keyboard_ls15bz22jwsm4
-      
-      keys/@21/key_text_color: hilited_text_color
-      keys/@22/key_text_color: hilited_text_color
-      keys/@23/key_text_color: hilited_text_color
-      keys/@24/key_text_color: hilited_text_color
-      keys/@25/key_text_color: hilited_text_color
-      keys/@31/key_text_color: hilited_text_color
-      keys/@32/key_text_color: hilited_text_color
-      keys/@33/key_text_color: hilited_text_color
-      keys/@34/key_text_color: hilited_text_color
-      keys/@35/key_text_color: hilited_text_color
-      keys/@41/key_text_color: hilited_text_color
-      keys/@42/key_text_color: hilited_text_color
-      keys/@43/key_text_color: hilited_text_color
-      keys/@44/key_text_color: hilited_text_color
-      keys/@45/key_text_color: hilited_text_color
-      
-      keys/@27/key_text_color: hilited_text_color
-      keys/@37/key_text_color: hilited_text_color
-      keys/@47/key_text_color: hilited_text_color
-  ls15bz22jwy:
-    __include: preset_keyboards/ls15bz22jw
-    __patch:
-      keys/@19/key_border_color:
-      keys/@29/key_border_color:
-      keys/@39/key_border_color: key_symbol_color
-      
-      keys/@21/click: ls15bz22jwy11
-      keys/@22/click: ls15bz22jwy12
-      keys/@23/click: ls15bz22jwy13
-      keys/@24/click: ls15bz22jwy14
-      keys/@25/click: ls15bz22jwy15
-      keys/@27/label: '零声母'
-      
-      keys/@31/click: ls15bz22jwy21
-      keys/@32/click: ls15bz22jwy22
-      keys/@33/click: ls15bz22jwy23
-      keys/@34/click: ls15bz22jwy24
-      keys/@35/click: ls15bz22jwy25
-      keys/@37/label: '𝘆'
-      
-      keys/@41/click: ls15bz22jwy31
-      keys/@42/click: ls15bz22jwy32
-      keys/@43/click: ls15bz22jwy33
-      keys/@44/click: ls15bz22jwy34
-      keys/@45/click: ls15bz22jwy35
-      keys/@47/label: 'w 𝘆𝘂'
-      
-      keys/@51/click: Keyboard_ls15bz22jwsm6
-      
-      keys/@21/key_text_color: key_symbol_color
-      keys/@22/key_text_color: key_symbol_color
-      keys/@23/key_text_color: key_symbol_color
-      keys/@24/key_text_color: key_symbol_color
-      keys/@25/key_text_color: key_symbol_color
-      keys/@31/key_text_color: key_symbol_color
-      keys/@32/key_text_color: key_symbol_color
-      keys/@33/key_text_color: key_symbol_color
-      keys/@34/key_text_color: key_symbol_color
-      keys/@35/key_text_color: key_symbol_color
-      keys/@41/key_text_color: key_symbol_color
-      keys/@42/key_text_color: key_symbol_color
-      keys/@43/key_text_color: key_symbol_color
-      keys/@44/key_text_color: key_symbol_color
-      keys/@45/key_text_color: key_symbol_color
-      
-      keys/@27/key_text_color: key_symbol_color
-      keys/@37/key_text_color: key_symbol_color
-      keys/@47/key_text_color: key_symbol_color
-  ls15bz23jw:
-    __include: preset_keyboards/ls15bz23
-    __patch:
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, label: '«1', click: Keyboard_ls15bz21jw, width: 8.5}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, label: '«2', click: Keyboard_ls15bz22jw, width: 6.5}
-      keys/@11:
-      keys/@12: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jw, label: '+ 第3键 [总览]', width: 70, key_border_color: key_symbol_color}
-      keys/@13:
-      keys/@after 13:
-      keys/@after 14:
-      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 16:
-      keys/@after 17:
-      
-      keys/@after 18: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jw1, label: '常规', round_corner: 8, key_text_size: 12, width: 8.5, height: 40}
-      keys/@after 19: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jw1, label: '1行', key_back_color: text_back_color, round_corner: 8, key_text_size: 12, width: 6.5}
-      keys/@after 20: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw011, long_click: ls15bz23jw11jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 21: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw012, long_click: ls15bz23jw12jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 22: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw013, long_click: ls15bz23jw13jm, round_corner: 8, key_text_size: 13, width: 14}
-      keys/@after 23: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw014, long_click: ls15bz23jw14jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 24: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw015, long_click: ls15bz23jw15jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 25: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 26:
-      keys/@after 27:
-      
-      keys/@after 28: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwz1, label: 'zh 𝘇', key_text_color: hilited_text_color, round_corner: 8, key_text_size: 12, width: 8.5, height: 40}
-      keys/@after 29: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jw2, label: '2行', key_back_color: hilited_back_color, round_corner: 8, key_text_size: 12, width: 6.5}
-      keys/@after 30: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw021, long_click: ls15bz23jw21jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 31: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw022, long_click: ls15bz23jw22jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 32: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw023, long_click: ls15bz23jw23jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 33: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw024, long_click: ls15bz23jw24jm, round_corner: 8, key_text_size: 13, width: 14}
-      keys/@after 34: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw025, long_click: ls15bz23jw25jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 35: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 36:
-      keys/@after 37:
-      
-      keys/@after 38: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwy1, label: '零𝘆w', key_text_color: key_symbol_color, round_corner: 8, key_text_size: 11, width: 8.5, height: 40}
-      keys/@after 39: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jw3, label: '3行', key_back_color: off_key_back_color, round_corner: 8, key_text_size: 12, width: 6.5}
-      keys/@after 40: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw031, long_click: ls15bz23jw31jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 41: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw032, long_click: ls15bz23jw32jm, round_corner: 8, key_text_size: 11, width: 14}
-      keys/@after 42: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw033, long_click: ls15bz23jw33jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 43: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw034, long_click: ls15bz23jw34jm, round_corner: 8, key_text_size: 12, width: 14}
-      keys/@after 44: {__include: preset_keyboards/lsbz/keys/@1, click: ls15bz23jw035, long_click: ls15bz23jw35jm, round_corner: 8, key_text_size: 14, width: 14}
-      keys/@after 45: {__include: preset_keyboards/lsbz/keys/@1, width: 15}
-      keys/@after 46:
-      keys/@after 47:
-      
-      keys/@15: {__include: preset_keyboards/lsbz/keys/@1, width: 64}
-      keys/@after 50: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwsm1, label: "说明⇨", width: 12}
-  ls15bz23jw1:
-    __include: preset_keyboards/ls15bz23jw
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jw
-      keys/@12/key_border_color:
-      
-      keys/@19/key_border_color: key_symbol_color
-      keys/@29/key_border_color:
-      keys/@39/key_border_color:
-      
-      keys/@20/key_border_color: key_symbol_color
-      keys/@30/key_border_color:
-      keys/@40/key_border_color:
-      
-      keys/@19/click: Keyboard_ls15bz23jw1
-      keys/@29/click: Keyboard_ls15bz23jwz1
-      keys/@39/click: Keyboard_ls15bz23jwy1
-      
-      keys/@20/label: '空'
-      keys/@30/label: '𝗶'
-      keys/@40/label: 'u𝘂̈'
-      
-      keys/@21/click: ls15bz23jw111
-      keys/@22/click: ls15bz23jw112
-      keys/@23/click: ls15bz23jw113
-      keys/@24/click: ls15bz23jw114
-      keys/@25/click: ls15bz23jw115
-      keys/@31/click: ls15bz23jw121
-      keys/@32/click: ls15bz23jw122
-      keys/@33/click: ls15bz23jw123
-      keys/@34/click: ls15bz23jw124
-      keys/@35/click: ls15bz23jw125
-      keys/@41/click: ls15bz23jw131
-      keys/@42/click: ls15bz23jw132
-      keys/@43/click: ls15bz23jw133
-      keys/@44/click: ls15bz23jw134
-      keys/@45/click: ls15bz23jw135
-      
-      keys/@21/key_text_size: 14
-      keys/@22/key_text_size: 14
-      keys/@23/key_text_size: 14
-      keys/@24/key_text_size: 14
-      keys/@25/key_text_size: 14
-      keys/@31/key_text_size: 14
-      keys/@32/key_text_size: 14
-      keys/@33/key_text_size: 14
-      keys/@34/key_text_size: 14
-      keys/@35/key_text_size: 14
-      keys/@41/key_text_size: 14
-      keys/@42/key_text_size: 14
-      keys/@43/key_text_size: 14
-      keys/@44/key_text_size: 14
-      keys/@45/key_text_size: 14
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm1
-      
-      keys/@21/key_back_color: text_back_color
-      keys/@22/key_back_color: text_back_color
-      keys/@23/key_back_color: text_back_color
-      keys/@24/key_back_color: text_back_color
-      keys/@25/key_back_color: text_back_color
-      keys/@31/key_back_color: text_back_color
-      keys/@32/key_back_color: text_back_color
-      keys/@33/key_back_color: text_back_color
-      keys/@34/key_back_color: text_back_color
-      keys/@35/key_back_color: text_back_color
-      keys/@41/key_back_color: text_back_color
-      keys/@42/key_back_color: text_back_color
-      keys/@43/key_back_color: text_back_color
-      keys/@44/key_back_color: text_back_color
-      keys/@45/key_back_color: text_back_color
-  ls15bz23jw2:
-    __include: preset_keyboards/ls15bz23jw
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jw
-      keys/@12/key_border_color:
-      
-      keys/@19/key_border_color: key_symbol_color
-      keys/@29/key_border_color:
-      keys/@39/key_border_color:
-      
-      keys/@20/key_border_color:
-      keys/@30/key_border_color: key_symbol_color
-      keys/@40/key_border_color:
-      
-      keys/@19/click: Keyboard_ls15bz23jw2
-      keys/@29/click: Keyboard_ls15bz23jwz2
-      keys/@39/click: Keyboard_ls15bz23jwy2
-      
-      keys/@20/label: '空'
-      keys/@30/label: '𝗶'
-      keys/@40/label: 'u𝘂̈'
-      
-      keys/@21/click: ls15bz23jw211
-      keys/@22/click: ls15bz23jw212
-      keys/@23/click: ls15bz23jw213
-      keys/@24/click: ls15bz23jw214
-      keys/@25/click: ls15bz23jw215
-      keys/@31/click: ls15bz23jw221
-      keys/@32/click: ls15bz23jw222
-      keys/@33/click: ls15bz23jw223
-      keys/@34/click: ls15bz23jw224
-      keys/@35/click: ls15bz23jw225
-      keys/@41/click: ls15bz23jw231
-      keys/@42/click: ls15bz23jw232
-      keys/@43/click: ls15bz23jw233
-      keys/@44/click: ls15bz23jw234
-      keys/@45/click: ls15bz23jw235
-      
-      keys/@21/key_text_size: 14
-      keys/@22/key_text_size: 14
-      keys/@23/key_text_size: 14
-      keys/@24/key_text_size: 14
-      keys/@25/key_text_size: 14
-      keys/@31/key_text_size: 14
-      keys/@32/key_text_size: 14
-      keys/@33/key_text_size: 14
-      keys/@34/key_text_size: 14
-      keys/@35/key_text_size: 14
-      keys/@41/key_text_size: 14
-      keys/@42/key_text_size: 14
-      keys/@43/key_text_size: 14
-      keys/@44/key_text_size: 14
-      keys/@45/key_text_size: 14
-      
-      keys/@34/hint: '𝗶𝗼𝘂'
-      keys/@42/hint: '𝗶𝗲𝗻'
-      keys/@44/hint: '𝗶𝗲𝗻𝗴'
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm1
-      
-      keys/@21/key_back_color: hilited_back_color
-      keys/@22/key_back_color: hilited_back_color
-      keys/@23/key_back_color: hilited_back_color
-      keys/@24/key_back_color: hilited_back_color
-      keys/@25/key_back_color: hilited_back_color
-      keys/@31/key_back_color: hilited_back_color
-      keys/@32/key_back_color: hilited_back_color
-      keys/@33/key_back_color: hilited_back_color
-      keys/@34/key_back_color: hilited_back_color
-      keys/@35/key_back_color: hilited_back_color
-      keys/@41/key_back_color: hilited_back_color
-      keys/@42/key_back_color: hilited_back_color
-      keys/@43/key_back_color: hilited_back_color
-      keys/@44/key_back_color: hilited_back_color
-      keys/@45/key_back_color: hilited_back_color
-  ls15bz23jw3:
-    __include: preset_keyboards/ls15bz23jw
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jw
-      keys/@12/key_border_color:
-      
-      keys/@19/key_border_color: key_symbol_color
-      keys/@29/key_border_color:
-      keys/@39/key_border_color:
-      
-      keys/@20/key_border_color:
-      keys/@30/key_border_color:
-      keys/@40/key_border_color: key_symbol_color
-      
-      keys/@19/click: Keyboard_ls15bz23jw3
-      keys/@29/click: Keyboard_ls15bz23jwz3
-      keys/@39/click: Keyboard_ls15bz23jwy3
-      
-      keys/@20/label: '空'
-      keys/@30/label: '𝗶'
-      keys/@40/label: 'u𝘂̈'
-      
-      keys/@21/click: ls15bz23jw311
-      keys/@22/click: ls15bz23jw312
-      keys/@23/click: ls15bz23jw313
-      keys/@24/click: ls15bz23jw314
-      keys/@25/click: ls15bz23jw315
-      keys/@31/click: ls15bz23jw321
-      keys/@32/click: ls15bz23jw322
-      keys/@33/click: ls15bz23jw323
-      keys/@34/click: ls15bz23jw324
-      keys/@35/click: ls15bz23jw325
-      keys/@41/click: ls15bz23jw331
-      keys/@42/click: ls15bz23jw332
-      keys/@43/click: ls15bz23jw333
-      keys/@44/click: ls15bz23jw334
-      keys/@45/click: ls15bz23jw335
-      
-      keys/@21/key_text_size: 14
-      keys/@22/key_text_size: 14
-      keys/@23/key_text_size: 14
-      keys/@24/key_text_size: 14
-      keys/@25/key_text_size: 14
-      keys/@31/key_text_size: 14
-      keys/@32/key_text_size: 14
-      keys/@33/key_text_size: 14
-      keys/@34/key_text_size: 14
-      keys/@35/key_text_size: 14
-      keys/@41/key_text_size: 14
-      keys/@42/key_text_size: 14
-      keys/@43/key_text_size: 14
-      keys/@44/key_text_size: 14
-      keys/@45/key_text_size: 14
-      
-      keys/@32/hint: 'uei'
-      keys/@35/hint: '𝘂̈𝗲𝗻'
-      keys/@42/hint: 'uen'
-      keys/@44/hint: 'ong'
-      keys/@45/hint: '𝗶𝗼𝗻𝗴'
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm1
-      
-      keys/@21/key_back_color: off_key_back_color
-      keys/@22/key_back_color: off_key_back_color
-      keys/@23/key_back_color: off_key_back_color
-      keys/@24/key_back_color: off_key_back_color
-      keys/@25/key_back_color: off_key_back_color
-      keys/@31/key_back_color: off_key_back_color
-      keys/@32/key_back_color: off_key_back_color
-      keys/@33/key_back_color: off_key_back_color
-      keys/@34/key_back_color: off_key_back_color
-      keys/@35/key_back_color: off_key_back_color
-      keys/@41/key_back_color: off_key_back_color
-      keys/@42/key_back_color: off_key_back_color
-      keys/@43/key_back_color: off_key_back_color
-      keys/@44/key_back_color: off_key_back_color
-      keys/@45/key_back_color: off_key_back_color
-  ls15bz23jwz1:
-    __include: preset_keyboards/ls15bz23jw1
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jwz
-      
-      keys/@19/key_border_color:
-      keys/@29/key_border_color: key_symbol_color
-      keys/@39/key_border_color:
-      
-      keys/@20/key_border_color: key_symbol_color
-      keys/@30/key_border_color:
-      keys/@40/key_border_color:
-      
-      keys/@20/click: Keyboard_ls15bz23jwz1
-      keys/@30/click: Keyboard_ls15bz23jwz2
-      keys/@40/click: Keyboard_ls15bz23jwz3
-      
-      keys/@20/label: 'zh'
-      keys/@30/label: '𝘇'
-      keys/@40/label: 'u𝘂'
-      
-      keys/@21/click: ls15bz23jwz111
-      keys/@22/click: ls15bz23jwz112
-      keys/@23/click: ls15bz23jwz113
-      keys/@24/click: ls15bz23jwz114
-      keys/@25/click: ls15bz23jwz115
-      keys/@31/click: ls15bz23jwz121
-      keys/@32/click: ls15bz23jwz122
-      keys/@33/click: ls15bz23jwz123
-      keys/@34/click: ls15bz23jwz124
-      keys/@35/click: ls15bz23jwz125
-      keys/@41/click: ls15bz23jwz131
-      keys/@42/click: ls15bz23jwz132
-      keys/@43/click: ls15bz23jwz133
-      keys/@44/click: ls15bz23jwz134
-      keys/@45/click: ls15bz23jwz135
-      
-      keys/@21/hint:
-      keys/@22/hint:
-      keys/@23/hint:
-      keys/@24/hint:
-      keys/@25/hint:
-      keys/@31/hint:
-      keys/@32/hint:
-      keys/@33/hint:
-      keys/@34/hint:
-      keys/@35/hint:
-      keys/@41/hint:
-      keys/@42/hint:
-      keys/@43/hint:
-      keys/@44/hint:
-      keys/@45/hint:
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm4
-      
-      keys/@20/key_text_color: hilited_text_color
-      keys/@30/key_text_color: hilited_text_color
-      keys/@40/key_text_color: hilited_text_color
-      
-      keys/@21/key_text_color: hilited_text_color
-      keys/@22/key_text_color: hilited_text_color
-      keys/@23/key_text_color: hilited_text_color
-      keys/@24/key_text_color: hilited_text_color
-      keys/@25/key_text_color: hilited_text_color
-      keys/@31/key_text_color: hilited_text_color
-      keys/@32/key_text_color: hilited_text_color
-      keys/@33/key_text_color: hilited_text_color
-      keys/@34/key_text_color: hilited_text_color
-      keys/@35/key_text_color: hilited_text_color
-      keys/@41/key_text_color: hilited_text_color
-      keys/@42/key_text_color: hilited_text_color
-      keys/@43/key_text_color: hilited_text_color
-      keys/@44/key_text_color: hilited_text_color
-      keys/@45/key_text_color: hilited_text_color
-  ls15bz23jwz2:
-    __include: preset_keyboards/ls15bz23jw2
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jwz
-      
-      keys/@19/key_border_color:
-      keys/@29/key_border_color: key_symbol_color
-      keys/@39/key_border_color:
-      
-      keys/@20/key_border_color:
-      keys/@30/key_border_color: key_symbol_color
-      keys/@40/key_border_color:
-      
-      keys/@20/click: Keyboard_ls15bz23jwz1
-      keys/@30/click: Keyboard_ls15bz23jwz2
-      keys/@40/click: Keyboard_ls15bz23jwz3
-      
-      keys/@20/label: 'zh'
-      keys/@30/label: '𝘇'
-      keys/@40/label: 'u𝘂'
-      
-      keys/@21/click: ls15bz23jwz211
-      keys/@22/click: ls15bz23jwz212
-      keys/@23/click: ls15bz23jwz213
-      keys/@24/click: ls15bz23jwz214
-      keys/@25/click: ls15bz23jwz215
-      keys/@31/click: ls15bz23jwz221
-      keys/@32/click: ls15bz23jwz222
-      keys/@33/click: ls15bz23jwz223
-      keys/@34/click: ls15bz23jwz224
-      keys/@35/click: ls15bz23jwz225
-      keys/@41/click: ls15bz23jwz231
-      keys/@42/click: ls15bz23jwz232
-      keys/@43/click: ls15bz23jwz233
-      keys/@44/click: ls15bz23jwz234
-      keys/@45/click: ls15bz23jwz235
-      
-      keys/@21/hint:
-      keys/@22/hint:
-      keys/@23/hint:
-      keys/@24/hint:
-      keys/@25/hint:
-      keys/@31/hint:
-      keys/@32/hint:
-      keys/@33/hint:
-      keys/@34/hint:
-      keys/@35/hint:
-      keys/@41/hint:
-      keys/@42/hint:
-      keys/@43/hint:
-      keys/@44/hint:
-      keys/@45/hint:
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm4
-      
-      keys/@20/key_text_color: hilited_text_color
-      keys/@30/key_text_color: hilited_text_color
-      keys/@40/key_text_color: hilited_text_color
-      
-      keys/@21/key_text_color: hilited_text_color
-      keys/@22/key_text_color: hilited_text_color
-      keys/@23/key_text_color: hilited_text_color
-      keys/@24/key_text_color: hilited_text_color
-      keys/@25/key_text_color: hilited_text_color
-      keys/@31/key_text_color: hilited_text_color
-      keys/@32/key_text_color: hilited_text_color
-      keys/@33/key_text_color: hilited_text_color
-      keys/@34/key_text_color: hilited_text_color
-      keys/@35/key_text_color: hilited_text_color
-      keys/@41/key_text_color: hilited_text_color
-      keys/@42/key_text_color: hilited_text_color
-      keys/@43/key_text_color: hilited_text_color
-      keys/@44/key_text_color: hilited_text_color
-      keys/@45/key_text_color: hilited_text_color
-  ls15bz23jwz3:
-    __include: preset_keyboards/ls15bz23jw3
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jwz
-      
-      keys/@19/key_border_color:
-      keys/@29/key_border_color: key_symbol_color
-      keys/@39/key_border_color:
-      
-      keys/@20/key_border_color:
-      keys/@30/key_border_color:
-      keys/@40/key_border_color: key_symbol_color
-      
-      keys/@20/click: Keyboard_ls15bz23jwz1
-      keys/@30/click: Keyboard_ls15bz23jwz2
-      keys/@40/click: Keyboard_ls15bz23jwz3
-      
-      keys/@20/label: 'zh'
-      keys/@30/label: '𝘇'
-      keys/@40/label: 'u𝘂'
-      
-      keys/@21/click: ls15bz23jwz311
-      keys/@22/click: ls15bz23jwz312
-      keys/@23/click: ls15bz23jwz313
-      keys/@24/click: ls15bz23jwz314
-      keys/@25/click: ls15bz23jwz315
-      keys/@31/click: ls15bz23jwz321
-      keys/@32/click: ls15bz23jwz322
-      keys/@33/click: ls15bz23jwz323
-      keys/@34/click: ls15bz23jwz324
-      keys/@35/click: ls15bz23jwz325
-      keys/@41/click: ls15bz23jwz331
-      keys/@42/click: ls15bz23jwz332
-      keys/@43/click: ls15bz23jwz333
-      keys/@44/click: ls15bz23jwz334
-      keys/@45/click: ls15bz23jwz335
-      
-      keys/@21/hint:
-      keys/@22/hint:
-      keys/@23/hint:
-      keys/@24/hint: '𝘂𝗲𝗶'
-      keys/@25/hint:
-      keys/@31/hint:
-      keys/@32/hint: 'uei'
-      keys/@33/hint:
-      keys/@34/hint:
-      keys/@35/hint: '𝘂𝗲𝗻'
-      keys/@41/hint:
-      keys/@42/hint: 'uen'
-      keys/@43/hint:
-      keys/@44/hint: 'ong'
-      keys/@45/hint: '𝗼𝗻𝗴'
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm4
-      
-      keys/@20/key_text_color: hilited_text_color
-      keys/@30/key_text_color: hilited_text_color
-      keys/@40/key_text_color: hilited_text_color
-      
-      keys/@21/key_text_color: hilited_text_color
-      keys/@22/key_text_color: hilited_text_color
-      keys/@23/key_text_color: hilited_text_color
-      keys/@24/key_text_color: hilited_text_color
-      keys/@25/key_text_color: hilited_text_color
-      keys/@31/key_text_color: hilited_text_color
-      keys/@32/key_text_color: hilited_text_color
-      keys/@33/key_text_color: hilited_text_color
-      keys/@34/key_text_color: hilited_text_color
-      keys/@35/key_text_color: hilited_text_color
-      keys/@41/key_text_color: hilited_text_color
-      keys/@42/key_text_color: hilited_text_color
-      keys/@43/key_text_color: hilited_text_color
-      keys/@44/key_text_color: hilited_text_color
-      keys/@45/key_text_color: hilited_text_color
-  ls15bz23jwy1:
-    __include: preset_keyboards/ls15bz23jw1
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jwy
-      
-      keys/@19/key_border_color:
-      keys/@29/key_border_color:
-      keys/@39/key_border_color: key_symbol_color
-      
-      keys/@20/key_border_color: key_symbol_color
-      keys/@30/key_border_color:
-      keys/@40/key_border_color:
-      
-      keys/@20/click: Keyboard_ls15bz23jwy1
-      keys/@30/click: Keyboard_ls15bz23jwy2
-      keys/@40/click: Keyboard_ls15bz23jwy3
-      
-      keys/@20/label: '零'
-      keys/@30/label: '𝘆'
-      keys/@40/label: 'w𝘆𝘂'
-      keys/@40/key_text_size: 10
-      
-      keys/@21/click: ls15bz23jwy111
-      keys/@22/click: ls15bz23jwy112
-      keys/@23/click: ls15bz23jwy113
-      keys/@24/click: ls15bz23jwy114
-      keys/@25/click: ls15bz23jwy115
-      keys/@31/click: ls15bz23jwy121
-      keys/@32/click: ls15bz23jwy122
-      keys/@33/click: ls15bz23jwy123
-      keys/@34/click: ls15bz23jwy124
-      keys/@35/click: ls15bz23jwy125
-      keys/@41/click: ls15bz23jwy131
-      keys/@42/click: ls15bz23jwy132
-      keys/@43/click: ls15bz23jwy133
-      keys/@44/click: ls15bz23jwy134
-      keys/@45/click: ls15bz23jwy135
-      
-      keys/@21/hint:
-      keys/@22/hint:
-      keys/@23/hint:
-      keys/@24/hint:
-      keys/@25/hint:
-      keys/@31/hint:
-      keys/@32/hint:
-      keys/@33/hint:
-      keys/@34/hint:
-      keys/@35/hint:
-      keys/@41/hint:
-      keys/@42/hint:
-      keys/@43/hint:
-      keys/@44/hint:
-      keys/@45/hint: 'weng'
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm6
-      
-      keys/@20/key_text_color: key_symbol_color
-      keys/@30/key_text_color: key_symbol_color
-      keys/@40/key_text_color: key_symbol_color
-      
-      keys/@21/key_text_color: key_symbol_color
-      keys/@22/key_text_color: key_symbol_color
-      keys/@23/key_text_color: key_symbol_color
-      keys/@24/key_text_color: key_symbol_color
-      keys/@25/key_text_color: key_symbol_color
-      keys/@31/key_text_color: key_symbol_color
-      keys/@32/key_text_color: key_symbol_color
-      keys/@33/key_text_color: key_symbol_color
-      keys/@34/key_text_color: key_symbol_color
-      keys/@35/key_text_color: key_symbol_color
-      keys/@41/key_text_color: key_symbol_color
-      keys/@42/key_text_color: key_symbol_color
-      keys/@43/key_text_color: key_symbol_color
-      keys/@44/key_text_color: key_symbol_color
-      keys/@45/key_text_color: key_symbol_color
-  ls15bz23jwy2:
-    __include: preset_keyboards/ls15bz23jw2
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jwy
-      
-      keys/@19/key_border_color:
-      keys/@29/key_border_color:
-      keys/@39/key_border_color: key_symbol_color
-      
-      keys/@20/key_border_color:
-      keys/@30/key_border_color: key_symbol_color
-      keys/@40/key_border_color:
-      
-      keys/@20/click: Keyboard_ls15bz23jwy1
-      keys/@30/click: Keyboard_ls15bz23jwy2
-      keys/@40/click: Keyboard_ls15bz23jwy3
-      
-      keys/@20/label: '零'
-      keys/@30/label: '𝘆'
-      keys/@40/label: 'w𝘆𝘂'
-      keys/@40/key_text_size: 10
-      
-      keys/@21/click: ls15bz23jwy211
-      keys/@22/click: ls15bz23jwy212
-      keys/@23/click: ls15bz23jwy213
-      keys/@24/click: ls15bz23jwy214
-      keys/@25/click: ls15bz23jwy215
-      keys/@31/click: ls15bz23jwy221
-      keys/@32/click: ls15bz23jwy222
-      keys/@33/click: ls15bz23jwy223
-      keys/@34/click: ls15bz23jwy224
-      keys/@35/click: ls15bz23jwy225
-      keys/@41/click: ls15bz23jwy231
-      keys/@42/click: ls15bz23jwy232
-      keys/@43/click: ls15bz23jwy233
-      keys/@44/click: ls15bz23jwy234
-      keys/@45/click: ls15bz23jwy235
-      
-      keys/@21/hint:
-      keys/@22/hint:
-      keys/@23/hint:
-      keys/@24/hint:
-      keys/@25/hint:
-      keys/@31/hint:
-      keys/@32/hint:
-      keys/@33/hint:
-      keys/@34/hint:
-      keys/@35/hint:
-      keys/@41/hint:
-      keys/@42/hint: '𝘆𝗲𝗻'
-      keys/@43/hint:
-      keys/@44/hint: '𝘆𝗲𝗻𝗴'
-      keys/@45/hint:
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm6
-      
-      keys/@20/key_text_color: key_symbol_color
-      keys/@30/key_text_color: key_symbol_color
-      keys/@40/key_text_color: key_symbol_color
-      
-      keys/@21/key_text_color: key_symbol_color
-      keys/@22/key_text_color: key_symbol_color
-      keys/@23/key_text_color: key_symbol_color
-      keys/@24/key_text_color: key_symbol_color
-      keys/@25/key_text_color: key_symbol_color
-      keys/@31/key_text_color: key_symbol_color
-      keys/@32/key_text_color: key_symbol_color
-      keys/@33/key_text_color: key_symbol_color
-      keys/@34/key_text_color: key_symbol_color
-      keys/@35/key_text_color: key_symbol_color
-      keys/@41/key_text_color: key_symbol_color
-      keys/@42/key_text_color: key_symbol_color
-      keys/@43/key_text_color: key_symbol_color
-      keys/@44/key_text_color: key_symbol_color
-      keys/@45/key_text_color: key_symbol_color
-  ls15bz23jwy3:
-    __include: preset_keyboards/ls15bz23jw3
-    __patch:
-      keys/@9/click: Keyboard_ls15bz21jw
-      keys/@10/click: Keyboard_ls15bz22jwy
-      
-      keys/@19/key_border_color:
-      keys/@29/key_border_color:
-      keys/@39/key_border_color: key_symbol_color
-      
-      keys/@20/key_border_color:
-      keys/@30/key_border_color:
-      keys/@40/key_border_color: key_symbol_color
-      
-      keys/@20/click: Keyboard_ls15bz23jwy1
-      keys/@30/click: Keyboard_ls15bz23jwy2
-      keys/@40/click: Keyboard_ls15bz23jwy3
-      
-      keys/@20/label: '零'
-      keys/@30/label: '𝘆'
-      keys/@40/label: 'w𝘆𝘂'
-      keys/@40/key_text_size: 10
-      
-      keys/@21/click: ls15bz23jwy311
-      keys/@22/click: ls15bz23jwy312
-      keys/@23/click: ls15bz23jwy313
-      keys/@24/click: ls15bz23jwy314
-      keys/@25/click: ls15bz23jwy315
-      keys/@31/click: ls15bz23jwy321
-      keys/@32/click: ls15bz23jwy322
-      keys/@33/click: ls15bz23jwy323
-      keys/@34/click: ls15bz23jwy324
-      keys/@35/click: ls15bz23jwy325
-      keys/@41/click: ls15bz23jwy331
-      keys/@42/click: ls15bz23jwy332
-      keys/@43/click: ls15bz23jwy333
-      keys/@44/click: ls15bz23jwy334
-      keys/@45/click: ls15bz23jwy335
-      
-      keys/@21/hint:
-      keys/@22/hint:
-      keys/@23/hint:
-      keys/@24/hint:
-      keys/@25/hint:
-      keys/@31/hint:
-      keys/@32/hint:
-      keys/@33/hint:
-      keys/@34/hint:
-      keys/@35/hint: '𝘆𝘂𝗲𝗻'
-      keys/@41/hint:
-      keys/@42/hint:
-      keys/@43/hint:
-      keys/@44/hint:
-      keys/@45/hint: '𝘆𝗼𝗻𝗴'
-      
-      keys/@51/click: Keyboard_ls15bz23jwsm6
-      
-      keys/@20/key_text_color: key_symbol_color
-      keys/@30/key_text_color: key_symbol_color
-      keys/@40/key_text_color: key_symbol_color
-      
-      keys/@21/key_text_color: key_symbol_color
-      keys/@22/key_text_color: key_symbol_color
-      keys/@23/key_text_color: key_symbol_color
-      keys/@24/key_text_color: key_symbol_color
-      keys/@25/key_text_color: key_symbol_color
-      keys/@31/key_text_color: key_symbol_color
-      keys/@32/key_text_color: key_symbol_color
-      keys/@33/key_text_color: key_symbol_color
-      keys/@34/key_text_color: key_symbol_color
-      keys/@35/key_text_color: key_symbol_color
-      keys/@41/key_text_color: key_symbol_color
-      keys/@42/key_text_color: key_symbol_color
-      keys/@43/key_text_color: key_symbol_color
-      keys/@44/key_text_color: key_symbol_color
-      keys/@45/key_text_color: key_symbol_color
-  ls15bz21jwsm1:
-    __include: preset_keyboards/ls15bz21
-    __patch:
-      keys/@9/label: "根据声韵组合的不同,23个声母和零声母可分为三类："
-      keys/@10/label: "第一类是常规声母，包括bpm,dtnl,gkh,jqx，共13个，"
-      keys/@11/label: "其中g/j,k/q,h/x共键；第二类是zh,ch,sh,r,zcs,f共8个,"
-      keys/@12/label: "其中zh/z,ch/c,sh/s,r/f共键；第三类是yw再加上零声"
-      keys/@13/label: "母共3个，共用一个按键。　　　　　　　　　　　　"
-      
-      keys/@15: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz21jw, label: "⇦键位", width: 12}
-      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, width: 48}
-      keys/@after 16: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz21jwsm1, label: "(1)", width: 8, key_border_color: key_symbol_color}
-      keys/@after 17: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz21jwsm2, label: "(2)", width: 8}
-  ls15bz21jwsm2:
-    __include: preset_keyboards/ls15bz21jwsm1
-    __patch:
-      keys/@9/label: "三类声母的声韵组合各有不同特点，利用其不同特点"
-      keys/@10/label: "在接下来的第2、3键消除共键声母产生的重复音节。"
-      keys/@11/label: "点击按键进入相应下一键说明。　　　　　　　　　"
-      keys/@12/label: ' '
-      keys/@13/label: ' '
-      
-      keys/@15/click: Keyboard_ls15bz21jw
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color: key_symbol_color
-  ls15bz22jwsm1:
-    __include: preset_keyboards/ls15bz22
-    __patch:
-      keys/@9/label: "综述"
-      keys/@10/label: "第1行引导空介韵母(aoe开头的基本韵母)，"
-      keys/@11/label: "第2行引导i类韵母，　　　　　　　　　　"
-      keys/@12/label: "第3行引导uü类韵母。　　　　　　　　　"
-      keys/@13/label: ' '
-      
-      keys/@15: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jw, label: "⇦键位", width: 12}
-      keys/@16: {__include: preset_keyboards/lsbz/keys/@1, width: 8}
-      keys/@17: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwsm1, label: "(1)", width: 8, key_border_color: key_symbol_color}
-      keys/@18: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwsm2, label: "(2)", width: 8}
-      keys/@after 18: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwsm3, label: "(3)", width: 8}
-      keys/@after 19: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwsm4, label: "(4)", width: 8}
-      keys/@after 20: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwsm5, label: "(5)", width: 8}
-      keys/@after 21: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwsm6, label: "(6)", width: 8}
-      keys/@after 22: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz22jwsm7, label: "(7)", width: 8}
-  ls15bz22jwsm2:
-    __include: preset_keyboards/ls15bz22jwsm1
-    __patch:
-      keys/@9/label: "第一类声母+介调键盘"
-      keys/@10/label: "常规声母可以和三类韵母相拼，如ban,dian,guan，"
-      keys/@11/label: "分别点击1-3行进入三类韵母键盘(第3键)。　　　 "
-      keys/@12/label: "对于共键声母g/j,k/q,h/x来说,因为gkh仅和aoe类、"
-      keys/@13/label: "u类韵母相拼,jqx仅和i、ü类韵母相拼, 因此用第1行"
-      
-      keys/@15/click: Keyboard_ls15bz22jw
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color: key_symbol_color
-      keys/@19/key_border_color:
-      keys/@20/key_border_color:
-      keys/@21/key_border_color:
-      keys/@22/key_border_color:
-      keys/@23/key_border_color:
-  ls15bz22jwsm3:
-    __include: preset_keyboards/ls15bz22jwsm1
-    __patch:
-      keys/@9/label: "表示g和aoe类韵母相拼，用第2行表示j和i类韵母相拼,"
-      keys/@10/label: "用第3行表示g/j和uü类韵母相拼，在随后的第3键中再"
-      keys/@11/label: "区分gu和jü类音节。　　　　　　　　　　　　　　 "
-      keys/@12/label: "共键声母g/j通过“声-介-韵”组合被自然区分。　　　 "
-      keys/@13/label: "共键声母k/q,h/x的情况和g/j类似。　　　　　　　　"
-      
-      keys/@15/click: Keyboard_ls15bz22jw
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color: key_symbol_color
-      keys/@20/key_border_color:
-      keys/@21/key_border_color:
-      keys/@22/key_border_color:
-      keys/@23/key_border_color:
-  ls15bz22jwsm4:
-    __include: preset_keyboards/ls15bz22jwsm1
-    __patch:
-      keys/@9/label: "第二类声母+介调键盘"
-      keys/@10/label: "zh,ch,sh,r,zcs,f八个声母仅和aoe类、u类韵母相拼，"
-      keys/@11/label: "不和i类韵母相拼(除了7个整体认读音节和fiao)，　 "
-      keys/@12/label: "即只有zha,za,fa等音节，而没有zhia,zia,fia等音节，"
-      keys/@13/label: "因此用第1行表示声母zh和aoe类韵母相拼，　　　 "
-      
-      keys/@15/click: Keyboard_ls15bz22jwz
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color:
-      keys/@20/key_border_color: key_symbol_color
-      keys/@21/key_border_color:
-      keys/@22/key_border_color:
-      keys/@23/key_border_color:
-  ls15bz22jwsm5:
-    __include: preset_keyboards/ls15bz22jwsm1
-    __patch:
-      keys/@9/label: "用第2行表示声母z和aoe类韵母相拼，　　　　　　"
-      keys/@10/label: "用第3行表示zh/z和u类韵母相拼，在随后的第3键中"
-      keys/@11/label: "再区分zhu和zu类音节。　　　　　　　　　　　　"
-      keys/@12/label: "共键声母zh/z通过“声-介-韵”组合被自然区分。　  "
-      keys/@13/label: "共键声母ch/c,sh/s,r/f的情况和zh/z类似。　　　　"
-      
-      keys/@15/click: Keyboard_ls15bz22jwz
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color:
-      keys/@20/key_border_color:
-      keys/@21/key_border_color: key_symbol_color
-      keys/@22/key_border_color:
-      keys/@23/key_border_color:
-  ls15bz22jwsm6:
-    __include: preset_keyboards/ls15bz22jwsm1
-    __patch:
-      keys/@9/label: "第三类声母+介调键盘"
-      keys/@10/label: "“零声母/y/w”引导的介调键盘中，　　　　　　　　"
-      keys/@11/label: "第1行表示零声母音节；第2行表示声母y开头的音节"
-      keys/@12/label: "(除了四个yu开头的音节)；第3行表示声母w和yu开 "
-      keys/@13/label: "头的音节，这两类音节在第3键中再加以区分。　　 "
-      
-      keys/@15/click: Keyboard_ls15bz22jwy
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color:
-      keys/@20/key_border_color:
-      keys/@21/key_border_color:
-      keys/@22/key_border_color: key_symbol_color
-      keys/@23/key_border_color:
-  ls15bz22jwsm7:
-    __include: preset_keyboards/ls15bz22jwsm1
-    __patch:
-      keys/@9/label: "共键声母“零声母/y/w”通过“声-介-韵”组合被自然　 "
-      keys/@10/label: "区分。　　　　　　　　　　　　　　　　　　　　 "
-      keys/@11/label: ' '
-      keys/@12/label: ' '
-      keys/@13/label: ' '
-      
-      keys/@15/click: Keyboard_ls15bz22jwy
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color:
-      keys/@20/key_border_color:
-      keys/@21/key_border_color:
-      keys/@22/key_border_color:
-      keys/@23/key_border_color: key_symbol_color
-  ls15bz23jwsm1:
-    __include: preset_keyboards/ls15bz23
-    __patch:
-      keys/@9/label: "第一类声母+介调+三类韵母键盘"
-      keys/@10/label: "第一类基本韵母(aoe开头的韵母)共有12个；介母i可以"
-      keys/@11/label: "和12个基本韵母相结合,构成第二类韵母；介母uü分别"
-      keys/@12/label: "可以和部分基本韵母组合，构成第三类韵母；i类、u类"
-      keys/@13/label: "韵母和基本韵母键位一致，ü类韵母键位略有调整。　"
-      
-      keys/@15: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jw1, label: "⇦键位", width: 12}
-      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, width: 8}
-      keys/@after 16: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwsm1, label: "(1)", width: 8, key_border_color: key_symbol_color}
-      keys/@after 17: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwsm2, label: "(2)", width: 8}
-      keys/@after 18: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwsm3, label: "(3)", width: 8}
-      keys/@after 19: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwsm4, label: "(4)", width: 8}
-      keys/@after 20: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwsm5, label: "(5)", width: 8}
-      keys/@after 21: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwsm6, label: "(6)", width: 8}
-      keys/@after 22: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls15bz23jwsm7, label: "(7)", width: 8}
-  ls15bz23jwsm2:
-    __include: preset_keyboards/ls15bz23jwsm1
-    __patch:
-      keys/@9/label: "需指出，　　　　　　　　　　　　　　　　　　　 "
-      keys/@10/label: "1. 部分iuü开头的韵母平时一般用简写形式，单独出现"
-      keys/@11/label: "在韵母表中,但其实仍然是iuü和基本韵母结合构成的,"
-      keys/@12/label: "包括:ui=uei,iu=iou,in=ien,un=uen,ün=üen,ing=ieng."
-      keys/@13/label: ' '
-      
-      keys/@15/click: Keyboard_ls15bz23jw1
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color: key_symbol_color
-      keys/@19/key_border_color:
-      keys/@20/key_border_color:
-      keys/@21/key_border_color:
-      keys/@22/key_border_color:
-      keys/@23/key_border_color:
-  ls15bz23jwsm3:
-    __include: preset_keyboards/ls15bz23jwsm1
-    __patch:
-      keys/@9/label: "2.ju,juan,jue,jun四个音节分别是jü,jüan,jüe,jün的简写,"
-      keys/@10/label: "其中的韵母是ü类韵母，和音节gu,guan,gun中的u类韵"
-      keys/@11/label: "母不同,两类韵母在第三类uü韵母键盘中加以区分。　"
-      keys/@12/label: "共键声母k/q,h/x的情况和g/j类似。　　　　　　　　"
-      keys/@13/label: ' '
-      
-      keys/@15/click: Keyboard_ls15bz23jw1
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color: key_symbol_color
-      keys/@20/key_border_color:
-      keys/@21/key_border_color:
-      keys/@22/key_border_color:
-      keys/@23/key_border_color:
-  ls15bz23jwsm4:
-    __include: preset_keyboards/ls15bz23jwsm1
-    __patch:
-      keys/@9/label: "第二类声母+介调+三类韵母键盘"
-      keys/@10/label: "第一类韵母键盘表示zh和aoe类韵母相拼的音节；　　"
-      keys/@11/label: "第二类韵母键盘表示z和aoe类韵母相拼的音节；　　  "
-      keys/@12/label: "第三类韵母键盘表示zh/z和u类韵母相拼的音节。　　"
-      keys/@13/label: ' '
-      
-      keys/@15/click: Keyboard_ls15bz23jwz1
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color:
-      keys/@20/key_border_color: key_symbol_color
-      keys/@21/key_border_color:
-      keys/@22/key_border_color:
-      keys/@23/key_border_color:
-  ls15bz23jwsm5:
-    __include: preset_keyboards/ls15bz23jwsm1
-    __patch:
-      keys/@9/label: "需要说明的是，七个整体认读音节zhi,chi,shi,ri,zi,ci,si"
-      keys/@10/label: "中的韵母虽然写作i，但并不是单韵母i，而是舌尖元音"
-      keys/@11/label: "“-i”，因此归为第一类空介韵母，放在1行2列的位置。"
-      keys/@12/label: ' '
-      keys/@13/label: ' '
-      
-      keys/@15/click: Keyboard_ls15bz23jwz1
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color:
-      keys/@20/key_border_color:
-      keys/@21/key_border_color: key_symbol_color
-      keys/@22/key_border_color:
-      keys/@23/key_border_color:
-  ls15bz23jwsm6:
-    __include: preset_keyboards/ls15bz23jwsm1
-    __patch:
-      keys/@9/label: "第三类声母+介调+三类韵母键盘"
-      keys/@10/label: "“零声母/y/w”引导的韵母键盘中，第一类韵母键盘表"
-      keys/@11/label: "示零声母音节;第二类韵母键盘表示声母y开头的音节"
-      keys/@12/label: "(除了yu开头的四个音节);第三类韵母键盘表示声母w"
-      keys/@13/label: "和yu开头的四个音节(yu,yuan,yue,yun)。　　　　 "
-      
-      keys/@15/click: Keyboard_ls15bz23jwy1
-      
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color:
-      keys/@20/key_border_color:
-      keys/@21/key_border_color:
-      keys/@22/key_border_color: key_symbol_color
-      keys/@23/key_border_color:
-  ls15bz23jwsm7:
-    __include: preset_keyboards/ls15bz23jwsm1
-    __patch:
-      keys/@9/label: "可以看出声母y、w、yu开头的音节分别是i、u、ü类韵"
-      keys/@10/label: "母单独构成的零声母音节的特殊写法，例如：　　　 "
-      keys/@11/label: "yi=i,wu=u,yu=ü,ya=ia,wa=ua,yue=üe。　　　　　"
-      keys/@12/label: ' '
-      keys/@13/label: ' '
-      
-      keys/@15/click: Keyboard_ls15bz23jwy1
-      
-      keys/@16/key_border_color:
-      keys/@17/key_border_color:
-      keys/@18/key_border_color:
-      keys/@19/key_border_color:
-      keys/@20/key_border_color:
-      keys/@21/key_border_color:
-      keys/@22/key_border_color:
-      keys/@23/key_border_color: key_symbol_color
-  ls15:
-    __include: preset_keyboards/lsjp
-    __patch:
-      "name": 15鍵鍵盤
-      keys/@10/click: Keyboard_lsfc_stroke
-      keys/@17/click: Keyboard_ls15bz1bz
-      keys/@11/click: 1_ls15show
-      keys/@12/click: 2_ls15show
-      keys/@13/click: 3_ls15show
-      keys/@14/click: x_ls15show
-      keys/@15/click: A_ls15show
-      keys/@18/click: 4_ls15show
-      keys/@19/click: 5_ls15show
-      keys/@20/click: 6_ls15show
-      keys/@21/click: 0_ls15show
-      keys/@22/click: B_ls15show
-      keys/@25/click: 7_ls15show
-      keys/@26/click: 8_ls15show
-      keys/@27/click: 9_ls15show
-      keys/@28/click: j_ls15show
-      keys/@29/click: C_ls15show
-      keys/@28/key_text_size: 15
-      keys/@11/long_click: 1cazj_ls15show
-      keys/@12/long_click: 2cazj_ls15show
-      keys/@13/long_click: 3cazj_ls15show
-      keys/@14/long_click: xcazj_ls15show
-      keys/@15/long_click: Acazj_ls15show
-      keys/@18/long_click: 4cazj_ls15show
-      keys/@19/long_click: 5cazj_ls15show
-      keys/@20/long_click: 6cazj_ls15show
-      keys/@21/long_click: 0cazj_ls15show
-      keys/@22/long_click: Bcazj_ls15show
-      keys/@25/long_click: 7cazj_ls15show
-      keys/@26/long_click: 8cazj_ls15show
-      keys/@27/long_click: 9cazj_ls15show
-      keys/@28/long_click: jcazj_ls15show
-      keys/@29/long_click: Ccazj_ls15show
-      keys/@14/swipe_up: xcazj_ls15show
-      keys/@15/swipe_up: Acazj_ls15show
-      keys/@21/swipe_up: 0cazj_ls15show
-      keys/@22/swipe_up: Bcazj_ls15show
-      keys/@28/swipe_up: jcazj_ls15show
-      keys/@29/swipe_up: Ccazj_ls15show
-      keys/@15/popup: [Acazj_ls15showpp, Acazj_ls15wsdshowpp]
-      keys/@11/hint: a
-      keys/@12/hint: 'o/-i'
-      keys/@13/hint: 'e/ie/üe'
-      keys/@14/hint: er
-      keys/@15/hint: üan
-      keys/@18/hint: ai
-      keys/@19/hint: 'i/ei/ui'
-      keys/@20/hint: 'u/ao'
-      keys/@21/hint: 'ü/ou/iu'
-      keys/@22/hint: ün
-      keys/@25/hint: an
-      keys/@26/hint: 'en/in/un'
-      keys/@27/hint: ang
-      keys/@28/hint: 'eng/ing'
-      keys/@29/hint: ong
-      keys/@31/click: Keyboard_ls15qwerty_Mode
-      keys/@33/swipe_up: Keyboard_ls15qwerty_Mode
-  ls15wsd:
-    __include: preset_keyboards/ls15
-    __patch:
-      "name": 15鍵無聲調鍵盤
-      keys/@15/click: A_ls15wsdshow
-      keys/@15/long_click: Acazj_ls15wsdshow
-      keys/@15/swipe_up: Acazj_ls15wsdshow
-      keys/@22/click: B_ls15wsdshow
-      keys/@22/long_click: Bcazj_ls15wsdshow
-      keys/@22/swipe_up: Bcazj_ls15wsdshow
-      keys/@29/click: C_ls15wsdshow
-      keys/@29/long_click: Ccazj_ls15wsdshow
-      keys/@29/swipe_up: Ccazj_ls15wsdshow
-      keys/@31/click: Keyboard_ls15wsdqwerty_Mode
-      keys/@33/swipe_up: Keyboard_ls15wsdqwerty_Mode
-  ls15qwerty:
-    __include: preset_keyboards/lsjpqwerty
-    __patch:
-      "name": 15鍵qwerty鍵盤
-      keys/@10/label: "¹q"
-      keys/@11/label: "²w"
-      keys/@12/label: "³e"
-      keys/@13/label: "*r"
-      keys/@14/label: "ᴬt"
-      keys/@20/label: "⁴a"
-      keys/@21/label: "⁵s"
-      keys/@22/label: "⁶d"
-      keys/@23/label: "⁰f"
-      keys/@24/label: "ᴮg"
-      keys/@31/label: "⁷z"
-      keys/@32/label: "⁸x"
-      keys/@33/label: "⁹c"
-      keys/@34/label: "#v"
-      keys/@35/label: "ᶜb"
-      keys/@10/key_text_size: 20
-      keys/@11/key_text_size: 20
-      keys/@12/key_text_size: 20
-      keys/@13/key_text_size: 20
-      keys/@14/key_text_size: 20
-      keys/@20/key_text_size: 20
-      keys/@21/key_text_size: 20
-      keys/@22/key_text_size: 20
-      keys/@23/key_text_size: 20
-      keys/@24/key_text_size: 20
-      keys/@31/key_text_size: 20
-      keys/@32/key_text_size: 20
-      keys/@33/key_text_size: 20
-      keys/@34/key_text_size: 20
-      keys/@35/key_text_size: 20
-      keys/@29/click: Keyboard_lsfc_stroke
-      keys/@38/click: Keyboard_ls15bz1bz
-      keys/@40/click: Keyboard_ls15_Mode
-      keys/@43/swipe_up: Keyboard_ls15_Mode
-  ls15wsdqwerty:
-    __include: preset_keyboards/ls15qwerty
-    __patch:
-      "name": 15鍵無聲調qwerty鍵盤
-      keys/@40/click: Keyboard_ls15wsd_Mode
-      keys/@43/swipe_up: Keyboard_ls15wsd_Mode
- # v李氏三拼注音鍵盤
-  triple_lishi15_bopomofo:
-    __include: preset_keyboards/ls15zy
-  ls15zy:
-    __include: preset_keyboards/ls15
-    __patch:
-      "name": 15鍵注音鍵盤
-      # keys/@17/click: Keyboard_ls15zybz1bz
-      keys/@11/click: 1_ls15zyshow
-      keys/@12/click: 2_ls15zyshow
-      keys/@13/click: 3_ls15zyshow
-      keys/@14/click: x_ls15zyshow
-      keys/@15/click: A_ls15zyshow
-      keys/@18/click: 4_ls15zyshow
-      keys/@19/click: 5_ls15zyshow
-      keys/@20/click: 6_ls15zyshow
-      keys/@21/click: 0_ls15zyshow
-      keys/@22/click: B_ls15zyshow
-      keys/@25/click: 7_ls15zyshow
-      keys/@26/click: 8_ls15zyshow
-      keys/@27/click: 9_ls15zyshow
-      keys/@28/click: j_ls15zyshow
-      keys/@29/click: C_ls15zyshow
-      keys/@11/hint: ㄚ
-      keys/@12/hint: 'ㄛ/ㄭ'
-      keys/@13/hint: 'ㄜ/ㄝ'
-      keys/@14/hint: ㄦ
-      keys/@15/hint: ㄩㄢ
-      keys/@18/hint: ㄞ
-      keys/@19/hint: 'ㄧ/ㄟ'
-      keys/@20/hint: 'ㄨ/ㄠ'
-      keys/@21/hint: 'ㄩ/ㄡ'
-      keys/@22/hint: ㄩㄣ
-      keys/@25/hint: ㄢ
-      keys/@26/hint: ㄣ
-      keys/@27/hint: ㄤ
-      keys/@28/hint: ㄥ
-      keys/@29/hint: ㄩㄥ
-      keys/@28/key_text_size: 18
-      keys/@11/long_click: 1cazj_ls15zyshow
-      keys/@12/long_click: 2cazj_ls15zyshow
-      keys/@13/long_click: 3cazj_ls15zyshow
-      keys/@14/long_click: xcazj_ls15zyshow
-      keys/@14/swipe_up: xcazj_ls15zyshow
-      keys/@15/long_click: Acazj_ls15zyshow
-      keys/@15/swipe_up: Acazj_ls15zyshow
-      keys/@15/popup: [Acazj_ls15zyshowpp, Acazj_ls15zywsdshowpp]
-      keys/@18/long_click: 4cazj_ls15zyshow
-      keys/@19/long_click: 5cazj_ls15zyshow
-      keys/@20/long_click: 6cazj_ls15zyshow
-      keys/@21/long_click: 0cazj_ls15zyshow
-      keys/@21/swipe_up: 0cazj_ls15zyshow
-      keys/@22/long_click: Bcazj_ls15zyshow
-      keys/@22/swipe_up: Bcazj_ls15zyshow
-      keys/@25/long_click: 7cazj_ls15zyshow
-      keys/@26/long_click: 8cazj_ls15zyshow
-      keys/@27/long_click: 9cazj_ls15zyshow
-      keys/@28/long_click: jcazj_ls15zyshow
-      keys/@28/swipe_up: jcazj_ls15zyshow
-      keys/@29/long_click: Ccazj_ls15zyshow
-      keys/@29/swipe_up: Ccazj_ls15zyshow
-      keys/@31/click: Keyboard_ls15zyqwerty_Mode
-      keys/@33/swipe_up: Keyboard_ls15zyqwerty_Mode
-  ls15zywsd:
-    __include: preset_keyboards/ls15zy
-    __patch:
-      "name": 15鍵注音無聲調鍵盤
-      keys/@15/click: A_ls15zywsdshow
-      keys/@15/long_click: Acazj_ls15zywsdshow
-      keys/@15/swipe_up: Acazj_ls15zywsdshow
-      keys/@22/click: B_ls15zywsdshow
-      keys/@22/long_click: Bcazj_ls15zywsdshow
-      keys/@22/swipe_up: Bcazj_ls15zywsdshow
-      keys/@29/click: C_ls15zywsdshow
-      keys/@29/long_click: Ccazj_ls15zywsdshow
-      keys/@29/swipe_up: Ccazj_ls15zywsdshow
-      keys/@31/click: Keyboard_ls15zywsdqwerty_Mode
-      keys/@33/swipe_up: Keyboard_ls15zywsdqwerty_Mode
-  ls15zyqwerty:
-    __include: preset_keyboards/ls15qwerty
-    __patch:
-      "name": 15鍵注音qwerty鍵盤
-      keys/@40/click: Keyboard_ls15zy_Mode
-      keys/@43/swipe_up: Keyboard_ls15zy_Mode
-  ls15zywsdqwerty:
-    __include: preset_keyboards/ls15qwerty
-    __patch:
-      "name": 15鍵注音無聲調qwerty鍵盤
-      keys/@40/click: Keyboard_ls15zywsd_Mode
-      keys/@43/swipe_up: Keyboard_ls15zywsd_Mode
- # v廿六三拼鍵盤
-  triple_lishi26:
-    __include: preset_keyboards/ls26
-  triple_lishi26_pinyin:
-    __include: preset_keyboards/ls26
-  triple_lishi26_bopomofo:
-    __include: preset_keyboards/ls26zy
-  triple_lishi26_romatzyh:
-    __include: preset_keyboards/ls26
-  ls26bz1:
-    __include: preset_keyboards/lsbz
-    __patch:
-      keys/@0: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls26bz1, label: "①编码方案", width: 50, key_border_color: key_symbol_color}
-      keys/@1: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls26bz2, label: "②y、w和零声母", width: 50}
-      keys/@2:
-      keys/@3: {__include: preset_keyboards/lsbz/keys/@1, label: "三码输入一个带调音节，总键位数26个；　　　　　"}
-      keys/@4: {__include: preset_keyboards/lsbz/keys/@1, label: "首码声母，次码韵母，　　　　　　　　　　　　　"}
-      keys/@5: {__include: preset_keyboards/lsbz/keys/@1, label: "第三码以oeway输入「ˉˊˇˋ˙」五声调；　　　　　　 "}
-      keys/@6: {__include: preset_keyboards/lsbz/keys/@1, label: "可省略声调成为无声调双拼。　　　　　　　　　　"}
-      keys/@7: {__include: preset_keyboards/lsbz/keys/@1}
-      keys/@8: {__include: preset_keyboards/lsbz/keys/@1}
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@2}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@3}
-      keys/@11: {__include: preset_keyboards/lsbz/keys/@4}
-  ls26bz2:
-    __include: preset_keyboards/ls26bz1
-    __patch:
-      keys/@0/key_border_color:
-      keys/@1/key_border_color: key_symbol_color
-      
-      keys/@3/label: "声母y引导的音节分为两类：　　　　　　　　　　"
-      keys/@4/label: "1: y和以aoe开头的韵母(除了ong)相拼时以j输入，　"
-      keys/@5/label: "　包括：ya yo ye yai yao yan yang you；　　　　　 "
-      keys/@6/label: "2: y和以i,u开头的韵母以及韵母ong相拼时以f输入，"
-      keys/@7/label: "　包括：yi yin ying yu yuan yue yun yong。　　　　"
-      keys/@8: {__include: preset_keyboards/lsbz/keys/@1, width: 84}
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls26bz2, label: "(1)", width: 8, key_border_color: key_symbol_color}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls26bz2p2, label: "(2)", width: 8}
-      keys/@11: {__include: preset_keyboards/lsbz/keys/@2}
-      keys/@12: {__include: preset_keyboards/lsbz/keys/@3}
-      keys/@13: {__include: preset_keyboards/lsbz/keys/@4}
-  ls26bz2p2:
-    __include: preset_keyboards/ls26bz2
-    __patch:
-      keys/@3/label: "声母w以q输入。　　　　　　　　　　　　　　　 "
-      keys/@4/label: "零声母er以f引导，其他零声母以x引导。　　　　　"
-      keys/@5/label: ' '
-      keys/@6/label: ' '
-      keys/@7/label: ' '
-      keys/@9/key_border_color:
-      keys/@10/key_border_color: key_symbol_color
-  ls26zybz1:
-    __include: preset_keyboards/lsbz
-    __patch:
-      keys/@0: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls26zybz1, label: "①編碼方案", width: 33, key_border_color: key_symbol_color}
-      keys/@1: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls26zybz2, label: "②零聲母音節", width: 34}
-      keys/@2: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_ls26zybz3, label: "③空韻音節", width: 33}
-      keys/@3: {__include: preset_keyboards/lsbz/keys/@1, label: "三碼輸入一個帶調音節，總鍵位數26個；　　　　　"}
-      keys/@4: {__include: preset_keyboards/lsbz/keys/@1, label: "將介韻合併，變“聲-介-韻-調”為“聲母-介韻-聲調”"}
-      keys/@5: {__include: preset_keyboards/lsbz/keys/@1, label: "三拼，首碼聲母，次碼介韻，第三碼以oeway輸入　"}
-      keys/@6: {__include: preset_keyboards/lsbz/keys/@1, label: "「ˉˊˇˋ˙」五聲調；可省略聲調成為無聲調雙拼注音；　"}
-      keys/@7: {__include: preset_keyboards/lsbz/keys/@1, label: "回車輸入注音符號，空格輸入漢字。　　　　　　　"}
-      keys/@8: {__include: preset_keyboards/lsbz/keys/@1}
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@2}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@3}
-      keys/@11: {__include: preset_keyboards/lsbz/keys/@4}
-  ls26zybz2:
-    __include: preset_keyboards/ls26zybz1
-    __patch:
-      keys/@0/key_border_color:
-      keys/@1/key_border_color: key_symbol_color
-      keys/@2/key_border_color:
-      keys/@3/label: "1: ㄧㄨㄩㄦ獨存時，分別以fqff作首碼引導；　　　 "
-      keys/@4/label: "2: ㄚㄛㄜㄝ、ㄞㄟㄠㄡ、ㄢㄣㄤㄥ獨存時，以“零”作 "
-      keys/@5/label: "　聲母，置於x，如：啊x-ㄚ，唉x-ㄞ；　　　　　　 "
-      keys/@6/label: "3: “ㄧ/ㄨ+韻母”類零聲母，以ㄧ/ㄨ作首碼，置於j/q,"
-      keys/@7/label: "　以韻母作次碼，如：呀j-ㄚ，哇q-ㄚ；　　　　　　"
-      keys/@8: {__include: preset_keyboards/lsbz/keys/@1, width: 84}
-      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls26zybz2, label: "(1)", width: 8, key_border_color: key_symbol_color}
-      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_ls26zybz2p2, label: "(2)", width: 8}
-      keys/@11: {__include: preset_keyboards/lsbz/keys/@2}
-      keys/@12: {__include: preset_keyboards/lsbz/keys/@3}
-      keys/@13: {__include: preset_keyboards/lsbz/keys/@4}
-  ls26zybz2p2:
-    __include: preset_keyboards/ls26zybz2
-    __patch:
-      keys/@3/label: "4: “ㄩ+韻母”類零聲母，音節整體作次碼，前面另補f"
-      keys/@4/label: "　作首碼引導，如：約f-ㄩㄝ，淵f-ㄩㄢ。　　　　　"
-      keys/@5/label: ' '
-      keys/@6/label: ' '
-      keys/@7/label: ' '
-      keys/@9/key_border_color:
-      keys/@10/key_border_color: key_symbol_color
-  ls26zybz3:
-    __include: preset_keyboards/ls26zybz1
-    __patch:
-      keys/@0/key_border_color:
-      keys/@1/key_border_color:
-      keys/@2/key_border_color: key_symbol_color
-      keys/@3/label: "聲母ㄓㄔㄕㄖㄗㄘㄙ獨存時，在其后加上虛韻母ㄭ　"
-      keys/@4/label: "作為次碼，置於i，如：知ㄓ-i，資ㄗ-i。　　　　　　"
-      keys/@5/label: ' '
-      keys/@6/label: ' '
-      keys/@7/label: ' '
-  ls26:
-    __include: preset_keyboards/lsqwerty
-    __patch:
-      "name": 26鍵鍵盤
-      "ascii_mode": 0
-     # 第一行
-     # 第二行
-      keys/@10/label: "qw"
-      keys/@10/key_text_size: 22
-      keys/@10/hint: "iu"
-      keys/@11/click: "ˇ"
-      keys/@11/composing: w_26show
-      keys/@11/ascii: 'w'
-      keys/@11/hint: "ei"
-      keys/@12/click: "ˊ"
-      keys/@12/composing: e_26show
-      keys/@12/ascii: 'e'
-      keys/@12/hint: "e er"
-      keys/@13/hint: "uan"
-      keys/@14/hint: "ue üe"
-      keys/@15/click: "˙"
-      keys/@15/composing: y_26show
-      keys/@15/ascii: 'y'
-      keys/@15/hint: "un"
-      keys/@16/label: "sh"
-      keys/@16/key_text_size: 22
-      keys/@16/hint: "u"
-      keys/@17/label: "ch"
-      keys/@17/key_text_size: 22
-      keys/@17/hint: "i"
-      keys/@18/click: "ˉ"
-      keys/@18/composing: o_26show
-      keys/@18/ascii: 'o'
-      keys/@18/hint: "uo o"
-      keys/@19/hint: "ie"
-     # 第三行
-      keys/@20/click: "ˋ"
-      keys/@20/composing: a_26show
-      keys/@20/ascii: 'a'
-      keys/@20/hint: "a"
-      keys/@21/hint: "(i)ong"
-      keys/@22/hint: "ai"
-      keys/@23/label: "FY"
-      keys/@23/key_text_size: 18
-      keys/@23/hint: "en"
-      keys/@24/hint: "eng"
-      keys/@25/hint: "ang"
-      keys/@26/label: "JY"
-      keys/@26/key_text_size: 18
-      keys/@26/hint: "an"
-      keys/@27/hint: "ing uai"
-      keys/@28/hint: "i(u)ang"
-      keys/@29/click: Keyboard_lsfc_pinyin
-      keys/@29/ascii: ";"
-      keys/@29/composing: delimiterls
-     # 第四行
-      keys/@31/hint: "ou"
-      keys/@32/label: "零x"
-      keys/@32/key_text_size: 18
-      keys/@32/hint: "ia ua"
-      keys/@33/hint: "ao"
-      keys/@34/label: "zh"
-      keys/@34/key_text_size: 22
-      keys/@34/hint: "ui ü"
-      keys/@35/hint: "in"
-      keys/@36/hint: "iao"
-      keys/@37/hint: "ian"
-      keys/@38/click: Keyboard_ls26bz1bz
-      keys/@38/ascii: "'"
-      keys/@38/composing: "'"
-     # 第五行
-  ls26zy:
-    __include: preset_keyboards/ls26
-    __patch:
-      "name": 26鍵注音鍵盤
-      "horizontal_gap": 1 #鍵水平間距
-      "vertical_gap": 2 #鍵盤行距
-     # 第一行
-     # 第二行
-      keys/@10/label: 'ㄑ/ㄨ'
-      keys/@13/label: ㄖ
-      keys/@14/label: ㄊ
-      keys/@16/label: ㄕ
-      keys/@17/label: ㄔ
-      keys/@19/label: ㄆ
-      keys/@10/hint: ㄧㄡ
-      keys/@11/hint: ㄟ
-      keys/@12/hint: 'ㄜ/ㄝ/ㄦ'
-      keys/@13/hint: 'ㄨ(ㄩ)ㄢ'
-      keys/@14/hint: ㄩㄝ
-      keys/@15/hint: 'ㄨ(ㄩ)ㄣ'
-      keys/@16/hint: ㄨ
-      keys/@17/hint: 'ㄧ/ㄭ'
-      keys/@18/hint: 'ㄨㄛ/ㄛ'
-      keys/@19/hint: ㄧㄝ
-      keys/@10/key_text_size: 14
-      keys/@11/key_text_size: 18
-      keys/@12/key_text_size: 18
-      keys/@13/key_text_size: 18
-      keys/@14/key_text_size: 18
-      keys/@15/key_text_size: 18
-      keys/@16/key_text_size: 18
-      keys/@17/key_text_size: 18
-      keys/@18/key_text_size: 18
-      keys/@19/key_text_size: 18
-      keys/@10/symbol_text_size: 8
-      keys/@11/symbol_text_size: 8
-      keys/@12/symbol_text_size: 8
-      keys/@13/symbol_text_size: 8
-      keys/@14/symbol_text_size: 8
-      keys/@15/symbol_text_size: 8
-      keys/@16/symbol_text_size: 8
-      keys/@17/symbol_text_size: 8
-      keys/@18/symbol_text_size: 8
-      keys/@19/symbol_text_size: 8
-     # 第三行
-      keys/@21/label: ㄙ
-      keys/@22/label: ㄉ
-      keys/@23/label: 'ㄈ/ㄩ'
-      keys/@24/label: ㄍ
-      keys/@25/label: ㄏ
-      keys/@26/label: 'ㄐ/ㄧ'
-      keys/@27/label: ㄎ
-      keys/@28/label: ㄌ
-      keys/@20/hint: ㄚ
-      keys/@21/hint: 'ㄨ(ㄩ)ㄥ'
-      keys/@22/hint: ㄞ
-      keys/@23/hint: ㄣ
-      keys/@24/hint: ㄥ
-      keys/@25/hint: ㄤ
-      keys/@26/hint: ㄢ
-      keys/@27/hint: 'ㄧㄥ/ㄨㄞ'
-      keys/@28/hint: 'ㄧ(ㄨ)ㄤ'
-      keys/@29/click: Keyboard_lsfc_stroke
-      keys/@20/key_text_size: 18
-      keys/@21/key_text_size: 18
-      keys/@22/key_text_size: 18
-      keys/@23/key_text_size: 14
-      keys/@24/key_text_size: 18
-      keys/@25/key_text_size: 18
-      keys/@26/key_text_size: 14
-      keys/@27/key_text_size: 18
-      keys/@28/key_text_size: 18
-      keys/@20/symbol_text_size: 8
-      keys/@21/symbol_text_size: 8
-      keys/@22/symbol_text_size: 8
-      keys/@23/symbol_text_size: 8
-      keys/@24/symbol_text_size: 8
-      keys/@25/symbol_text_size: 8
-      keys/@26/symbol_text_size: 8
-      keys/@27/symbol_text_size: 8
-      keys/@28/symbol_text_size: 8
-     # 第四行
-      keys/@31/label: ㄗ
-      keys/@32/label: '零/ㄒ'
-      keys/@33/label: ㄘ
-      keys/@34/label: ㄓ
-      keys/@35/label: ㄅ
-      keys/@36/label: ㄋ
-      keys/@37/label: ㄇ
-      keys/@31/hint: ㄡ
-      keys/@32/hint: 'ㄧ(ㄨ)ㄚ'
-      keys/@33/hint: ㄠ
-      keys/@34/hint: 'ㄨㄟ/ㄩ'
-      keys/@35/hint: ㄧㄣ
-      keys/@36/hint: ㄧㄠ
-      keys/@37/hint: ㄧㄢ
-      keys/@38/click: Keyboard_ls26zybz1bz
-      keys/@31/key_text_size: 18
-      keys/@32/key_text_size: 14
-      keys/@33/key_text_size: 18
-      keys/@34/key_text_size: 18
-      keys/@35/key_text_size: 18
-      keys/@36/key_text_size: 18
-      keys/@37/key_text_size: 18
-      keys/@31/symbol_text_size: 8
-      keys/@32/symbol_text_size: 8
-      keys/@33/symbol_text_size: 8
-      keys/@34/symbol_text_size: 8
-      keys/@35/symbol_text_size: 8
-      keys/@36/symbol_text_size: 8
-      keys/@37/symbol_text_size: 8
-     # 第五行
- # v三碼拼音鍵盤
+ # v三碼拼音系列靜態鍵盤
   triple_pinyin_smpy_express:
-    __include: preset_keyboards/smpy1
+    __include: preset_keyboards/smpy1wsd
+  triple_pinyin_smpy_bopomofo:
+    __include: preset_keyboards/smpy1zywsd
   triple_pinyin_smpy_romatzyh:
-    __include: preset_keyboards/smpy1
+    __include: preset_keyboards/smpy1wsd
   triple_pinyin_smpy_ipa:
-    __include: preset_keyboards/smpy1
+    __include: preset_keyboards/smpy1wsd
   triple_pinyin_smpyaoe:
-    __include: preset_keyboards/smpy2
-  triple_pinyin_bopomofo:
-    __include: preset_keyboards/smpy3
+    __include: preset_keyboards/smpy2wsd
+  triple_pinyin_bopomofo_express:
+    __include: preset_keyboards/smpy3wsd
   smpy1bz1_0:
     __include: preset_keyboards/lsbz
     __patch:
@@ -4478,9 +2374,9 @@ preset_keyboards:
       keys/@0/key_border_color: key_symbol_color
       keys/@1/key_border_color:
       keys/@3/label: "通过“声母+韵母+去重码&声调”，三码输入一个"
-      keys/@4/label: "带调音节，任意音节编码不重复（即没有重复音"
-      keys/@5/label: "节）。针对手机打字设计，只用15键，按键大，　"
-      keys/@6/label: "可单手打字。　　　　　　　　　　　　　　　"
+      keys/@4/label: "带调音节，任意两个音节编码不重复（即没有重"
+      keys/@5/label: "复音节）。针对手机打字设计，只使用15键，按键"
+      keys/@6/label: "大，可单手打字。　　　　　　　　　　　　　"
       keys/@7/label: ""
       
       keys/@9/width: 55
@@ -4542,7 +2438,7 @@ preset_keyboards:
       keys/@6/key_border_color:
       keys/@7/key_border_color:
       keys/@8/key_border_color:
-      keys/@9/label: "23个声母合并在15键上，基本按照声母表顺序"
+      keys/@9/label: "23个声母合并在15键上，大致按照声母表顺序"
       keys/@10/label: "排列，方便记忆。其中部分声母共键，包括：　"
       keys/@11/label: "1. g/j, k/q, h/x;　　2. 零声母/y/w;　　 "
       keys/@12/label: "3. zh/z, ch/c, sh/s, r/f。　　　　　　　"
@@ -4614,7 +2510,7 @@ preset_keyboards:
   smpy1bz22smp5:
     __include: preset_keyboards/smpy1bz22sm
     __patch:
-      keys/@9/label: "把z,c,s,f所跟韵母放在第2行和第4列。　　 "
+      keys/@9/label: "把z,c,s,f所跟韵母放在第2行和第5列。　　 "
       keys/@10/label: "（注：7个整体认读音节(zhi,chi,shi,ri,zi,ci, "
       keys/@11/label: "si)的韵母虽然写作i，但其实和单音节韵母"
       keys/@12/label: "i不同，因此归为第1类韵母，安排在第3键"
@@ -4648,7 +2544,7 @@ preset_keyboards:
       keys/@6/key_border_color:
       keys/@7/key_border_color: key_symbol_color
       keys/@8/key_border_color: key_symbol_color
-      keys/@9/label: "第三码同时输入韵母去重码和声调，　　　　"
+      keys/@9/label: "第三码同时输入韵母去重码和声调：　　　　"
       keys/@10/label: "1. 韵母去重：第二码中的三个共键韵母按照 "
       keys/@11/label: "韵尾的不同分布在1-3行上，以区分重复音节，"
       keys/@12/label: "例如第一组韵母a,an,ang依次分布在1-3行；  "
@@ -4892,6 +2788,93 @@ preset_keyboards:
       "name": 三碼拼音1無聲調qwerty鍵盤
       keys/@40/click: Keyboard_smpy1wsd_Mode
       keys/@43/swipe_up: Keyboard_smpy1wsd_Mode
+  smpy1zy:
+    __include: preset_keyboards/smpy1
+    __patch:
+      "name": 三碼拼音1注音鍵盤
+      # keys/@17/click: Keyboard_smpy1zybz1bz
+      keys/@11/click: 1_smpy1zyshow
+      keys/@12/click: 2_smpy1zyshow
+      keys/@13/click: 3_smpy1zyshow
+      keys/@14/click: x_smpy1zyshow
+      keys/@15/click: A_smpy1zyshow
+      keys/@18/click: 4_smpy1zyshow
+      keys/@19/click: 5_smpy1zyshow
+      keys/@20/click: 6_smpy1zyshow
+      keys/@21/click: 0_smpy1zyshow
+      keys/@22/click: B_smpy1zyshow
+      keys/@25/click: 7_smpy1zyshow
+      keys/@26/click: 8_smpy1zyshow
+      keys/@27/click: 9_smpy1zyshow
+      keys/@28/click: j_smpy1zyshow
+      keys/@29/click: C_smpy1zyshow
+      keys/@11/hint: 'ㄚㄢㄤ'
+      keys/@12/hint: 'ㄜㄣㄥ'
+      keys/@13/hint: 'ㄛㄡ_'
+      keys/@14/hint: 'ㄞㄟㄠ'
+      keys/@15/hint: 'ㄩ-ㄦㄢ_'
+      keys/@18/hint: 'ㄧ-ㄚㄢㄤ'
+      keys/@19/hint: 'ㄧ-ㄝㄣㄥ'
+      keys/@20/hint: 'ㄧ-ㄛㄡ_'
+      keys/@21/hint: 'ㄧ-ㄞㄧㄠ'
+      keys/@22/hint: 'ㄩ-ㄝㄣㄥ'
+      keys/@25/hint: 'ㄨ-ㄚㄢㄤ'
+      keys/@26/hint: 'ㄨ-ㄝㄣㄥ'
+      keys/@27/hint: 'ㄨ-ㄛㄡ_'
+      keys/@28/hint: 'ㄨ-ㄞㄟㄨ'
+      keys/@29/hint: 'ㄩ-ㄡㄟㄩ'
+      keys/@28/key_text_size: 18
+      keys/@11/long_click: 1cazj_smpy1zyshow
+      keys/@12/long_click: 2cazj_smpy1zyshow
+      keys/@13/long_click: 3cazj_smpy1zyshow
+      keys/@14/long_click: xcazj_smpy1zyshow
+      keys/@14/swipe_up: xcazj_smpy1zyshow
+      keys/@15/long_click: Acazj_smpy1zyshow
+      keys/@15/swipe_up: Acazj_smpy1zyshow
+      keys/@15/popup: [Acazj_smpy1zyshowpp, Acazj_smpy1zywsdshowpp]
+      keys/@18/long_click: 4cazj_smpy1zyshow
+      keys/@19/long_click: 5cazj_smpy1zyshow
+      keys/@20/long_click: 6cazj_smpy1zyshow
+      keys/@21/long_click: 0cazj_smpy1zyshow
+      keys/@21/swipe_up: 0cazj_smpy1zyshow
+      keys/@22/long_click: Bcazj_smpy1zyshow
+      keys/@22/swipe_up: Bcazj_smpy1zyshow
+      keys/@25/long_click: 7cazj_smpy1zyshow
+      keys/@26/long_click: 8cazj_smpy1zyshow
+      keys/@27/long_click: 9cazj_smpy1zyshow
+      keys/@28/long_click: jcazj_smpy1zyshow
+      keys/@28/swipe_up: jcazj_smpy1zyshow
+      keys/@29/long_click: Ccazj_smpy1zyshow
+      keys/@29/swipe_up: Ccazj_smpy1zyshow
+      keys/@31/click: Keyboard_smpy1zyqwerty_Mode
+      keys/@33/swipe_up: Keyboard_smpy1zyqwerty_Mode
+  smpy1zywsd:
+    __include: preset_keyboards/smpy1zy
+    __patch:
+      "name": 三碼拼音1注音無聲調鍵盤
+      keys/@15/click: A_smpy1zywsdshow
+      keys/@15/long_click: Acazj_smpy1zywsdshow
+      keys/@15/swipe_up: Acazj_smpy1zywsdshow
+      keys/@22/click: B_smpy1zywsdshow
+      keys/@22/long_click: Bcazj_smpy1zywsdshow
+      keys/@22/swipe_up: Bcazj_smpy1zywsdshow
+      keys/@29/click: C_smpy1zywsdshow
+      keys/@29/long_click: Ccazj_smpy1zywsdshow
+      keys/@29/swipe_up: Ccazj_smpy1zywsdshow
+      keys/@31/click: Keyboard_smpy1zywsdqwerty_Mode
+      keys/@33/swipe_up: Keyboard_smpy1zywsdqwerty_Mode
+  smpy1zyqwerty:
+    __include: preset_keyboards/smpy1qwerty
+    __patch:
+      "name": 三碼拼音1注音qwerty鍵盤
+      keys/@40/click: Keyboard_smpy1zy_Mode
+      keys/@43/swipe_up: Keyboard_smpy1zy_Mode
+  smpy1zywsdqwerty:
+    __include: preset_keyboards/smpy1qwerty
+    __patch:
+      "name": 三碼拼音1注音無聲調qwerty鍵盤
+      keys/@40/click: Keyboard_smpy1zywsd_Mode
+      keys/@43/swipe_up: Keyboard_smpy1zywsd_Mode
   smpy2:
     __include: preset_keyboards/smpy1
     __patch:
@@ -4978,11 +2961,335 @@ preset_keyboards:
       "name": 三碼拼音2無聲調qwerty鍵盤
       keys/@40/click: Keyboard_smpy2wsd_Mode
       keys/@43/swipe_up: Keyboard_smpy2wsd_Mode
+  smpy3bz1_0:
+    __include: preset_keyboards/lsbz
+    __patch:
+      keys/@0: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_smpy3bz1, label: "①基本原理", width: 50}
+      keys/@1: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_smpy3bz21, label: "②編碼方案", width: 50}
+      keys/@2:
+      keys/@3: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@4: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@5: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@6: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@7: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@8: {__include: preset_keyboards/lsbz/keys/@1, width: 12}
+      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, width: 12}
+      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, width: 12}
+      keys/@11: {__include: preset_keyboards/lsbz/keys/@2}
+      keys/@12: {__include: preset_keyboards/lsbz/keys/@3}
+      keys/@13: {__include: preset_keyboards/lsbz/keys/@4}
+  smpy3bz1:
+    __include: preset_keyboards/smpy3bz1_0
+    __patch:
+      keys/@0/key_border_color: key_symbol_color
+      keys/@1/key_border_color:
+      keys/@3/label: "通過“聲母+介韻+去重碼&聲調”，三碼輸入一個"
+      keys/@4/label: "帶調音節，任意兩個音節編碼不重複（即沒有重"
+      keys/@5/label: "複音節）。針對手機打字設計，只用15鍵，按鍵"
+      keys/@6/label: "大，可單手打字。　　　　　　　　　　　　　"
+      keys/@7/label: ""
+      
+      keys/@9/width: 55
+      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz1, label: "(1)", width: 7, key_border_color: key_symbol_color}
+      keys/@11: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz1p2, label: "(2)", width: 7}
+      keys/@12: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz1p3, label: "(3)", width: 7}
+      keys/@13: {__include: preset_keyboards/smpy3bz1_0/keys/@10}
+      keys/@14: {__include: preset_keyboards/smpy3bz1_0/keys/@11}
+      keys/@15: {__include: preset_keyboards/smpy3bz1_0/keys/@12}
+      keys/@16: {__include: preset_keyboards/smpy3bz1_0/keys/@13}
+  smpy3bz1p2:
+    __include: preset_keyboards/smpy3bz1
+    __patch:
+      keys/@3/label: "前兩碼分別輸入聲母和介韻，類似於普通雙拼，"
+      keys/@4/label: "但是聲母和介韻都合併在15鍵上，部分聲母、韻"
+      keys/@5/label: "母共鍵。通過聲、介、韻組合在第二碼消除共鍵"
+      keys/@6/label: "聲母，通過第三碼去重碼消除共鍵介母和韻母。"
+      keys/@7/label: ""
+      keys/@10/key_border_color:
+      keys/@11/key_border_color: key_symbol_color
+      keys/@12/key_border_color:
+  smpy3bz1p3:
+    __include: preset_keyboards/smpy3bz1
+    __patch:
+      keys/@3/label: "“三碼注音”方案採用動態鍵盤，以方便熟悉鍵　"
+      keys/@4/label: "位，只能打三碼全碼；熟悉之後可使用“三碼　"
+      keys/@5/label: "注音快打”方案，採用靜態鍵盤，可使用首碼簡 "
+      keys/@6/label: "拼和前兩碼簡拼，打前兩碼簡拼類似於普通的 "
+      keys/@7/label: "有重音的雙拼，第三碼相當於直接輔助碼。　 "
+      keys/@10/key_border_color:
+      keys/@11/key_border_color:
+      keys/@12/key_border_color: key_symbol_color
+  smpy3bz2_0:
+    __include: preset_keyboards/lsbz
+    __patch:
+      keys/@0: {__include: preset_keyboards/smpy3bz1_0/keys/@0, __patch: {key_border_color:}}
+      keys/@1: {__include: preset_keyboards/smpy3bz1_0/keys/@1, key_border_color: key_symbol_color}
+      keys/@2:
+      keys/@3: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_smpy3bz21, label: "第1碼:聲母", width: 20, key_text_size: 13}
+      keys/@4: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_smpy3bz21sm, label: "說明", width: 9, key_text_size: 12}
+      keys/@5: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_smpy3bz22, label: "第2碼:介韻", width: 20, key_text_size: 13}
+      keys/@6: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_smpy3bz22sm, label: "說明", width: 9, key_text_size: 12}
+      keys/@7: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_smpy3bz23, label: "第3碼:去重碼&聲調", width: 33, key_text_size: 13}
+      keys/@8: {__include: preset_keyboards/lsbz/keys/@0, click: Keyboard_smpy3bz23sm, label: "說明", width: 9, key_text_size: 12}
+      keys/@9: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@10: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@11: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@12: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@13: {__include: preset_keyboards/lsbz/keys/@1}
+      keys/@14: {__include: preset_keyboards/lsbz/keys/@2}
+      keys/@15: {__include: preset_keyboards/lsbz/keys/@3, label: ""}
+      keys/@16: {__include: preset_keyboards/lsbz/keys/@4}
+  smpy3bz21sm:
+    __include: preset_keyboards/smpy3bz2_0
+    __patch:
+      keys/@3/key_border_color: key_symbol_color
+      keys/@4/key_border_color: key_symbol_color
+      keys/@5/key_border_color:
+      keys/@6/key_border_color:
+      keys/@7/key_border_color:
+      keys/@8/key_border_color:
+      keys/@9/label: "聲母合併在15鍵上，大致按聲母表順序排列，"
+      keys/@10/label: "方便記憶。其中部分聲母共鍵，包括：　　　"
+      keys/@11/label: "1. ㄍ/ㄐ, ㄎ/ㄑ, ㄏ/ㄒ；　2. 零聲母音節；"
+      keys/@12/label: "3. ㄓ/ㄗ, ㄔ/ㄘ, ㄕ/ㄙ, ㄖ/ㄈ。　　　　　"
+      keys/@13/label: "共鍵聲母將在第二碼去重。　　　　　　　　"
+  smpy3bz22sm:
+    __include: preset_keyboards/smpy3bz2_0
+    __patch:
+      keys/@3/key_border_color:
+      keys/@4/key_border_color:
+      keys/@5/key_border_color: key_symbol_color
+      keys/@6/key_border_color: key_symbol_color
+      keys/@7/key_border_color:
+      keys/@8/key_border_color:
+      keys/@9/label: "介韻組合分佈在15鍵上，分佈規律是：　　　"
+      keys/@10/label: " 1. 空介韻母在第1行（第1區），　　"
+      keys/@11/label: " 2. ㄧ+韻母在第2行（第2區），　　"
+      keys/@12/label: " 3. ㄨ+韻母在第3行（第3區），　　"
+      keys/@13/label: " 4. ㄩ+韻母在第5列（第4區）。　　"
+      
+      keys/@15/width: 34
+      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz22sm, label: "(1)", width: 7, key_border_color: key_symbol_color}
+      keys/@after 16: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz22smp2, label: "(2)", width: 7}
+      keys/@after 17: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz22smp3, label: "(3)", width: 7}
+      keys/@after 18: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz22smp4, label: "(4)", width: 7}
+      keys/@after 19: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz22smp5, label: "(5)", width: 7}
+      keys/@after 20: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz22smp6, label: "(6)", width: 7}
+  smpy3bz22smp2:
+    __include: preset_keyboards/smpy3bz22sm
+    __patch:
+      keys/@9/label: "通過聲、介、韻組合消除共鍵聲母，方法是："
+      keys/@10/label: "1. ㄍ/ㄐ, ㄎ/ㄑ, ㄏ/ㄒ：因為ㄍㄎㄏ只跟空介"
+      keys/@11/label: "及介母ㄨ，ㄐㄑㄒ只跟介母ㄧ、ㄩ，所以共"
+      keys/@12/label: "鍵聲母被自然區分，例如只有ㄍㄚ而沒有　"
+      keys/@13/label: "ㄐㄚ，所以ㄍ/ㄐ+ㄚ=ㄍㄚ；　　　　　　 "
+      keys/@16/key_border_color:
+      keys/@17/key_border_color: key_symbol_color
+      keys/@18/key_border_color:
+      keys/@19/key_border_color:
+      keys/@20/key_border_color:
+      keys/@21/key_border_color:
+  smpy3bz22smp3:
+    __include: preset_keyboards/smpy3bz22sm
+    __patch:
+      keys/@9/label: "2. 零聲母音節：　　　　　　　　　　　　 "
+      keys/@10/label: "根據介母的不同分別分佈在4個區域；　　 "
+      keys/@11/label: ""
+      keys/@12/label: ""
+      keys/@13/label: ""
+      keys/@16/key_border_color:
+      keys/@17/key_border_color:
+      keys/@18/key_border_color: key_symbol_color
+      keys/@19/key_border_color:
+      keys/@20/key_border_color:
+      keys/@21/key_border_color:
+  smpy3bz22smp4:
+    __include: preset_keyboards/smpy3bz22sm
+    __patch:
+      keys/@9/label: "3. ㄓ/ㄗ, ㄔ/ㄘ, ㄕ/ㄙ, ㄖ/ㄈ：　　　　　　"
+      keys/@10/label: "由於這8個聲母都不跟介母ㄧ、ㄩ，所以把"
+      keys/@11/label: "ㄓㄔㄕㄖ類音節放在第1、3區，把ㄗㄘㄙㄈ"
+      keys/@12/label: "類音節放在第2、4區。（注：7個空韻音節"
+      keys/@13/label: "ㄓㄔㄕㄖㄗㄘㄙ也需輸入一個韻母ㄭ。　 "
+      keys/@16/key_border_color:
+      keys/@17/key_border_color:
+      keys/@18/key_border_color:
+      keys/@19/key_border_color: key_symbol_color
+      keys/@20/key_border_color:
+      keys/@21/key_border_color:
+  smpy3bz22smp5:
+    __include: preset_keyboards/smpy3bz22sm
+    __patch:
+      keys/@9/label: "通過前兩碼組合，共鍵聲母全部得以區分。　"
+      keys/@10/label: ""
+      keys/@11/label: "在第二碼中，相鄰的3個韻母位於同一鍵位， "
+      keys/@12/label: "將在第三碼進行區分。　　　　　　　　　　"
+      keys/@13/label: ""
+      keys/@16/key_border_color:
+      keys/@17/key_border_color:
+      keys/@18/key_border_color:
+      keys/@19/key_border_color:
+      keys/@20/key_border_color: key_symbol_color
+      keys/@21/key_border_color:
+  smpy3bz22smp6:
+    __include: preset_keyboards/smpy3bz22sm
+    __patch:
+      keys/@9/label: ""
+      keys/@10/label: ""
+      keys/@11/label: ""
+      keys/@12/label: ""
+      keys/@13/label: ""
+      keys/@16/key_border_color:
+      keys/@17/key_border_color:
+      keys/@18/key_border_color:
+      keys/@19/key_border_color:
+      keys/@20/key_border_color:
+      keys/@21/key_border_color: key_symbol_color
+  smpy3bz23sm:
+    __include: preset_keyboards/smpy3bz2_0
+    __patch:
+      keys/@3/key_border_color:
+      keys/@4/key_border_color:
+      keys/@5/key_border_color:
+      keys/@6/key_border_color:
+      keys/@7/key_border_color: key_symbol_color
+      keys/@8/key_border_color: key_symbol_color
+      keys/@9/label: "第三碼同時輸入韻母去重碼和聲調：　　　　"
+      keys/@10/label: "1. 韻母去重：第二碼中的三個共鍵韻母按照 "
+      keys/@11/label: "顺序分佈在1-3行上，以區分重複音節，例如"
+      keys/@12/label: "第一組韻母ㄚㄞㄢ順次分佈在1-3行；　　　"
+      keys/@13/label: "2. 聲調：用1-5列分別輸入1-4聲和輕聲。　"
+      
+      keys/@15/width: 62
+      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz23sm, label: "(1)", width: 7, key_border_color: key_symbol_color}
+      keys/@after 16: {__include: preset_keyboards/lsbz/keys/@1, click: Keyboard_smpy3bz23smp2, label: "(2)", width: 7}
+  smpy3bz23smp2:
+    __include: preset_keyboards/smpy3bz23sm
+    __patch:
+      keys/@9/label: "如此，在輸入第三碼之後便得到了唯一的一個 "
+      keys/@10/label: "帶調音節，不會有重複音節。　　　　　　　 "
+      keys/@11/label: "如果不想區分聲調，可長按或上滑T鍵切換為無"
+      keys/@12/label: "聲調模式，此時可用第三碼的第5列輸入無聲調"
+      keys/@13/label: "音節。　　　　　　　　　　　　　　　　　 "
+      keys/@16/key_border_color:
+      keys/@17/key_border_color: key_symbol_color
+  smpy3bz21:
+    __include: preset_keyboards/smpy3bz21sm
+    __patch:
+      keys/@9: {__include: preset_keyboards/lsbz/keys/@1, width: 3}
+      keys/@10: {__include: preset_keyboards/lsbz/keys/@1, width: 2}
+      keys/@11: {__include: preset_keyboards/lsbz/keys/@1, width: 90}
+      keys/@12:
+      keys/@13:
+      keys/@after 13:
+      keys/@after 14:
+      keys/@after 15: {__include: preset_keyboards/lsbz/keys/@1, width: 5}
+      keys/@after 16:
+      keys/@after 17:
+      
+      keys/@after 18: {__include: preset_keyboards/lsbz/keys/@1, width: 5, height: 40}
+      keys/@after 19:
+      keys/@after 20: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw11, long_click: smpy3bzjw11jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 21: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw12, long_click: smpy3bzjw12jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 22: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw13, long_click: smpy3bzjw13jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 23: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw14, long_click: smpy3bzjw14jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 24: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw15, long_click: smpy3bzjw15jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 25: {__include: preset_keyboards/lsbz/keys/@1, width: 5}
+      keys/@after 26:
+      keys/@after 27:
+      
+      keys/@after 28: {__include: preset_keyboards/lsbz/keys/@1, width: 5, height: 40}
+      keys/@after 29:
+      keys/@after 30: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw21, long_click: smpy3bzjw21jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 31: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw22, long_click: smpy3bzjw22jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 32: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw23, long_click: smpy3bzjw23jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 33: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw24, long_click: smpy3bzjw24jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 34: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw25, long_click: smpy3bzjw25jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 35: {__include: preset_keyboards/lsbz/keys/@1, width: 5}
+      keys/@after 36:
+      keys/@after 37:
+      
+      keys/@after 38: {__include: preset_keyboards/lsbz/keys/@1, width: 5, height: 40}
+      keys/@after 39:
+      keys/@after 40: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw31, long_click: smpy3bzjw31jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 41: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw32, long_click: smpy3bzjw32jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 42: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw33, long_click: smpy3bzjw33jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 43: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw34, long_click: smpy3bzjw34jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 44: {__include: preset_keyboards/lsbz/keys/@1, click: smpy3bz21jw35, long_click: smpy3bzjw35jm, symbol_text_size: 8, round_corner: 20, key_border_color: key_symbol_color, key_text_size: 14, width: 18}
+      keys/@after 45: {__include: preset_keyboards/lsbz/keys/@1, width: 5}
+      keys/@after 46:
+      keys/@after 47:
+      keys/@15: {__include: preset_keyboards/lsbz/keys/@3}
+  smpy3bz22:
+    __include: preset_keyboards/smpy3bz21
+    __patch:
+      keys/@3: {__include: preset_keyboards/smpy3bz22sm/keys/@3}
+      keys/@4: {__include: preset_keyboards/smpy3bz22sm/keys/@4}
+      keys/@5: {__include: preset_keyboards/smpy3bz22sm/keys/@5}
+      keys/@6: {__include: preset_keyboards/smpy3bz22sm/keys/@6}
+      keys/@7: {__include: preset_keyboards/smpy3bz22sm/keys/@7}
+      keys/@8: {__include: preset_keyboards/smpy3bz22sm/keys/@8}
+      keys/@21/click: smpy3bz22jw11
+      keys/@22/click: smpy3bz22jw12
+      keys/@23/click: smpy3bz22jw13
+      keys/@24/click: smpy3bz22jw14
+      keys/@25/click: smpy3bz22jw15
+      keys/@31/click: smpy3bz22jw21
+      keys/@32/click: smpy3bz22jw22
+      keys/@33/click: smpy3bz22jw23
+      keys/@34/click: smpy3bz22jw24
+      keys/@35/click: smpy3bz22jw25
+      keys/@41/click: smpy3bz22jw31
+      keys/@42/click: smpy3bz22jw32
+      keys/@43/click: smpy3bz22jw33
+      keys/@44/click: smpy3bz22jw34
+      keys/@45/click: smpy3bz22jw35
+      keys/@21/key_text_size: 12
+      keys/@22/key_text_size: 12
+      keys/@23/key_text_size: 12
+      keys/@24/key_text_size: 12
+      keys/@25/key_text_size: 12
+      keys/@31/key_text_size: 12
+      keys/@32/key_text_size: 12
+      keys/@33/key_text_size: 12
+      keys/@34/key_text_size: 12
+      keys/@35/key_text_size: 12
+      keys/@41/key_text_size: 12
+      keys/@42/key_text_size: 12
+      keys/@43/key_text_size: 12
+      keys/@44/key_text_size: 12
+      keys/@45/key_text_size: 12
+  smpy3bz23:
+    __include: preset_keyboards/smpy3bz21
+    __patch:
+      keys/@3: {__include: preset_keyboards/smpy3bz23sm/keys/@3}
+      keys/@4: {__include: preset_keyboards/smpy3bz23sm/keys/@4}
+      keys/@5: {__include: preset_keyboards/smpy3bz23sm/keys/@5}
+      keys/@6: {__include: preset_keyboards/smpy3bz23sm/keys/@6}
+      keys/@7: {__include: preset_keyboards/smpy3bz23sm/keys/@7}
+      keys/@8: {__include: preset_keyboards/smpy3bz23sm/keys/@8}
+      keys/@11/label: "以第一組韻母為例"
+      keys/@21/click: smpy3bz23jw11
+      keys/@22/click: smpy3bz23jw12
+      keys/@23/click: smpy3bz23jw13
+      keys/@24/click: smpy3bz23jw14
+      keys/@25/click: smpy3bz23jw15
+      keys/@31/click: smpy3bz23jw21
+      keys/@32/click: smpy3bz23jw22
+      keys/@33/click: smpy3bz23jw23
+      keys/@34/click: smpy3bz23jw24
+      keys/@35/click: smpy3bz23jw25
+      keys/@41/click: smpy3bz23jw31
+      keys/@42/click: smpy3bz23jw32
+      keys/@43/click: smpy3bz23jw33
+      keys/@44/click: smpy3bz23jw34
+      keys/@45/click: smpy3bz23jw35
   smpy3:
     __include: preset_keyboards/smpy1
     __patch:
       "name": 三碼拼音3鍵盤
-      # keys/@17/click: Keyboard_smpy3bz1bz
+      keys/@17/click: Keyboard_smpy3bz1bz
+      keys/@10/click: Keyboard_lsfc_strokeB
       keys/@11/click: 1_smpy3show
       keys/@12/click: 2_smpy3show
       keys/@13/click: 3_smpy3show
@@ -5002,16 +3309,16 @@ preset_keyboards:
       keys/@12/hint: 'ㄛㄟㄣ'
       keys/@13/hint: 'ㄜㄠㄤ'
       keys/@14/hint: 'ㄝㄡㄥ'
-      keys/@15/hint: 'ㄩ-ㄦㄞㄢ'
+      keys/@15/hint: 'ㄩ-ㄦ_ㄢ'
       keys/@18/hint: 'ㄧ-ㄚㄞㄢ'
       keys/@19/hint: 'ㄧ-ㄛㄧㄣ'
-      keys/@20/hint: 'ㄧ-ㄜㄠㄤ'
+      keys/@20/hint: 'ㄧ-_ㄠㄤ'
       keys/@21/hint: 'ㄧ-ㄝㄡㄥ'
-      keys/@22/hint: 'ㄩ-ㄛㄟㄣ'
+      keys/@22/hint: 'ㄩ-__ㄣ'
       keys/@25/hint: 'ㄨ-ㄚㄞㄢ'
       keys/@26/hint: 'ㄨ-ㄛㄟㄣ'
-      keys/@27/hint: 'ㄨ-ㄜㄨㄤ'
-      keys/@28/hint: 'ㄨ-ㄝㄡㄥ'
+      keys/@27/hint: 'ㄨ-__ㄤ'
+      keys/@28/hint: 'ㄨ-ㄝㄨㄥ'
       keys/@29/hint: 'ㄩ-ㄝㄩㄥ'
       keys/@28/key_text_size: 18
       keys/@11/long_click: 1cazj_smpy3show
@@ -5067,7 +3374,7 @@ preset_keyboards:
       keys/@43/swipe_up: Keyboard_smpy3wsd_Mode
  # v三碼拼音動態鍵盤
   triple_pinyin_smpy:
-    __include: preset_keyboards/smpy1dt
+    __include: preset_keyboards/smpy1dtwsd
   smpy1dt:
     __include: preset_keyboards/smpy1
     __patch:
@@ -6460,21 +4767,21 @@ preset_keyboards:
     __include: preset_keyboards/smpy1dtyu3
     __patch:
       keys/@16/composing: BackSpacesmpy1dtyb
-      keys/@11/label: '^iō'
-      keys/@12/label: '^ió'
-      keys/@13/label: '^iǒ'
-      keys/@14/label: '^iò'
-      keys/@15/label: '^iȯ'
+      keys/@11/label: '^iāo'
+      keys/@12/label: '^iáo'
+      keys/@13/label: '^iǎo'
+      keys/@14/label: '^iào'
+      keys/@15/label: '^iȧo'
       keys/@18/label: '^iū'
       keys/@19/label: '^iú'
       keys/@20/label: '^iǔ'
       keys/@21/label: '^iù'
       keys/@22/label: '^iu̇'
-      keys/@25/label: '^iāo'
-      keys/@26/label: '^iáo'
-      keys/@27/label: '^iǎo'
-      keys/@28/label: '^iào'
-      keys/@29/label: '^iȧo'
+      keys/@25/label: '^iōng'
+      keys/@26/label: '^ióng'
+      keys/@27/label: '^iǒng'
+      keys/@28/label: '^iòng'
+      keys/@29/label: '^iȯng'
       keys/@11/key_text_size: 12
       keys/@12/key_text_size: 12
       keys/@13/key_text_size: 12
@@ -7840,9 +6147,9 @@ preset_keyboards:
       keys/@31/click: Keyboard_smpy1dtwsdqwerty_Mode
       keys/@33/swipe_up: Keyboard_smpy1dtwsdqwerty_Mode
       keys/@16/composing: BackSpacesmpy1dtybwsd
-      keys/@15/label: '^io'
+      keys/@15/label: '^iao'
       keys/@22/label: '^iu'
-      keys/@29/label: '^iao'
+      keys/@29/label: '^iong'
       keys/@15/click: 'y{Keyboard_last_lock}'
       keys/@22/click: 'h{Keyboard_last_lock}'
       keys/@29/click: 'n{Keyboard_last_lock}'
@@ -11931,93 +10238,3 @@ preset_keyboards:
       "name": 三碼拼音動態qwerty鍵盤無聲調
       keys/@40/click: Keyboard_smpy1dtwsd_Mode
       keys/@43/swipe_up: Keyboard_smpy1dtwsd_Mode
- # v三碼拼音注音鍵盤
-  triple_pinyin_smpy_bopomofo:
-    __include: preset_keyboards/smpy1zy
-  smpy1zy:
-    __include: preset_keyboards/smpy1
-    __patch:
-      "name": 三碼拼音1注音鍵盤
-      # keys/@17/click: Keyboard_smpy1zybz1bz
-      keys/@11/click: 1_smpy1zyshow
-      keys/@12/click: 2_smpy1zyshow
-      keys/@13/click: 3_smpy1zyshow
-      keys/@14/click: x_smpy1zyshow
-      keys/@15/click: A_smpy1zyshow
-      keys/@18/click: 4_smpy1zyshow
-      keys/@19/click: 5_smpy1zyshow
-      keys/@20/click: 6_smpy1zyshow
-      keys/@21/click: 0_smpy1zyshow
-      keys/@22/click: B_smpy1zyshow
-      keys/@25/click: 7_smpy1zyshow
-      keys/@26/click: 8_smpy1zyshow
-      keys/@27/click: 9_smpy1zyshow
-      keys/@28/click: j_smpy1zyshow
-      keys/@29/click: C_smpy1zyshow
-      keys/@11/hint: 'ㄚㄢㄤ'
-      keys/@12/hint: 'ㄜㄣㄥ'
-      keys/@13/hint: 'ㄛㄡ_'
-      keys/@14/hint: 'ㄞㄟㄠ'
-      keys/@15/hint: 'ㄩ-ㄦㄢ_'
-      keys/@18/hint: 'ㄧ-ㄚㄢㄤ'
-      keys/@19/hint: 'ㄧ-ㄝㄣㄥ'
-      keys/@20/hint: 'ㄧ-ㄛㄡ_'
-      keys/@21/hint: 'ㄧ-ㄞㄧㄠ'
-      keys/@22/hint: 'ㄩ-ㄝㄣㄥ'
-      keys/@25/hint: 'ㄨ-ㄚㄢㄤ'
-      keys/@26/hint: 'ㄨ-ㄝㄣㄥ'
-      keys/@27/hint: 'ㄨ-ㄛㄡ_'
-      keys/@28/hint: 'ㄨ-ㄞㄟㄨ'
-      keys/@29/hint: 'ㄩ-ㄡㄟㄩ'
-      keys/@28/key_text_size: 18
-      keys/@11/long_click: 1cazj_smpy1zyshow
-      keys/@12/long_click: 2cazj_smpy1zyshow
-      keys/@13/long_click: 3cazj_smpy1zyshow
-      keys/@14/long_click: xcazj_smpy1zyshow
-      keys/@14/swipe_up: xcazj_smpy1zyshow
-      keys/@15/long_click: Acazj_smpy1zyshow
-      keys/@15/swipe_up: Acazj_smpy1zyshow
-      keys/@15/popup: [Acazj_smpy1zyshowpp, Acazj_smpy1zywsdshowpp]
-      keys/@18/long_click: 4cazj_smpy1zyshow
-      keys/@19/long_click: 5cazj_smpy1zyshow
-      keys/@20/long_click: 6cazj_smpy1zyshow
-      keys/@21/long_click: 0cazj_smpy1zyshow
-      keys/@21/swipe_up: 0cazj_smpy1zyshow
-      keys/@22/long_click: Bcazj_smpy1zyshow
-      keys/@22/swipe_up: Bcazj_smpy1zyshow
-      keys/@25/long_click: 7cazj_smpy1zyshow
-      keys/@26/long_click: 8cazj_smpy1zyshow
-      keys/@27/long_click: 9cazj_smpy1zyshow
-      keys/@28/long_click: jcazj_smpy1zyshow
-      keys/@28/swipe_up: jcazj_smpy1zyshow
-      keys/@29/long_click: Ccazj_smpy1zyshow
-      keys/@29/swipe_up: Ccazj_smpy1zyshow
-      keys/@31/click: Keyboard_smpy1zyqwerty_Mode
-      keys/@33/swipe_up: Keyboard_smpy1zyqwerty_Mode
-  smpy1zywsd:
-    __include: preset_keyboards/smpy1zy
-    __patch:
-      "name": 三碼拼音1注音無聲調鍵盤
-      keys/@15/click: A_smpy1zywsdshow
-      keys/@15/long_click: Acazj_smpy1zywsdshow
-      keys/@15/swipe_up: Acazj_smpy1zywsdshow
-      keys/@22/click: B_smpy1zywsdshow
-      keys/@22/long_click: Bcazj_smpy1zywsdshow
-      keys/@22/swipe_up: Bcazj_smpy1zywsdshow
-      keys/@29/click: C_smpy1zywsdshow
-      keys/@29/long_click: Ccazj_smpy1zywsdshow
-      keys/@29/swipe_up: Ccazj_smpy1zywsdshow
-      keys/@31/click: Keyboard_smpy1zywsdqwerty_Mode
-      keys/@33/swipe_up: Keyboard_smpy1zywsdqwerty_Mode
-  smpy1zyqwerty:
-    __include: preset_keyboards/smpy1qwerty
-    __patch:
-      "name": 三碼拼音1注音qwerty鍵盤
-      keys/@40/click: Keyboard_smpy1zy_Mode
-      keys/@43/swipe_up: Keyboard_smpy1zy_Mode
-  smpy1zywsdqwerty:
-    __include: preset_keyboards/smpy1qwerty
-    __patch:
-      "name": 三碼拼音1注音無聲調qwerty鍵盤
-      keys/@40/click: Keyboard_smpy1zywsd_Mode
-      keys/@43/swipe_up: Keyboard_smpy1zywsd_Mode

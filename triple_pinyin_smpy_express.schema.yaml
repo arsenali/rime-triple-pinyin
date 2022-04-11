@@ -11,8 +11,7 @@ schema:
   description: |
     15键内实现“声母+韵母+去重码&声调”三码输入一个带调音节；
     基础韵母大致按韵头分为4组：a/an/ang,e/en/eng,o/ou/ong,ai/ei/ao；
-    i=iei,u=uao,v=vao,er=va；
-    支持首码简拼和前两码简拼，支持云输入。
+    支持首码简拼（需使用隔音符）和前两码简拼。
   dependencies:
     - luna_pinyin
     - stroke
@@ -108,15 +107,15 @@ speller:
     - derive/^([jqx])?veng/$1iong/            # veng->iong
     - derive/^(\w|[zcs]h)ueng/$1ong/          # ueng->ong
    # 尖音處理
-    - xform/^ziao([1-5])$/buong$1/
+    - xform/^ziao([1-5])$/buo$1/
     - xform/^zii([1-5])$/buei$1/
     - xform/^zi(\w+[1-5])$/bu$1/
     - xform/^z(v\w*[1-5])$/b$1/
-    - xform/^ciao([1-5])$/puong$1/
+    - xform/^ciao([1-5])$/puo$1/
     - xform/^cii([1-5])$/puei$1/
     - xform/^ci(\w+[1-5])$/pu$1/
     - xform/^c(v\w*[1-5])$/p$1/
-    - xform/^siao([1-5])$/muong$1/
+    - xform/^siao([1-5])$/muo$1/
     - xform/^sii([1-5])$/muei$1/
     - xform/^si(\w+[1-5])$/mu$1/
     - xform/^s(v\w*[1-5])$/m$1/
@@ -221,7 +220,7 @@ translator:
     - xform/\<[gh](\w*)/C$1/
     - xform/\<[bn](\w*)/S$1/
     - xform/\<([BPMDTNLGKHYZCSR])(?!\w)\>/$1-/
-    - xform/\<([BPMDTNLGKHYZCSR])q(\w|\>)/$1Q$2/         # 第2碼：韻母
+    - xform/\<([BPMDTNLGKHYZCSR])q(\w|\>)/$1Q$2/            # 第2碼：韻母
     - xform/\<([BPMDTNLGKHYZCSR])w(\w|\>)/$1W$2/
     - xform/\<([BPMDTNLGKHYZCSR])e(\w|\>)/$1E$2/
     - xform/\<([BPMDTNLGKHYZCSR])r(\w|\>)/$1R$2/
@@ -349,20 +348,20 @@ translator:
     - xform/\<RV(ENG)?([0-5])\>/fu$1$2/
     - xform/\<Ri([A-Z]+[0-5])\>/f$1/
     - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/
-    - xform/\<(buong)([0-5])\>/ziao$2/                       # 尖音處理
+    - xform/\<(buo)([0-5])\>/ziao$2/                        # 尖音處理
     - xform/\<buei([0-5])\>/zii$1/
     - xform/\<bu(\w+[0-5])\>/zi$1/
     - xform/\<b(v\w*[0-5])\>/z$1/
-    - xform/\<(puong)([0-5])\>/ciao$2/
+    - xform/\<(puo)([0-5])\>/ciao$2/
     - xform/\<puei([0-5])\>/cii$1/
     - xform/\<pu(\w+[0-5])\>/ci$1/
     - xform/\<p(v\w*[0-5])\>/c$1/
-    - xform/\<(muong)([0-5])\>/siao$2/
+    - xform/\<(muo)([0-5])\>/siao$2/
     - xform/\<muei([0-5])\>/sii$1/
     - xform/\<mu(\w+[0-5])\>/si$1/
     - xform/\<m(v\w*[0-5])\>/s$1/
     
-    - xform/veng(?!\S*-)/iong/                                      # 拼音完整形式
+    - xform/veng(?!\S*-)/iong/                              # 拼音完整形式
     - xform/\<([jqx])v(?!\S*-)/$1u/
     - xform/\<y([aoe])(?!\S*-)/$1/
     - xform/([iuv])en(?!\S*-)/$1n/
@@ -380,10 +379,9 @@ translator:
     - xform/ (\S+-)/ '$1/                                   # 簡拼前+隔音符
     - xform/- /-' /                                         # 簡拼後+隔音符
     - xform/' '?/ '/
-    - xform/\<g([iv][aeoj]-)/j$1/                                # 前兩碼簡拼
+    - xform/\<g([iv][aeoj]-)/j$1/                           # 前兩碼簡拼
     - xform/\<k([iv][aeoj]-)/q$1/
     - xform/\<h([iv][aeoj]-)/x$1/
-    - xform/(?<![yzcsr])v([aej]-)/ü$1/
     - xform/\<y([aeoj]-)/’$1/
     - xform/\<yu([aeoj]-)/w$1/
     - xform/\<([zcs])(u)?([aeoj]-)/$1h$2$3/
@@ -392,8 +390,10 @@ translator:
     - xform/\<yua-/yur-/
     - xform/\<ri([aeoj]-)/f$1/
     - xform/\<rv([aej]-)/fu$1/
+    - xform/v([ae]-)/ü$1/
+    - xform/vj-/ü-/
     - xform/j-/ι-/
-    - xform/\<g-/g\x2Fj-/                                 # 首碼簡拼
+    - xform/\<g-/g\x2Fj-/                                   # 首碼簡拼
     - xform/\<k-/k\x2Fq-/
     - xform/\<h-/h\x2Fx-/
     - xform/\<y-/’\x2Fy\x2Fw-/
@@ -416,15 +416,15 @@ translator:
     - xform/[0-5]//                                         # 去掉聲調
     
    # 3：  取消空格：取消零聲母音節前的隔音符，保留空格
-    - xform/(?<!-) '(?!\S*-)/ /         # 取消零聲母音節前的隔音符
-    # - xform/([bpmfdtnljqxwzcs])-/$1/    # 取消首碼簡拼後的-
-    # - xform/ //                         # 取消空格
-    - xlit|;"| '|                       # 把;替換為空格，恢復輸入的隔音符號'
+    - xform/(?<!-) '(?!\S*-)/ /                             # 取消零聲母音節前的隔音符
+    # - xform/([bpmfdtnljqxwzcs])-/$1/                      # 取消首碼簡拼後的-
+    # - xform/ //                                           # 取消空格
+    - xlit|;"| '|                                           # 把;替換為空格，恢復輸入的隔音符號'
 
   comment_format:  # 提示碼爲带调拼音
-    - erase/^xx$/
-    - xform/^m([1-5])$/mu$1/        # 鼻音m（呣）轉化爲mu
-    - xform/^r5$/er5/               # r5（兒）轉化爲er5
+    - erase/\<xx\>/
+    - xform/\<m([1-5])\>/mu$1/        # 鼻音m（呣）轉化爲mu
+    - xform/\<r5\>/er5/               # r5（兒）轉化爲er5
     - xform/([aoeiuv])(ng?|r)([1-4])/$1$3$2
     - xform/([aoe])([iuo])([1-4])/$1$3$2
     - xform/a1/ā
@@ -458,7 +458,7 @@ translator:
     - xform/eh5?/ê
     - xform/([nlzcs])v/$1ü/
     - xform/([jqxy])v/$1u/
-    - xform/([a-z|ü]+)[1-5]/$1/                            # 未處理聲調轉換
+    - xform/([a-z|ü]+)[1-5]/$1/                             # 未處理聲調轉換
 
 luna_pinyin_lookup:
   tag: luna_pinyin_lookup
@@ -491,15 +491,15 @@ luna_pinyin_lookup:
     - derive/\<([jqx])?veng/$1iong/            # veng->iong
     - derive/\<(\w|[zcs]h)ueng/$1ong/          # ueng->ong
    # 尖音處理
-    - xform/\<ziao([1-5])\>/buong$1/
+    - xform/\<ziao([1-5])\>/buo$1/
     - xform/\<zii([1-5])\>/buei$1/
     - xform/\<zi(\w+[1-5])\>/bu$1/
     - xform/\<z(v\w*[1-5])\>/b$1/
-    - xform/\<ciao([1-5])\>/puong$1/
+    - xform/\<ciao([1-5])\>/puo$1/
     - xform/\<cii([1-5])\>/puei$1/
     - xform/\<ci(\w+[1-5])\>/pu$1/
     - xform/\<c(v\w*[1-5])\>/p$1/
-    - xform/\<siao([1-5])\>/muong$1/
+    - xform/\<siao([1-5])\>/muo$1/
     - xform/\<sii([1-5])\>/muei$1/
     - xform/\<si(\w+[1-5])\>/mu$1/
     - xform/\<s(v\w*[1-5])\>/m$1/

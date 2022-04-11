@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: triple_pinyin_bopomofo
-  name: 三碼注音
+  schema_id: triple_pinyin_bopomofo_express
+  name: 三碼注音快打
   version: "1.2"
   author:
     - 佛振 <chen.sst@gmail.com>
@@ -11,7 +11,7 @@ schema:
   description: |
     15鍵內實現“聲母+介韻+去重碼&聲調”三碼輸入一個帶調音節；
     介韻分為四區：ㄚ/ㄞ/ㄢ,ㄛ/ㄟ/ㄣ,ㄜ/ㄠ/ㄤ,ㄝ/ㄡ/ㄥ；
-    本方案主要用於熟悉鍵位，不支持簡拼，如需用簡拼請使用三碼注音快打方案。
+    支持首碼簡拼（需使用隔音符）和前兩碼簡拼。
   dependencies:
     - luna_pinyin
     - stroke
@@ -189,18 +189,18 @@ speller:
     - derive/^t([qwertasdfgzxcvb]{2})$/y$1/
     - derive/^g([qwertasdfgzxcvb]{2})$/h$1/
     - derive/^b([qwertasdfgzxcvb]{2})$/n$1/
-    # - abbrev/^([qwertasdfgzxcvbyhn])[qwertasdfgzxcvb]{2}$/$1/     # 首碼簡拼
+    - abbrev/^([qwertasdfgzxcvbyhn])[qwertasdfgzxcvb]{2}$/$1/     # 首碼簡拼
     - derive/^([qwertasdfgzxcvbyhn])t([qwertasdfgzxcvb])$/$1y$2/
     - derive/^([qwertasdfgzxcvbyhn])g([qwertasdfgzxcvb])$/$1h$2/
     - derive/^([qwertasdfgzxcvbyhn])b([qwertasdfgzxcvb])$/$1n$2/
-    # - derive/^([qwertasdfgzxcvbyhn]{2})[qwertasdfgzxcvb]$/$1/     # 前兩碼簡拼
+    - derive/^([qwertasdfgzxcvbyhn]{2})[qwertasdfgzxcvb]$/$1/     # 前兩碼簡拼
     - derive/^([qwertasdfgzxcvbyhn]{2})[qwert]$/$1y/
     - derive/^([qwertasdfgzxcvbyhn]{2})[asdfg]$/$1h/
     - derive/^([qwertasdfgzxcvbyhn]{2})[zxcvb]$/$1n/
 
 translator:
   dictionary: terra_pinyin
-  prism: triple_pinyin_bopomofo
+  prism: triple_pinyin_bopomofo_express
   spelling_hints: 4 # ～字以內候選標註完整帶調拼音
   preedit_format:
    # 1：  三碼注音輸入碼->數字標調拼音
