@@ -823,12 +823,8 @@ preset_keys:
   Escapecx: {label: *lb_Escapecx, send: Escape}
   BackSpacelast: {label: *lb_BackSpace, text: '{BackSpace}{Keyboard_last}'}
   BackToPreSyl: {label: *lb_BackToPreSyl, text: '{BackToPreviousSyllable}'}
-  
-  Xdm: {label: "^", text: "x"}
-  
   # rime組合鍵
   # rime狀態
-  Mode_switchsy: {toggle: ascii_mode, send: Mode_switch, states: [ Eo, En ]}
   # trime設定
   # trime命令
  # v補充鍵盤
@@ -874,12 +870,14 @@ preset_keys:
   Keyboard_lsjpqwerty: {send: Eisu_toggle, select: lsjpqwerty}
   Keyboard_lsjpqwerty_Mode: {label: *lb_Keyboard_ls15qwerty_Mode, text: '{Keyboard_lsjpqwerty}{Mode_switch}'}
   # trime命令
-  help_ls: {label: *lb_help_ls, send: function, command: run, option: "http://lssp.ysepan.com/", functional: false} #李氏三拼介紹主頁
+  help_ls: {label: *lb_help_ls, send: function, command: run, option: "http://lssp.ysepan.com/", functional: false} #李氏拼音系列方案介紹主頁
   
   # 按鍵設置
   lsjp_1x: {label: *lb_lsjp_1x, text: 1, functional: false}
   lsjp_2x: {label: *lb_lsjp_2x, text: 2, functional: false}
   lsjp_3x: {label: *lb_lsjp_3x, text: 3, functional: false}
+  
+  fc_show: {label: *lb_Keyboard_lsfc, text: "`"}
   
   lsfc_pinyinshow_a: {label: 'a', text: '`a', functional: false}
   lsfc_pinyinshow_b: {label: 'b', text: '`b', functional: false}
@@ -1031,21 +1029,21 @@ preset_keys:
   smpy1bz22jw34: {label: {__include: preset_keyboards/smpy1/keys/@28/hint}, preview: " ", functional: false}
   smpy1bz22jw35: {label: {__include: preset_keyboards/smpy1/keys/@29/hint}, preview: " ", functional: false}
   
-  smpy1bz23jw11: {label: {__include: preset_keyboards/smpy1dty1/keys/@11/label}, preview: " ", functional: false}
-  smpy1bz23jw12: {label: {__include: preset_keyboards/smpy1dty1/keys/@12/label}, preview: " ", functional: false}
-  smpy1bz23jw13: {label: {__include: preset_keyboards/smpy1dty1/keys/@13/label}, preview: " ", functional: false}
-  smpy1bz23jw14: {label: {__include: preset_keyboards/smpy1dty1/keys/@14/label}, preview: " ", functional: false}
-  smpy1bz23jw15: {label: {__include: preset_keyboards/smpy1dty1/keys/@15/label}, preview: " ", functional: false}
-  smpy1bz23jw21: {label: {__include: preset_keyboards/smpy1dty1/keys/@18/label}, preview: " ", functional: false}
-  smpy1bz23jw22: {label: {__include: preset_keyboards/smpy1dty1/keys/@19/label}, preview: " ", functional: false}
-  smpy1bz23jw23: {label: {__include: preset_keyboards/smpy1dty1/keys/@20/label}, preview: " ", functional: false}
-  smpy1bz23jw24: {label: {__include: preset_keyboards/smpy1dty1/keys/@21/label}, preview: " ", functional: false}
-  smpy1bz23jw25: {label: {__include: preset_keyboards/smpy1dty1/keys/@22/label}, preview: " ", functional: false}
-  smpy1bz23jw31: {label: {__include: preset_keyboards/smpy1dty1/keys/@25/label}, preview: " ", functional: false}
-  smpy1bz23jw32: {label: {__include: preset_keyboards/smpy1dty1/keys/@26/label}, preview: " ", functional: false}
-  smpy1bz23jw33: {label: {__include: preset_keyboards/smpy1dty1/keys/@27/label}, preview: " ", functional: false}
-  smpy1bz23jw34: {label: {__include: preset_keyboards/smpy1dty1/keys/@28/label}, preview: " ", functional: false}
-  smpy1bz23jw35: {label: {__include: preset_keyboards/smpy1dty1/keys/@29/label}, preview: " ", functional: false}
+  smpy1bz23jw11: {label: 'ā', preview: " ", functional: false}
+  smpy1bz23jw12: {label: 'á', preview: " ", functional: false}
+  smpy1bz23jw13: {label: 'ǎ', preview: " ", functional: false}
+  smpy1bz23jw14: {label: 'à', preview: " ", functional: false}
+  smpy1bz23jw15: {label: 'ȧ', preview: " ", functional: false}
+  smpy1bz23jw21: {label: 'ān', preview: " ", functional: false}
+  smpy1bz23jw22: {label: 'án', preview: " ", functional: false}
+  smpy1bz23jw23: {label: 'ǎn', preview: " ", functional: false}
+  smpy1bz23jw24: {label: 'àn', preview: " ", functional: false}
+  smpy1bz23jw25: {label: 'ȧn', preview: " ", functional: false}
+  smpy1bz23jw31: {label: 'āng', preview: " ", functional: false}
+  smpy1bz23jw32: {label: 'áng', preview: " ", functional: false}
+  smpy1bz23jw33: {label: 'ǎng', preview: " ", functional: false}
+  smpy1bz23jw34: {label: 'àng', preview: " ", functional: false}
+  smpy1bz23jw35: {label: 'ȧng', preview: " ", functional: false}
   
   1_smpy1show: {preview: "q", text: 'q', label: "b", functional: false}
   2_smpy1show: {preview: "w", text: 'w', label: "p", functional: false}
@@ -1109,7 +1107,7 @@ preset_keys:
   7_smpy1zyshow: {__include: preset_keys/7_smpy1show, label: "ㄍㄐ"}
   8_smpy1zyshow: {__include: preset_keys/8_smpy1show, label: "ㄎㄑ"}
   9_smpy1zyshow: {__include: preset_keys/9_smpy1show, label: "ㄏㄒ"}
-  j_smpy1zyshow: {__include: preset_keys/j_smpy1show, label: "零"}
+  j_smpy1zyshow: {__include: preset_keys/j_smpy1show, label: "〇"}
   C_smpy1zyshow: {__include: preset_keys/C_smpy1show, label: "ㄕㄙ"}
   A_smpy1zywsdshow: {__include: preset_keys/A_smpy1zyshow, text: 'y', preview: "y"}
   B_smpy1zywsdshow: {__include: preset_keys/B_smpy1zyshow, text: 'h', preview: "h"}
@@ -1260,37 +1258,37 @@ preset_keys:
   smpy3bz22jw34: {label: {__include: preset_keyboards/smpy3/keys/@28/hint}, preview: " ", functional: false}
   smpy3bz22jw35: {label: {__include: preset_keyboards/smpy3/keys/@29/hint}, preview: " ", functional: false}
   
-  smpy3bz23jw11: {label: {__include: preset_keyboards/smpy3dty1/keys/@11/label}, preview: " ", functional: false}
-  smpy3bz23jw12: {label: {__include: preset_keyboards/smpy3dty1/keys/@12/label}, preview: " ", functional: false}
-  smpy3bz23jw13: {label: {__include: preset_keyboards/smpy3dty1/keys/@13/label}, preview: " ", functional: false}
-  smpy3bz23jw14: {label: {__include: preset_keyboards/smpy3dty1/keys/@14/label}, preview: " ", functional: false}
-  smpy3bz23jw15: {label: {__include: preset_keyboards/smpy3dty1/keys/@15/label}, preview: " ", functional: false}
-  smpy3bz23jw21: {label: {__include: preset_keyboards/smpy3dty1/keys/@18/label}, preview: " ", functional: false}
-  smpy3bz23jw22: {label: {__include: preset_keyboards/smpy3dty1/keys/@19/label}, preview: " ", functional: false}
-  smpy3bz23jw23: {label: {__include: preset_keyboards/smpy3dty1/keys/@20/label}, preview: " ", functional: false}
-  smpy3bz23jw24: {label: {__include: preset_keyboards/smpy3dty1/keys/@21/label}, preview: " ", functional: false}
-  smpy3bz23jw25: {label: {__include: preset_keyboards/smpy3dty1/keys/@22/label}, preview: " ", functional: false}
-  smpy3bz23jw31: {label: {__include: preset_keyboards/smpy3dty1/keys/@25/label}, preview: " ", functional: false}
-  smpy3bz23jw32: {label: {__include: preset_keyboards/smpy3dty1/keys/@26/label}, preview: " ", functional: false}
-  smpy3bz23jw33: {label: {__include: preset_keyboards/smpy3dty1/keys/@27/label}, preview: " ", functional: false}
-  smpy3bz23jw34: {label: {__include: preset_keyboards/smpy3dty1/keys/@28/label}, preview: " ", functional: false}
-  smpy3bz23jw35: {label: {__include: preset_keyboards/smpy3dty1/keys/@29/label}, preview: " ", functional: false}
+  smpy3bz23jw11: {label: 'ㄚˉ', preview: " ", functional: false}
+  smpy3bz23jw12: {label: 'ㄚˊ', preview: " ", functional: false}
+  smpy3bz23jw13: {label: 'ㄚˇ', preview: " ", functional: false}
+  smpy3bz23jw14: {label: 'ㄚˋ', preview: " ", functional: false}
+  smpy3bz23jw15: {label: 'ㄚ˙', preview: " ", functional: false}
+  smpy3bz23jw21: {label: 'ㄞˉ', preview: " ", functional: false}
+  smpy3bz23jw22: {label: 'ㄞˊ', preview: " ", functional: false}
+  smpy3bz23jw23: {label: 'ㄞˇ', preview: " ", functional: false}
+  smpy3bz23jw24: {label: 'ㄞˋ', preview: " ", functional: false}
+  smpy3bz23jw25: {label: 'ㄞ˙', preview: " ", functional: false}
+  smpy3bz23jw31: {label: 'ㄢˉ', preview: " ", functional: false}
+  smpy3bz23jw32: {label: 'ㄢˊ', preview: " ", functional: false}
+  smpy3bz23jw33: {label: 'ㄢˇ', preview: " ", functional: false}
+  smpy3bz23jw34: {label: 'ㄢˋ', preview: " ", functional: false}
+  smpy3bz23jw35: {label: 'ㄢ˙', preview: " ", functional: false}
   
-  1_smpy3show: {__include: preset_keys/1_smpy1show, label: "ㄅ"}
-  2_smpy3show: {__include: preset_keys/2_smpy1show, label: "ㄆ"}
-  3_smpy3show: {__include: preset_keys/3_smpy1show, label: "ㄇ"}
-  x_smpy3show: {__include: preset_keys/x_smpy1show, label: "ㄖㄈ"}
-  A_smpy3show: {__include: preset_keys/A_smpy1show, label: "ㄓㄗ"}
-  4_smpy3show: {__include: preset_keys/4_smpy1show, label: "ㄉ"}
-  5_smpy3show: {__include: preset_keys/5_smpy1show, label: "ㄊ"}
-  6_smpy3show: {__include: preset_keys/6_smpy1show, label: "ㄋ"}
-  0_smpy3show: {__include: preset_keys/0_smpy1show, label: "ㄌ"}
-  B_smpy3show: {__include: preset_keys/B_smpy1show, label: "ㄔㄘ"}
-  7_smpy3show: {__include: preset_keys/7_smpy1show, label: "ㄍㄐ"}
-  8_smpy3show: {__include: preset_keys/8_smpy1show, label: "ㄎㄑ"}
-  9_smpy3show: {__include: preset_keys/9_smpy1show, label: "ㄏㄒ"}
-  j_smpy3show: {__include: preset_keys/j_smpy1show, label: "〇"}
-  C_smpy3show: {__include: preset_keys/C_smpy1show, label: "ㄕㄙ"}
+  1_smpy3show: {__include: preset_keys/1_smpy1zyshow}
+  2_smpy3show: {__include: preset_keys/2_smpy1zyshow}
+  3_smpy3show: {__include: preset_keys/3_smpy1zyshow}
+  x_smpy3show: {__include: preset_keys/x_smpy1zyshow}
+  A_smpy3show: {__include: preset_keys/A_smpy1zyshow}
+  4_smpy3show: {__include: preset_keys/4_smpy1zyshow}
+  5_smpy3show: {__include: preset_keys/5_smpy1zyshow}
+  6_smpy3show: {__include: preset_keys/6_smpy1zyshow}
+  0_smpy3show: {__include: preset_keys/0_smpy1zyshow}
+  B_smpy3show: {__include: preset_keys/B_smpy1zyshow}
+  7_smpy3show: {__include: preset_keys/7_smpy1zyshow}
+  8_smpy3show: {__include: preset_keys/8_smpy1zyshow}
+  9_smpy3show: {__include: preset_keys/9_smpy1zyshow}
+  j_smpy3show: {__include: preset_keys/j_smpy1zyshow}
+  C_smpy3show: {__include: preset_keys/C_smpy1zyshow}
   A_smpy3wsdshow: {__include: preset_keys/A_smpy3show, text: 'y', preview: "y"}
   B_smpy3wsdshow: {__include: preset_keys/B_smpy3show, text: 'h', preview: "h"}
   C_smpy3wsdshow: {__include: preset_keys/C_smpy3show, text: 'n', preview: "n"}
@@ -2095,32 +2093,9 @@ preset_keyboards:
       - {click: '.', long_click: '>', swipe_up: '>', swipe_left: select_all, label: " 。"}
       - {click: '/', long_click: '?', swipe_up: '?', swipe_left: select_all, label: " 、", composing: lsjp_3x}
       - {click: Return, long_click: Color_settings, swipe_left: Return, swipe_up: Hide, width: 15}
-  esperanto:
-    __include: preset_keyboards/lsqwerty
-    __patch:
-      "name": 世界語鍵盤
-     # 第三行
-      keys/@29/label:
-     # 第四行
-      keys/@30/click: Shift_L1l
-      keys/@32/composing: Xdm
-      keys/@38/label:
-     # 第五行
-      keys/@40/click: Mode_switchsy
-      keys/@42/label:
-      keys/@44/label:
-      keys/@43/swipe_up: Mode_switchsy
-      keys/@45/label:
-  romatzyh:
-    __include: preset_keyboards/lsqwerty
-    __patch:
-      "name": 國語羅馬字鍵盤
-      "label_transform": uppercase #uppercase|none 中文模式下的字母標籤自動大寫
-     # 第三行
-      keys/@29/composing: delimiterls
   lsjp:
     author: 阿森納裡
-    name: 李氏系列基礎鍵盤
+    name: 李氏拼音系列基礎鍵盤
     ascii_mode: 0   #默认进入中文状态
     height: 48   #每行高度
     width: 14   #按键默认宽度
@@ -2174,7 +2149,7 @@ preset_keyboards:
   lsjpqwerty:
     __include: preset_keyboards/lsqwerty
     __patch:
-      "name": 李氏系列基礎qwerty鍵盤
+      "name": 李氏拼音系列基礎qwerty鍵盤
       "ascii_mode": 0
       keys/@29/ascii: ";"
       keys/@29/composing: delimiterls
@@ -2810,19 +2785,19 @@ preset_keyboards:
       keys/@29/click: C_smpy1zyshow
       keys/@11/hint: 'ㄚㄢㄤ'
       keys/@12/hint: 'ㄜㄣㄥ'
-      keys/@13/hint: 'ㄛㄡ_'
+      keys/@13/hint: 'ㄛㄡong'
       keys/@14/hint: 'ㄞㄟㄠ'
       keys/@15/hint: 'ㄩ-ㄦㄢ_'
       keys/@18/hint: 'ㄧ-ㄚㄢㄤ'
       keys/@19/hint: 'ㄧ-ㄝㄣㄥ'
-      keys/@20/hint: 'ㄧ-ㄛㄡ_'
+      keys/@20/hint: 'ㄧ-ㄛㄡong'
       keys/@21/hint: 'ㄧ-ㄞㄧㄠ'
       keys/@22/hint: 'ㄩ-ㄝㄣㄥ'
       keys/@25/hint: 'ㄨ-ㄚㄢㄤ'
-      keys/@26/hint: 'ㄨ-ㄝㄣㄥ'
-      keys/@27/hint: 'ㄨ-ㄛㄡ_'
+      keys/@26/hint: 'ㄨ-_ㄣㄥ'
+      keys/@27/hint: 'ㄨ-ㄛ__'
       keys/@28/hint: 'ㄨ-ㄞㄟㄨ'
-      keys/@29/hint: 'ㄩ-ㄡㄟㄩ'
+      keys/@29/hint: 'ㄩ-__ㄩ'
       keys/@28/key_text_size: 18
       keys/@11/long_click: 1cazj_smpy1zyshow
       keys/@12/long_click: 2cazj_smpy1zyshow
@@ -3318,7 +3293,7 @@ preset_keyboards:
       keys/@25/hint: 'ㄨ-ㄚㄞㄢ'
       keys/@26/hint: 'ㄨ-ㄛㄟㄣ'
       keys/@27/hint: 'ㄨ-__ㄤ'
-      keys/@28/hint: 'ㄨ-ㄝㄨㄥ'
+      keys/@28/hint: 'ㄨ-_ㄨㄥ'
       keys/@29/hint: 'ㄩ-ㄝㄩㄥ'
       keys/@28/key_text_size: 18
       keys/@11/long_click: 1cazj_smpy3show
