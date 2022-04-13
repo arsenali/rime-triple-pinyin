@@ -385,6 +385,7 @@ translator:
     - xform/\<rv([aej]-)/fu$1/
     - xform/v([ae]-)/ü$1/
     - xform/vj-/ü-/
+    - xform/\<([yf])uj-/$1u-/
     - xform/j-/ι-/
     - xform/\<g-/g\x2Fj-/                                   # 首碼簡拼
     - xform/\<k-/k\x2Fq-/
