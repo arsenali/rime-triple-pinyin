@@ -104,8 +104,8 @@ speller:
     - xform/iu/v/
     - xform/([iuv])n/$1en/
    # 異拼
-    - derive/^([jqx])?veng/$1iong/            # veng->iong
-    - derive/^(\w|[zcs]h)ueng/$1ong/          # ueng->ong
+    - xform/^([jqx])?veng/$1iong/            # veng->iong
+    - xform/^(\w|[zcs]h)ueng/$1ong/          # ueng->ong
    # 尖音處理
     - xform/^ziao([1-5])$/buo$1/
     - xform/^zii([1-5])$/buei$1/
