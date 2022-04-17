@@ -2316,6 +2316,8 @@ preset_keyboards:
  # v三碼拼音系列靜態鍵盤
   triple_pinyin_smpy_express:
     __include: preset_keyboards/smpy1wsd
+  triple_pinyin_smpy_RTexpress:
+    __include: preset_keyboards/smpy1wsd
   triple_pinyin_smpy_bopomofo:
     __include: preset_keyboards/smpy1zywsd
   triple_pinyin_smpy_romatzyh:
@@ -2325,6 +2327,8 @@ preset_keyboards:
   triple_pinyin_smpyaoe:
     __include: preset_keyboards/smpy2wsd
   triple_pinyin_bopomofo_express:
+    __include: preset_keyboards/smpy3wsd
+  triple_pinyin_bopomofo_RTexpress:
     __include: preset_keyboards/smpy3wsd
   smpy1bz1_0:
     __include: preset_keyboards/lsbz

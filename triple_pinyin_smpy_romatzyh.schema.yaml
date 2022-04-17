@@ -197,6 +197,7 @@ speller:
     - derive/^([qwertasdfgzxcvbyhn]{2})[qwert]$/$1y/
     - derive/^([qwertasdfgzxcvbyhn]{2})[asdfg]$/$1h/
     - derive/^([qwertasdfgzxcvbyhn]{2})[zxcvb]$/$1n/
+    # - derive/^([qwertasdfgzxcvbyhn])([qwertasdfgzxcvbyhn]{2})$/$2/     # 後兩碼簡拼
 
 translator:
   dictionary: terra_pinyin
@@ -844,6 +845,8 @@ luna_pinyin_lookup:
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[qwert]\>/$1y/
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[asdfg]\>/$1h/
     # - derive/\<([qwertasdfgzxcvbyhn]{2})[zxcvb]\>/$1n/
+    # - derive/\<([qwertasdfgzxcvbyhn])([qwertasdfgzxcvbyhn]{2})\>/$2/     # 後兩碼簡拼
+    
    # 變形
     - xlit/qwertasdfgzxcvb/QWERTASDFGZXCVB/
 
