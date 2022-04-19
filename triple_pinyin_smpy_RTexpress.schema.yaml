@@ -4,7 +4,7 @@
 schema:
   schema_id: triple_pinyin_smpy_RTexpress
   name: 三码拼音韵调快打
-  version: "1.3"
+  version: "1.4"
   author:
     - 佛振 <chen.sst@gmail.com>
     - 阿森納裡 <15678407@qq.com>

@@ -4,7 +4,7 @@
 schema:
   schema_id: triple_pinyin_smpy_romatzyh
   name: 三码拼音·国罗
-  version: "1.3"
+  version: "1.4"
   author:
     - 佛振 <chen.sst@gmail.com>
     - 阿森納裡 <15678407@qq.com>
@@ -285,7 +285,7 @@ translator:
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]d(?!-)\>/$1$2EN\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]f(?!-)\>/$1$2EN\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]g(?!-)\>/$1$2EN\x35/
-    - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]s(?!-)\>/$1$2EN\x30/
+    - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]h(?!-)\>/$1$2EN\x30/
     - xform/\<([ZCS])vEN([0-5])\>/$1uen$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]z(?!-)\>/$1$2ENG\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]x(?!-)\>/$1$2ENG\x32/

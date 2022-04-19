@@ -4,14 +4,14 @@
 schema:
   schema_id: triple_pinyin_smpy
   name: 三码拼音
-  version: "1.3"
+  version: "1.4"
   author:
     - 佛振 <chen.sst@gmail.com>
     - 阿森納裡 <15678407@qq.com>
   description: |
     15键内实现“声母+韵母+去重码&声调”三码输入一个带调音节；
     基础韵母大致按韵头分为4组：a/an/ang,e/en/eng,o/ou/ong,ai/ei/ao；
-    本方案主要用于熟悉键位，不支持简拼，如需用简拼请使用三码拼音快打方案。
+    支持首码简拼（需使用隔音符）和前两码简拼。
   dependencies:
     - luna_pinyin
     - stroke
@@ -189,11 +189,11 @@ speller:
     - derive/^t([qwertasdfgzxcvb]{2})$/y$1/
     - derive/^g([qwertasdfgzxcvb]{2})$/h$1/
     - derive/^b([qwertasdfgzxcvb]{2})$/n$1/
-    # - abbrev/^([qwertasdfgzxcvbyhn])[qwertasdfgzxcvb]{2}$/$1/     # 首碼簡拼
+    - abbrev/^([qwertasdfgzxcvbyhn])[qwertasdfgzxcvb]{2}$/$1/     # 首碼簡拼
     - derive/^([qwertasdfgzxcvbyhn])t([qwertasdfgzxcvb])$/$1y$2/
     - derive/^([qwertasdfgzxcvbyhn])g([qwertasdfgzxcvb])$/$1h$2/
     - derive/^([qwertasdfgzxcvbyhn])b([qwertasdfgzxcvb])$/$1n$2/
-    # - derive/^([qwertasdfgzxcvbyhn]{2})[qwertasdfgzxcvb]$/$1/     # 前兩碼簡拼
+    - derive/^([qwertasdfgzxcvbyhn]{2})[qwertasdfgzxcvb]$/$1/     # 前兩碼簡拼
     - derive/^([qwertasdfgzxcvbyhn]{2})[qwert]$/$1y/
     - derive/^([qwertasdfgzxcvbyhn]{2})[asdfg]$/$1h/
     - derive/^([qwertasdfgzxcvbyhn]{2})[zxcvb]$/$1n/
@@ -285,7 +285,7 @@ translator:
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]d(?!-)\>/$1$2EN\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]f(?!-)\>/$1$2EN\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]g(?!-)\>/$1$2EN\x35/
-    - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]s(?!-)\>/$1$2EN\x30/
+    - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]h(?!-)\>/$1$2EN\x30/
     - xform/\<([ZCS])vEN([0-5])\>/$1uen$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]z(?!-)\>/$1$2ENG\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]x(?!-)\>/$1$2ENG\x32/
@@ -402,42 +402,20 @@ translator:
     - xform/\<([zcs])-/$1h\x2F$1-/
     - xform/\<r-/r\x2Ff-/
     
-   # 2.2：數字標調拼音->帶調拼音（全碼轉換）：帶調拼音
-    - xform/ ([aoe])/ '$1/                                  # 零聲母音節前+隔音符
-    - xform/([aoeiuv])(ng?|r)([1-4])/$1$3$2
-    - xform/([aoe])([iuo])([1-4])/$1$3$2
-    - xform/a1/ā
-    - xform/a2/á
-    - xform/a3/ǎ
-    - xform/a4/à
-    - xform/e1/ē
-    - xform/e2/é
-    - xform/e3/ě
-    - xform/e4/è
-    - xform/o1/ō
-    - xform/o2/ó
-    - xform/o3/ǒ
-    - xform/o4/ò
-    - xform/i1/ī
-    - xform/i2/í
-    - xform/i3/ǐ
-    - xform/i4/ì
-    - xform/u1/ū
-    - xform/u2/ú
-    - xform/u3/ǔ
-    - xform/u4/ù
-    - xform/v1/ǖ
-    - xform/v2/ǘ
-    - xform/v3/ǚ
-    - xform/v4/ǜ
-    - xform/eh1/ê̄
-    - xform/eh2/ế
-    - xform/eh3/ê̌
-    - xform/eh4/ề
-    - xform/eh[05]/ê
-    - xform/([nlzcs])v/$1ü/
-    # - xform/- '/- /                                       # 簡拼後去掉隔音符
-    - xform/[05]//                                          # 未處理聲調轉換
+   # 2.2：數字標調拼音->帶調拼音（全碼轉換）：漢語拼音全拼，去掉聲調
+    - xform/([bpmfw])on(g?[0-5])/$1en$2/                    # 異拼
+    - xform/zii([0-5])/ji$1/                                # 尖音處理
+    - xform/z(i[a-z]+[0-5])/j$1/
+    - xform/zv([a-z]*[0-5])/ju$1/
+    - xform/cii([0-5])/qi$1/
+    - xform/c(i[a-z]+[0-5])/q$1/
+    - xform/cv([a-z]*[0-5])/qu$1/
+    - xform/sii([0-5])/xi$1/
+    - xform/s(i[a-z]+[0-5])/x$1/
+    - xform/sv([a-z]*[0-5])/xu$1/
+    # - xform/([nl])v([a-z]*[0-5])/$1ü$2/                   # [nl]v(-)轉換為ü
+    - xform/([nl])v([a-z]+[0-5])/$1u$2/                     # [nl]v-轉換為u-
+    - xform/[0-5]//                                         # 去掉聲調
     
    # 3：  取消空格：取消零聲母音節前的隔音符，保留空格
     - xform/(?<!-) '(?!\S*-)/ /                             # 取消零聲母音節前的隔音符
