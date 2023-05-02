@@ -839,6 +839,7 @@ preset_keys:
   _Keyboard_candidate: {label: *lb__Keyboard_candidate, functional: false, send: Eisu_toggle, select: _candidate_board}
   _add_phrase: {label: *lb__add_phrase, functional: true, send: function, command: add_phrase}
   _Keyboard_script: {label: *lb__Keyboard_script, functional: false, send: Eisu_toggle, select: _script}
+  K_default: {label: *lb_Keyboard_default, send: Eisu_toggle, select: .default}
   Keyboard_last: {label: *lb_Keyboard_last, send: Eisu_toggle, select: .last}
   K_back: {label: *lb_Keyboard_default, functional: false, send: Eisu_toggle, select: .last_lock}
   Keyboard_last_lock: {label: *lb_Keyboard_default, send: Eisu_toggle, select: .last_lock}
@@ -1478,7 +1479,7 @@ preset_keyboards:
       - {click: '.', label: '。', long_click: Right, swipe_up: Right}
       - {click: ':', label: '：', long_click: paste, swipe_up: paste, popup: [_Keyboard_clip, _Keyboard_phrase]}
      # 第五行
-      - {click: Keyboard_last_lock, long_click: Menu, swipe_right: Return, swipe_up: Hide}
+      - {click: Keyboard_last_lock, long_click: Menu, swipe_right: Return, swipe_up: Hide, composing: Keyboard_last_lockEsc}
       - {click: Keyboard_lsedit, long_click: Keyboard_symbolsyou, swipe_up: Keyboard_symbolsyou, swipe_right: select_all}
       - {__include: preset_keyboards/lsqwerty/keys/@43, click: spacelskg, swipe_up: Keyboard_last_lock, width: 20}
       - {__include: preset_keyboards/lsjp/keys/@34, long_click: ';', swipe_up: ';'}
@@ -1680,7 +1681,7 @@ preset_keyboards:
       - {click: A_ls15show, ascii: 'A', long_click: Acazj_lsjpshow, swipe_up: Acazj_lsjpshow, key_text_size: 18}
       - {__include: preset_keyboards/lsqwerty/keys/@39, width: 15}
      # 第三行
-      - {click: "'", ascii: "'", long_click: '"', swipe_up: '"', composing: "{space}'", width: 15}
+      - {click: "'", ascii: "'", long_click: '"', swipe_up: '"', composing: "'", width: 15}
       - {click: 4_ls15show, ascii: '4', long_click: 4cazj_lsjpshow, key_text_size: 18}
       - {click: 5_ls15show, ascii: '5', long_click: 5cazj_lsjpshow, key_text_size: 18}
       - {click: 6_ls15show, ascii: '6', long_click: 6cazj_lsjpshow, key_text_size: 18}
@@ -1799,13 +1800,11 @@ preset_keyboards:
       keys/@37/ascii: 'm'
       keys/@29/click: Keyboard_last_lock
       keys/@29/label:
-      keys/@29/ascii: Keyboard_last_lockMs
-      keys/@29/composing: Keyboard_last_lockEsc
+      keys/@29/composing: Escapecx
       keys/@30/click: ''
       keys/@38/click: ''
       keys/@38/label:
       keys/@40/click: Keyboard_last_lock
-      keys/@40/ascii: Keyboard_last_lockMs
       keys/@40/composing: Keyboard_last_lockEsc
       keys/@43/swipe_up:
       keys/@41/composing:
@@ -1835,9 +1834,9 @@ preset_keyboards:
       - {click: lsfc_strokeshow_n, composing: lsfc_strokeshow_nCo, ascii: 'n'}
       - {click: lsfc_strokeshow_z, composing: lsfc_strokeshow_zCo, ascii: 'z'}
       - {click: '', swipe_up: CommitScriptText}
-      - {click: Keyboard_last_lock, long_click: '^', ascii: Keyboard_last_lockMs, composing: Escapecx}
+      - {click: Keyboard_last_lock, long_click: '^', composing: Escapecx}
      # 第三行
-      - {click: Keyboard_last_lock, long_click: Menu, ascii: Keyboard_last_lockMs, composing: Keyboard_last_lockEsc, width: 20}
+      - {__include: preset_keyboards/numberyou/keys/@20, width: 20}
       - {__include: preset_keyboards/lsqwerty/keys/@42, width: 10}
       - {__include: preset_keyboards/lsqwerty/keys/@43, width: 40}
       - {__include: preset_keyboards/lsqwerty/keys/@44, width: 10}
@@ -2380,24 +2379,26 @@ preset_keyboards:
  # v三碼拼音系列靜態鍵盤
   triple_pinyin_smpy:
     __include: preset_keyboards/smpy1wsd
-  triple_pinyin_smpy_express:
-    __include: preset_keyboards/smpy1wsd
-  triple_pinyin_smpy_RTexpress:
+  triple_pinyin_smpy_ddpy:
     __include: preset_keyboards/smpy1wsd
   triple_pinyin_smpy_bopomofo:
     __include: preset_keyboards/smpy1zywsd
   triple_pinyin_smpy_romatzyh:
     __include: preset_keyboards/smpy1wsd
-  triple_pinyin_smpy_ipa:
+  triple_pinyin_smpy_RTexpress:
     __include: preset_keyboards/smpy1wsd
   triple_pinyin_smpyaoe:
     __include: preset_keyboards/smpy2wsd
   triple_pinyin_bopomofo:
     __include: preset_keyboards/smpy3wsd
-  triple_pinyin_bopomofo_express:
-    __include: preset_keyboards/smpy3wsd
   triple_pinyin_bopomofo_RTexpress:
     __include: preset_keyboards/smpy3wsd
+  triple_pinyin_smpy_express:
+    __include: preset_keyboards/smpy1wsd
+  triple_pinyin_bopomofo_express:
+    __include: preset_keyboards/smpy3wsd
+  triple_pinyin_smpy_ipa:
+    __include: preset_keyboards/smpy1wsd
   smpy1:
     __include: preset_keyboards/lsjp
     __patch:

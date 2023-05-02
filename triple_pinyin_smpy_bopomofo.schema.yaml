@@ -4,7 +4,7 @@
 schema:
   schema_id: triple_pinyin_smpy_bopomofo
   name: 三码拼音·注音
-  version: "1.4"
+  version: "1.5"
   author:
     - 佛振 <chen.sst@gmail.com>
     - 阿森納裡 <15678407@qq.com>
@@ -93,19 +93,23 @@ speller:
     - xform/^m([1-5])$/mu$1/        # 鼻音m（呣）轉化爲mu
     - xform/^r5$/er5/               # r5（兒）轉化爲er5
     - xform/^eh([1-5])$/e$1/        # 模糊音：eh（誒欸）、e合併
-    - xform/^wong([1-5])$/weng$1/   # 模糊音：wong、weng合併
+    # - xform/^wong([1-5])$/weng$1/   # 模糊音：wong、weng合併
    # 拼音完整形式
     - xform/^([jqx])u/$1v/
     - xform/iu/iou/
-    - xform/ui/uei/
-    - xform/ong/ung/
+    - xform/([uv])i/$1ei/
+    - xform/(?<![uw])ong/$1ung/
     - xform/^yi?/i/
     - xform/^wu?/u/
     - xform/iu/v/
     - xform/([iuv])n/$1en/
    # 異拼
-    - derive/^([jqx])?veng/$1iong/            # veng->iong
-    - derive/^(\w|[zcs]h)ueng/$1ong/          # ueng->ong
+    - xform/([bpm])ueng/$1ong/
+    - xform/([bpm])veng/$1iong/
+    # - xform/(\w+)ueng/$1ong/
+    # - xform/veng/iong/
+    - derive/ueng/ong/
+    - derive/veng/iong/
    # 尖音處理
     - xform/^ziao([1-5])$/buo$1/
     - xform/^zii([1-5])$/buei$1/
@@ -122,10 +126,10 @@ speller:
    # 音節合併
     - xform/^([zcs]h?|r)i([1-5])$/$1o$2/
     - xform/^([zcs])([aoe]\w*)([1-5])$/$1hi$2$3/
-    - xform/^([zcs])u(an|eng?|ei|o)?([1-5])$/$1hv$2$3/
+    - xform/^([zcs])u([aoe]\w*)?([1-5])$/$1hv$2$3/
+    - xform/^f([aoe]\w*)([1-5])$/ri$1$2/
     - xform/^fiao([1-5])$/riao$1/
-    - xform/^fu(eng)?([1-5])$/rv$1$2/
-    - xform/^f(\w+)([1-5])$/ri$1$2/
+    - xform/^fu([aoe]\w*)?([1-5])$/rv$1$2/
     
    # 第1碼：聲母
     - xform/^b/Q/
@@ -161,7 +165,7 @@ speller:
     
     - xform/^([QWERTASDFGZXCVB])(va|van|vang|er)([1-5])$/$1T$2$3/
     - xform/^([QWERTASDFGZXCVB])(ve|ven|veng)([1-5])$/$1G$2$3/
-    - xform/^([QWERTASDFGZXCVB])(vo|vou|vong|vai|vei|vao|v)([1-5])$/$1B$2$3/
+    - xform/^([QWERTASDFGZXCVB])(vo|vei|vao|v)([1-5])$/$1B$2$3/
    # 第3碼：去重碼&聲調
     - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)1$/$1Q/
     - xform/^([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)2$/$1W/
@@ -260,14 +264,12 @@ translator:
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]r(?!-)\>/$1$2A\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]t(?!-)\>/$1$2A\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]y(?!-)\>/$1$2A\x30/
-    - xform/\<YvA([0-5])\>/er$1/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]a(?!-)\>/$1$2AN\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]s(?!-)\>/$1$2AN\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]d(?!-)\>/$1$2AN\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]f(?!-)\>/$1$2AN\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]g(?!-)\>/$1$2AN\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]h(?!-)\>/$1$2AN\x30/
-    - xform/\<([ZCS])vAN([0-5])\>/$1uan$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]z(?!-)\>/$1$2ANG\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]x(?!-)\>/$1$2ANG\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[QAZTY]c(?!-)\>/$1$2ANG\x33/
@@ -286,39 +288,30 @@ translator:
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]f(?!-)\>/$1$2EN\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]g(?!-)\>/$1$2EN\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]h(?!-)\>/$1$2EN\x30/
-    - xform/\<([ZCS])vEN([0-5])\>/$1uen$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]z(?!-)\>/$1$2ENG\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]x(?!-)\>/$1$2ENG\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]c(?!-)\>/$1$2ENG\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]v(?!-)\>/$1$2ENG\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]b(?!-)\>/$1$2ENG\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[WSXGH]n(?!-)\>/$1$2ENG\x30/
-    - xform/\<([ZCS])vENG([0-5])\>/$1ueng$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]q(?!-)\>/$1$2O\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]w(?!-)\>/$1$2O\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]e(?!-)\>/$1$2O\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]r(?!-)\>/$1$2O\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]t(?!-)\>/$1$2O\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]y(?!-)\>/$1$2O\x30/
-    - xform/\<([ZCS]i?|R)O([0-5])\>/$1I$2/
-    - xform/\<([ZCS])vO([0-5])\>/$1uo$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]a(?!-)\>/$1$2OU\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]s(?!-)\>/$1$2OU\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]d(?!-)\>/$1$2OU\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]f(?!-)\>/$1$2OU\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]g(?!-)\>/$1$2OU\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]h(?!-)\>/$1$2OU\x30/
-    - xform/\<([BPMDTNLGKHYR])vOU([0-5])\>/$1vei$2/
-    - xform/\<([ZCS])vOU([0-5])\>/$1uei$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]z(?!-)\>/$1$2ONG\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]x(?!-)\>/$1$2ONG\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]c(?!-)\>/$1$2ONG\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]v(?!-)\>/$1$2ONG\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]b(?!-)\>/$1$2ONG\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[EDCBN]n(?!-)\>/$1$2ONG\x30/
-    - xform/\<YONG([0-5])\>/wong$1/             # 異拼
-    - xform/\<([BPMDTNLGKHYR])vONG([0-5])\>/$1V$2/
-    - xform/\<([ZCS])vONG([0-5])\>/$1u$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]q(?!-)\>/$1$2AI\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]w(?!-)\>/$1$2AI\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]e(?!-)\>/$1$2AI\x33/
@@ -331,45 +324,52 @@ translator:
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]f(?!-)\>/$1$2EI\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]g(?!-)\>/$1$2EI\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]h(?!-)\>/$1$2EI\x30/
-    - xform/\<([BPMDTNLGKHY])iEI([0-5])\>/$1I$2/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]z(?!-)\>/$1$2AO\x31/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]x(?!-)\>/$1$2AO\x32/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]c(?!-)\>/$1$2AO\x33/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]v(?!-)\>/$1$2AO\x34/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]b(?!-)\>/$1$2AO\x35/
     - xform/\<([BPMDTNLGKHYZCSR])([iuv])?[RFV]n(?!-)\>/$1$2AO\x30/
-    - xform/\<([BPMDTNLGKHYZCSR])uAO([0-5])\>/$1U$2/
     
+    - xform/\<([BPMDTNLGKHY])iEI([0-5])\>/$1I$2/                    # 音節合併
+    - xform/\<([BPMDTNLGKHYZCSR])uAO([0-5])\>/$1U$2/
+    - xform/\<YvA([0-5])\>/er$1/
+    - xform/\<([BPMDTNLGKHYZCSR])vOU([0-5])\>/$1vEI$2/
+    - xform/\<([BPMDTNLGKHYZCSR])vONG([0-5])\>/$1V$2/
     - xform/\<G([iv][A-Z]+|[IV])([0-5])\>/j$1$2/
     - xform/\<K([iv][A-Z]+|[IV])([0-5])\>/q$1$2/
     - xform/\<H([iv][A-Z]+|[IV])([0-5])\>/x$1$2/
-    - xform/\<([ZCS])([AOEu][A-Z]+|[AOEIU])([0-5])\>/$1h$2$3/
+    - xform/\<([ZCS]i?|R)O([0-5])\>/$1I$2/
+    - xform/\<([ZCS])(u?[A-Z]+)([0-5])\>/$1h$2$3/
     - xform/\<([ZCS])i([A-Z]+[0-5])\>/$1$2/
+    - xform/\<([ZCS])v([A-Z]+[0-5])\>/$1u$2/
+    - xform/\<([ZCS])hV([0-5])\>/$1U$2/
     - xform/\<RiAO([0-5])\>/fiao$1/
-    - xform/\<RV(ENG)?([0-5])\>/fu$1$2/
     - xform/\<Ri([A-Z]+[0-5])\>/f$1/
+    - xform/\<Rv([A-Z]+[0-5])\>/fu$1/
+    - xform/\<RV([0-5])\>/fu$1/
     - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/
-    - xform/\<(buo)([0-5])\>/ziao$2/                        # 尖音處理
+    - xform/\<buo([0-5])\>/ziao$1/                                  # 尖音處理
     - xform/\<buei([0-5])\>/zii$1/
     - xform/\<bu(\w+[0-5])\>/zi$1/
     - xform/\<b(v\w*[0-5])\>/z$1/
-    - xform/\<(puo)([0-5])\>/ciao$2/
+    - xform/\<puo([0-5])\>/ciao$1/
     - xform/\<puei([0-5])\>/cii$1/
     - xform/\<pu(\w+[0-5])\>/ci$1/
     - xform/\<p(v\w*[0-5])\>/c$1/
-    - xform/\<(muo)([0-5])\>/siao$2/
+    - xform/\<muo([0-5])\>/siao$1/
     - xform/\<muei([0-5])\>/sii$1/
     - xform/\<mu(\w+[0-5])\>/si$1/
     - xform/\<m(v\w*[0-5])\>/s$1/
-    
-    - xform/veng(?!\S*-)/iong/                              # 拼音完整形式
-    - xform/\<([jqx])v(?!\S*-)/$1u/
+    # - xform/([^y])ueng([0-5])/$1ong$2/                              # 異拼
+    # - xform/veng([0-5])/iong$1/
+    - xform/\<([jqx])v(?!\S*-)/$1u/                                 # 拼音完整形式
     - xform/\<y([aoe])(?!\S*-)/$1/
-    - xform/([iuv])en(?!\S*-)/$1n/
-    - xform/([^y])ung(?!\S*-)/$1ong/
+    - xform/ien(g?[0-5])/in$1/
+    - xform/([uv])en(g?[0-5])/$1n$2/
     - xform/([^y])iou(?!\S*-)/$1iu/
     - xform/\<yi([aoe])(?!.*-)/y$1/
-    - xform/uei(?!\S*-)/ui/
+    - xform/([uv])ei(?!\S*-)/$1i/
     - xform/\<yu([0-5])(?!\S*-)/wu$1/
     - xform/\<yu([aoe])(?!\S*-)/w$1/
     - xform/\<yu([in])(?!\S*-)/we$1/
@@ -408,7 +408,8 @@ translator:
     - xform/ui(?!.*-)/uei/
     - xform/ong(?!.*-)/ung/
     - xform/yi?(?!.*-)/i/
-    - xform/wu?(?!.*-)/u/
+    - xform/wu([0-5])/u$1/
+    - xform/w(?!.*-)/u/
     - xform/iu(?!.*-)/v/
     - xform/([iuv])n(?!.*-)/$1en/
     - xform/zh(?!.*-)/Z/
@@ -473,15 +474,19 @@ translator:
     - xform/(ˉ|ˊ|ˇ|ˋ|˙) '/$1 /                              # 聲調符號後去掉隔音符
     
    # 3：  取消空格：取消空格
-    # - xform/(?<!-) '(?!\S*-)/ /                           # 取消零聲母音節前的隔音符
-    # - xform/([bpmfdtnljqxwzcs])-/$1/                      # 取消首碼簡拼後的-
+    # - xform/(?<!-) '(?!\S*-)/ /                             # 取消零聲母音節前的隔音符
+    # - xform/([bpmfdtnljqxwzcs])-/$1/                        # 取消首碼簡拼後的-
     - xform/ //                                             # 取消空格
     - xlit|;"| '|                                           # 把;替換為空格，恢復輸入的隔音符號'
 
   comment_format:  # 提示碼爲带调拼音
     - erase/\<xx\>/
-    - xform/\<m([1-5])\>/mu$1/        # 鼻音m（呣）轉化爲mu
-    - xform/\<r5\>/er5/               # r5（兒）轉化爲er5
+    - xform/\<m([1-5])\>/mu$1/                              # 鼻音m（呣）轉化爲mu
+    - xform/\<r5\>/er5/                                     # r5（兒）轉化爲er5
+    - xform/\<(ung|ong)([1-5])\>/weng$2/                    # 拼音完整形式、異拼
+    - xform/\<([jqx])ung([1-5])\>/$1iong$2/
+    - xform/ung/ong/
+    - xform/vng/iong/
     - xform/([aoeiuv])(ng?|r)([1-4])/$1$3$2
     - xform/([aoe])([iuo])([1-4])/$1$3$2
     - xform/a1/ā
@@ -513,7 +518,7 @@ translator:
     - xform/eh3/ê̌
     - xform/eh4/ề
     - xform/eh5?/ê
-    - xform/([nlzcs])v/$1ü/
+    - xform/([dtnlzcs])v/$1ü/
     - xform/([jqxy])v/$1u/
     - xform/([a-z|ü]+)[1-5]/$1/                             # 未處理聲調轉換
 
@@ -534,19 +539,23 @@ luna_pinyin_lookup:
     - xform/\<m([1-5])\>/mu$1/        # 鼻音m（呣）轉化爲mu
     - xform/\<r5\>/er5/               # r5（兒）轉化爲er5
     - xform/\<eh([1-5])\>/e$1/        # 模糊音：eh（誒欸）、e合併
-    - xform/\<wong([1-5])\>/weng$1/   # 模糊音：wong、weng合併
+    # - xform/\<wong([1-5])\>/weng$1/   # 模糊音：wong、weng合併
    # 拼音完整形式
     - xform/\<([jqx])u/$1v/
     - xform/iu/iou/
-    - xform/ui/uei/
-    - xform/ong/ung/
+    - xform/([uv])i/$1ei/
+    - xform/(?<![uw])ong/$1ung/
     - xform/\<yi?/i/
     - xform/\<wu?/u/
     - xform/iu/v/
     - xform/([iuv])n/$1en/
    # 異拼
-    - derive/\<([jqx])?veng/$1iong/            # veng->iong
-    - derive/\<(\w|[zcs]h)ueng/$1ong/          # ueng->ong
+    - xform/([bpm])ueng/$1ong/
+    - xform/([bpm])veng/$1iong/
+    # - xform/(\w+)ueng/$1ong/
+    # - xform/veng/iong/
+    - derive/ueng/ong/
+    - derive/veng/iong/
    # 尖音處理
     - xform/\<ziao([1-5])\>/buo$1/
     - xform/\<zii([1-5])\>/buei$1/
@@ -563,10 +572,10 @@ luna_pinyin_lookup:
    # 音節合併
     - xform/\<([zcs]h?|r)i([1-5])\>/$1o$2/
     - xform/\<([zcs])([aoe]\w*)([1-5])\>/$1hi$2$3/
-    - xform/\<([zcs])u(an|eng?|ei|o)?([1-5])\>/$1hv$2$3/
+    - xform/\<([zcs])u([aoe]\w*)?([1-5])\>/$1hv$2$3/
+    - xform/\<f([aoe]\w*)([1-5])\>/ri$1$2/
     - xform/\<fiao([1-5])\>/riao$1/
-    - xform/\<fu(eng)?([1-5])\>/rv$1$2/
-    - xform/\<f(\w+)([1-5])\>/ri$1$2/
+    - xform/\<fu([aoe]\w*)?([1-5])\>/rv$1$2/
     
    # 第1碼：聲母
     - xform/\<b/Q/
@@ -602,7 +611,7 @@ luna_pinyin_lookup:
     
     - xform/\<([QWERTASDFGZXCVB])(va|van|vang|er)([1-5])\>/$1T$2$3/
     - xform/\<([QWERTASDFGZXCVB])(ve|ven|veng)([1-5])\>/$1G$2$3/
-    - xform/\<([QWERTASDFGZXCVB])(vo|vou|vong|vai|vei|vao|v)([1-5])\>/$1B$2$3/
+    - xform/\<([QWERTASDFGZXCVB])(vo|vei|vao|v)([1-5])\>/$1B$2$3/
    # 第3碼：去重碼&聲調
     - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)1\>/$1Q/
     - xform/\<([QWERTASDFGZXCVB]{2})([iuv]?[aeo]|[iuv]?ai|er)2\>/$1W/

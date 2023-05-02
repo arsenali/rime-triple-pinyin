@@ -1413,12 +1413,24 @@ preset_keyboards:
  # v三碼拼音動態鍵盤
   triple_pinyin_smpy:
     __include: preset_keyboards/smpy1dtwsd
+  triple_pinyin_smpy_ddpy:
+    __include: preset_keyboards/smpy1dtwsd
   triple_pinyin_smpy_express:
     __include: preset_keyboards/smpy1dtwsd
   smpy1dt:
     __include: 三拼原始主题.trime:/preset_keyboards/smpy1
     __patch:
       "name": 三碼拼音動態聲母鍵盤
+      width: 16
+      keys/@10/width: 10
+      keys/@16/width: 10
+      keys/@17/width: 10
+      keys/@23/width: 10
+      keys/@24/width: 10
+      keys/@30/width: 10
+      keys/@32/width: 11
+      keys/@33/width: 48
+      keys/@34/width: 11
       keys/@10/composing: Keyboard_lsfc_pinyinPEsc
       keys/@11/click: 1_smpy1dtshow
       keys/@12/click: 2_smpy1dtshow
@@ -1521,22 +1533,22 @@ preset_keyboards:
       "name": 三碼拼音動態介調鍵盤
       "lock": false #切換程序時記憶鍵盤
       keys/@15/popup:
-      keys/@11/label: 'a-'
-      keys/@12/label: 'e-'
-      keys/@13/label: 'o-'
+      keys/@11/label: 'a,an,ang'
+      keys/@12/label: 'e,en,eng'
+      keys/@13/label: 'o,ou,ong'
       keys/@14/label: 'ai,ei,ao'
-      keys/@15/label: 'üan'
+      keys/@15/label: '_,üan,_'
       keys/@16/composing: BackSpacesmpy1dt2b1
-      keys/@18/label: 'ia-'
-      keys/@19/label: 'ie,in-'
-      keys/@20/label: 'io-,iu'
-      keys/@21/label: 'i,iao'
-      keys/@22/label: 'üe,ün'
-      keys/@25/label: 'ua-'
-      keys/@26/label: 'un-'
-      keys/@27/label: 'uo-'
+      keys/@18/label: 'ia,ian,iang'
+      keys/@19/label: 'ie,in,ing'
+      keys/@20/label: 'io,iu,iong'
+      keys/@21/label: 'iai,i,iao'
+      keys/@22/label: 'üe,ün,_'
+      keys/@25/label: 'ua,uan,uang'
+      keys/@26/label: '_,un,ueng'
+      keys/@27/label: 'uo,_,_'
       keys/@28/label: 'uai,ui,u'
-      keys/@29/label: 'ü'
+      keys/@29/label: '_,_,ü'
       keys/@11/composing:
       keys/@12/composing:
       keys/@13/composing:
@@ -1567,21 +1579,21 @@ preset_keyboards:
       keys/@27/ascii:
       keys/@28/ascii:
       keys/@29/ascii:
-      keys/@11/key_text_size: 15
-      keys/@12/key_text_size: 15
-      keys/@13/key_text_size: 15
+      keys/@11/key_text_size: 13
+      keys/@12/key_text_size: 13
+      keys/@13/key_text_size: 13
       keys/@14/key_text_size: 13
-      keys/@15/key_text_size: 15
-      keys/@18/key_text_size: 15
-      keys/@19/key_text_size: 14
-      keys/@20/key_text_size: 14
-      keys/@21/key_text_size: 14
-      keys/@22/key_text_size: 14
-      keys/@25/key_text_size: 15
-      keys/@26/key_text_size: 15
-      keys/@27/key_text_size: 15
+      keys/@15/key_text_size: 13
+      keys/@18/key_text_size: 13
+      keys/@19/key_text_size: 13
+      keys/@20/key_text_size: 13
+      keys/@21/key_text_size: 13
+      keys/@22/key_text_size: 13
+      keys/@25/key_text_size: 13
+      keys/@26/key_text_size: 13
+      keys/@27/key_text_size: 13
       keys/@28/key_text_size: 13
-      keys/@29/key_text_size: 15
+      keys/@29/key_text_size: 13
   smpy1dtjb:
     __include: preset_keyboards/smpy1dtj
     __patch:
@@ -1765,17 +1777,17 @@ preset_keyboards:
   smpy1dtjy:
     __include: preset_keyboards/smpy1dtj
     __patch:
-      keys/@15/label: 'er,yuan'
-      keys/@18/label: 'ya-'
-      keys/@19/label: 'ye,in-'
-      keys/@20/label: 'yo-'
-      keys/@21/label: 'yi,ao'
-      keys/@22/label: 'yue,un'
-      keys/@25/label: 'wa-'
-      keys/@26/label: 'we-'
-      keys/@27/label: 'wo-'
-      keys/@28/label: 'wai,ei,u'
-      keys/@29/label: 'yu'
+      keys/@15/label: 'er,yuan,_'
+      keys/@18/label: 'ya,yan,yang'
+      keys/@19/label: 'ye,yin,ying'
+      keys/@20/label: 'yo,you,yong'
+      keys/@21/label: 'yai,yi,yao'
+      keys/@22/label: 'yue,yun,_'
+      keys/@25/label: 'wa,wan,wang'
+      keys/@26/label: '_,wen,weng'
+      keys/@27/label: 'wo,_,_'
+      keys/@28/label: 'wai,wei,wu'
+      keys/@29/label: '_,_,yu'
       keys/@11/click: 'q{Keyboard_smpy1dtyy1}'
       keys/@12/click: 'w{Keyboard_smpy1dtyy2}'
       keys/@13/click: 'e{Keyboard_smpy1dtyy3}'
@@ -1791,57 +1803,57 @@ preset_keyboards:
       keys/@27/click: 'c{Keyboard_smpy1dtyyu3}'
       keys/@28/click: 'v{Keyboard_smpy1dtyyu4}'
       keys/@29/click: 'b{Keyboard_smpy1dtyyv3}'
-      keys/@11/key_text_size: 15
-      keys/@12/key_text_size: 15
-      keys/@13/key_text_size: 15
+      keys/@11/key_text_size: 13
+      keys/@12/key_text_size: 13
+      keys/@13/key_text_size: 13
       keys/@14/key_text_size: 13
       keys/@15/key_text_size: 13
-      keys/@18/key_text_size: 15
+      keys/@18/key_text_size: 13
       keys/@19/key_text_size: 13
-      keys/@20/key_text_size: 15
+      keys/@20/key_text_size: 13
       keys/@21/key_text_size: 13
       keys/@22/key_text_size: 13
-      keys/@25/key_text_size: 15
-      keys/@26/key_text_size: 15
-      keys/@27/key_text_size: 15
+      keys/@25/key_text_size: 13
+      keys/@26/key_text_size: 13
+      keys/@27/key_text_size: 13
       keys/@28/key_text_size: 13
-      keys/@29/key_text_size: 15
+      keys/@29/key_text_size: 13
   smpy1dtjzcsr:
     __include: preset_keyboards/smpy1dtj
     __patch:
-      keys/@11/key_text_size: 15
-      keys/@12/key_text_size: 15
-      keys/@13/key_text_size: 14
+      keys/@11/key_text_size: 11
+      keys/@12/key_text_size: 11
+      keys/@13/key_text_size: 11
       keys/@14/key_text_size: 12
-      keys/@15/key_text_size: 15
-      keys/@18/key_text_size: 15
-      keys/@19/key_text_size: 15
-      keys/@20/key_text_size: 15
-      keys/@21/key_text_size: 13
-      keys/@22/key_text_size: 15
-      keys/@25/key_text_size: 15
-      keys/@26/key_text_size: 15
-      keys/@27/key_text_size: 15
+      keys/@15/key_text_size: 12
+      keys/@18/key_text_size: 12
+      keys/@19/key_text_size: 12
+      keys/@20/key_text_size: 12
+      keys/@21/key_text_size: 12
+      keys/@22/key_text_size: 12
+      keys/@25/key_text_size: 9
+      keys/@26/key_text_size: 12
+      keys/@27/key_text_size: 12
       keys/@28/key_text_size: 12
-      keys/@29/key_text_size: 13
+      keys/@29/key_text_size: 12
   smpy1dtjz:
     __include: preset_keyboards/smpy1dtjzcsr
     __patch:
-      keys/@11/label: 'zha-'
-      keys/@12/label: 'zhe-'
-      keys/@13/label: 'zhi,o-'
-      keys/@14/label: 'zhai,ao'
-      keys/@15/label: 'zuan'
-      keys/@18/label: 'za-'
-      keys/@19/label: 'ze-'
-      keys/@20/label: 'zi,o-'
-      keys/@21/label: 'zai,ei,ao'
-      keys/@22/label: 'zun'
-      keys/@25/label: 'zhua-'
-      keys/@26/label: 'zhun-'
-      keys/@27/label: 'zhuo-'
-      keys/@28/label: 'zhuai,ui,u'
-      keys/@29/label: 'zuo,ui,u'
+      keys/@11/label: 'zha,zhan,zhang'
+      keys/@12/label: 'zhe,zhen,zheng'
+      keys/@13/label: 'zhi,zhou,zhong'
+      keys/@14/label: 'zhai,_,zhao'
+      keys/@15/label: '_,zuan,_'
+      keys/@18/label: 'za,zan,zang'
+      keys/@19/label: 'ze,zen,zeng'
+      keys/@20/label: 'zi,zou,zong'
+      keys/@21/label: 'zai,zei,zao'
+      keys/@22/label: '_,zun,_'
+      keys/@25/label: 'zhua,zhuan,zhuang'
+      keys/@26/label: '_,zhun,_'
+      keys/@27/label: 'zhuo,_,_'
+      keys/@28/label: 'zhuai,zhui,zhu'
+      keys/@29/label: 'zuo,zui,zu'
       keys/@11/click: 'q{Keyboard_smpy1dtyz1}'
       keys/@12/click: 'w{Keyboard_smpy1dtyz2}'
       keys/@13/click: 'e{Keyboard_smpy1dtyz3}'
@@ -1860,21 +1872,21 @@ preset_keyboards:
   smpy1dtjc:
     __include: preset_keyboards/smpy1dtjzcsr
     __patch:
-      keys/@11/label: 'cha-'
-      keys/@12/label: 'che-'
-      keys/@13/label: 'chi,o-'
-      keys/@14/label: 'chai,ao'
-      keys/@15/label: 'cuan'
-      keys/@18/label: 'ca-'
-      keys/@19/label: 'ce-'
-      keys/@20/label: 'ci,o-'
-      keys/@21/label: 'cai,ao'
-      keys/@22/label: 'cun'
-      keys/@25/label: 'chua-'
-      keys/@26/label: 'chun-'
-      keys/@27/label: 'chuo-'
-      keys/@28/label: 'chuai,ui,u'
-      keys/@29/label: 'cuo,ui,u'
+      keys/@11/label: 'cha,chan,chang'
+      keys/@12/label: 'che,chen,cheng'
+      keys/@13/label: 'chi,chou,chong'
+      keys/@14/label: 'chai,_,chao'
+      keys/@15/label: '_,cuan,_'
+      keys/@18/label: 'ca,can,cang'
+      keys/@19/label: 'ce,cen,ceng'
+      keys/@20/label: 'ci,cou,cong'
+      keys/@21/label: 'cai,_,cao'
+      keys/@22/label: '_,cun,_'
+      keys/@25/label: 'chua,chuan,chuang'
+      keys/@26/label: '_,chun,_'
+      keys/@27/label: 'chuo,_,_'
+      keys/@28/label: 'chuai,chui,chu'
+      keys/@29/label: 'cuo,cui,cu'
       keys/@11/click: 'q{Keyboard_smpy1dtyc1}'
       keys/@12/click: 'w{Keyboard_smpy1dtyc2}'
       keys/@13/click: 'e{Keyboard_smpy1dtyc3}'
@@ -1893,21 +1905,21 @@ preset_keyboards:
   smpy1dtjs:
     __include: preset_keyboards/smpy1dtjzcsr
     __patch:
-      keys/@11/label: 'sha-'
-      keys/@12/label: 'she-'
-      keys/@13/label: 'shi,ou'
-      keys/@14/label: 'shai,ei,ao'
-      keys/@15/label: 'suan'
-      keys/@18/label: 'sa-'
-      keys/@19/label: 'se-'
-      keys/@20/label: 'si,o-'
-      keys/@21/label: 'sai,ao'
-      keys/@22/label: 'sun'
-      keys/@25/label: 'shua-'
-      keys/@26/label: 'shun-'
-      keys/@27/label: 'shuo-'
-      keys/@28/label: 'shuai,ui,u'
-      keys/@29/label: 'suo,ui,u'
+      keys/@11/label: 'sha,shan,shang'
+      keys/@12/label: 'she,shen,sheng'
+      keys/@13/label: 'shi,shou,_'
+      keys/@14/label: 'shai,shei,shao'
+      keys/@15/label: '_,suan,_'
+      keys/@18/label: 'sa,san,sang'
+      keys/@19/label: 'se,sen,seng'
+      keys/@20/label: 'si,sou,song'
+      keys/@21/label: 'sai,_,sao'
+      keys/@22/label: '_,sun,_'
+      keys/@25/label: 'shua,shuan,shuang'
+      keys/@26/label: '_,shun,_'
+      keys/@27/label: 'shuo,_,_'
+      keys/@28/label: 'shuai,shui,shu'
+      keys/@29/label: 'suo,sui,su'
       keys/@11/click: 'q{Keyboard_smpy1dtys1}'
       keys/@12/click: 'w{Keyboard_smpy1dtys2}'
       keys/@13/click: 'e{Keyboard_smpy1dtys3}'
@@ -1926,21 +1938,21 @@ preset_keyboards:
   smpy1dtjr:
     __include: preset_keyboards/smpy1dtjzcsr
     __patch:
-      keys/@11/label: 'ra-'
-      keys/@12/label: 're-'
-      keys/@13/label: 'ri,o-'
-      keys/@14/label: 'rao'
-      keys/@15/label: 'f×'
-      keys/@18/label: 'fa-'
-      keys/@19/label: 'fe-'
-      keys/@20/label: 'fo-'
-      keys/@21/label: 'fei,iao'
-      keys/@22/label: 'f×'
-      keys/@25/label: 'ruan'
-      keys/@26/label: 'run-'
-      keys/@27/label: 'ruo-'
-      keys/@28/label: 'rui,u'
-      keys/@29/label: 'fu'
+      keys/@11/label: '_,ran,rang'
+      keys/@12/label: 're,ren,reng'
+      keys/@13/label: 'ri,rou,rong'
+      keys/@14/label: '_,_,rao'
+      keys/@15/label: '_,_,_'
+      keys/@18/label: 'fa,fan,fang'
+      keys/@19/label: '_,fen,feng'
+      keys/@20/label: 'fo,fou,_'
+      keys/@21/label: '_,fei,fiao'
+      keys/@22/label: '_,_,_'
+      keys/@25/label: '_,ruan,_'
+      keys/@26/label: '_,run,_'
+      keys/@27/label: 'ruo,_,_'
+      keys/@28/label: '_,rui,ru'
+      keys/@29/label: '_,_,fu'
       keys/@11/click: 'q{Keyboard_smpy1dtyr1}'
       keys/@12/click: 'w{Keyboard_smpy1dtyr2}'
       keys/@13/click: 'e{Keyboard_smpy1dtyr3}'
@@ -1956,21 +1968,21 @@ preset_keyboards:
       keys/@27/click: 'c{Keyboard_smpy1dtyru3}'
       keys/@28/click: 'v{Keyboard_smpy1dtyru4}'
       keys/@29/click: 'b{Keyboard_smpy1dtyrv3}'
-      keys/@11/key_text_size: 15
-      keys/@12/key_text_size: 15
-      keys/@13/key_text_size: 14
-      keys/@14/key_text_size: 15
-      keys/@15/key_text_size: 15
-      keys/@18/key_text_size: 15
-      keys/@19/key_text_size: 15
-      keys/@20/key_text_size: 15
+      keys/@11/key_text_size: 13
+      keys/@12/key_text_size: 13
+      keys/@13/key_text_size: 13
+      keys/@14/key_text_size: 13
+      keys/@15/key_text_size: 13
+      keys/@18/key_text_size: 13
+      keys/@19/key_text_size: 13
+      keys/@20/key_text_size: 13
       keys/@21/key_text_size: 13
-      keys/@22/key_text_size: 15
-      keys/@25/key_text_size: 15
-      keys/@26/key_text_size: 15
-      keys/@27/key_text_size: 15
-      keys/@28/key_text_size: 14
-      keys/@29/key_text_size: 15
+      keys/@22/key_text_size: 13
+      keys/@25/key_text_size: 13
+      keys/@26/key_text_size: 13
+      keys/@27/key_text_size: 13
+      keys/@28/key_text_size: 13
+      keys/@29/key_text_size: 13
   smpy1dtjbwsd:
     __include: preset_keyboards/smpy1dtjb
     __patch:
@@ -8345,6 +8357,16 @@ preset_keyboards:
     __include: 三拼原始主题.trime:/preset_keyboards/smpy3
     __patch:
       "name": 三碼注音動態聲母鍵盤
+      width: 16
+      keys/@10/width: 10
+      keys/@16/width: 10
+      keys/@17/width: 10
+      keys/@23/width: 10
+      keys/@24/width: 10
+      keys/@30/width: 10
+      keys/@32/width: 11
+      keys/@33/width: 48
+      keys/@34/width: 11
       keys/@10/composing: Keyboard_lsfc_strokeBEsc
       keys/@11/click: 1_smpy3dtshow
       keys/@12/click: 2_smpy3dtshow
